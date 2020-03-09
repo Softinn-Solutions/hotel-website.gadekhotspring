@@ -150,7 +150,7 @@ img {
     display: inline-block;
     width: 100px;
     height: 1px;
-    background: #DA001B
+    background: #8DC53E
 }
 
     .box-border.w350 {
@@ -233,8 +233,8 @@ img {
     }
 
         .awe-btn.awe-btn-default:hover {
-            border-color: #DA001B;
-            background-color: #DA001B;
+            border-color: #8DC53E;
+            background-color: #8DC53E;
             color: #fff
         }
 
@@ -289,13 +289,13 @@ img {
         }
 
     .awe-btn.awe-btn-6 {
-        border: 2px solid#DA001B;
-        background-color: #DA001B;
+        border: 2px solid#8DC53E;
+        background-color: #8DC53E;
         color: #fff
     }
 
         .awe-btn.awe-btn-6:hover {
-            color: #DA001B;
+            color: #8DC53E;
             background-color: transparent
         }
 
@@ -360,22 +360,22 @@ img {
     }
 
         .awe-btn.awe-btn-12:hover {
-            color: #DA001B;
-            background-color: #DA001B;
-            border-color: #DA001B;
+            color: #8DC53E;
+            background-color: #8DC53E;
+            border-color: #8DC53E;
             color: #fff
         }
 
     .awe-btn.awe-btn-13 {
-        border: 2px solid#DA001B;
-        background-color: #DA001B;
+        border: 2px solid#8DC53E;
+        background-color: #8DC53E;
         color: #fff
     }
 
         .awe-btn.awe-btn-13:hover {
-            border-color: #DA001B;
+            border-color: #8DC53E;
             background-color: #fff;
-            color: #DA001B !important
+            color: #8DC53E !important
         }
 
         .awe-btn.awe-btn-13.btn-order {
@@ -391,8 +391,8 @@ img {
     }
 
         .awe-btn.awe-btn-14:hover {
-            border-color: #DA001B;
-            background-color: #DA001B;
+            border-color: #8DC53E;
+            background-color: #8DC53E;
             color: #fff
         }
 
@@ -572,7 +572,7 @@ blockquote {
 }
 
 .bg-blue {
-    background-color: #DA001B
+    background-color: #8DC53E
 }
 
 .tabs {
@@ -614,7 +614,7 @@ blockquote {
             }
 
             .tabs .ui-tabs-nav li:hover a, .tabs .ui-tabs-nav li.ui-tabs-active a {
-                color: #DA001B !important
+                color: #8DC53E !important
             }
 
     .tabs .ui-tabs-panel {
@@ -638,16 +638,16 @@ blockquote {
 
         .tabs.tabs-2 .ui-tabs-nav li:hover a {
             color: #232323 !important;
-            border-color: #DA001B
+            border-color: #8DC53E
         }
 
         .tabs.tabs-2 .ui-tabs-nav li.ui-tabs-active a {
-            background-color: #DA001B;
+            background-color: #8DC53E;
             color: #fff !important
         }
 
 .accordion .ui-accordion-header {
-    background-color: #DA001B;
+    background-color: #8DC53E;
     color: #fff;
     padding: 10px 20px;
     font-family: 'Hind';
@@ -672,7 +672,7 @@ blockquote {
 .accordion .ui-accordion-content {
     background-color: transparent;
     padding: 15px 20px;
-    border: 2px solid#DA001B;
+    border: 2px solid#8DC53E;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0
@@ -787,9 +787,9 @@ blockquote {
         }
 
             .bootstrap-select.btn-group.awe-select .dropdown-menu ul li a:hover {
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 color: #fff;
-                border-bottom-color: #DA001B
+                border-bottom-color: #8DC53E
             }
 
         .bootstrap-select.btn-group.awe-select .dropdown-menu ul li:last-child a {
@@ -797,9 +797,9 @@ blockquote {
         }
 
         .bootstrap-select.btn-group.awe-select .dropdown-menu ul li.selected a {
-            background-color: #DA001B;
+            background-color: #8DC53E;
             color: #fff;
-            border-bottom-color: #DA001B
+            border-bottom-color: #8DC53E
         }
 
 .tab-price table {
@@ -839,7 +839,7 @@ blockquote {
         }
 
             .tab-price table caption a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
             .tab-price table caption a.prev {
@@ -885,7 +885,7 @@ blockquote {
         }
 
         .tab-price table tr td.date-select {
-            background-color: #DA001B;
+            background-color: #8DC53E;
             color: #fff
         }
 
@@ -901,7 +901,7 @@ blockquote {
 }
 
     .ui-datepicker .ui-datepicker-header {
-        background-color: #8d0606;
+        background-color: #5A920B;
         border-width: 0;
         padding: 0;
         -webkit-border-radius: 0;
@@ -961,7 +961,7 @@ blockquote {
             }
 
             .ui-datepicker .ui-datepicker-header .ui-corner-all.ui-state-hover {
-                background: #DA001B
+                background: #8DC53E
             }
 
     .ui-datepicker .ui-state-disabled, .ui-datepicker .ui-widget-content .ui-state-disabled, .ui-datepicker .ui-widget-header .ui-state-disabled {
@@ -991,7 +991,7 @@ blockquote {
             color: #fff;
             font-family: 'Montserrat';
             font-weight: normal;
-            background-color: #DA001B;
+            background-color: #8DC53E;
             padding: 12px 5px
         }
 
@@ -1013,13 +1013,13 @@ blockquote {
         }
 
             .ui-datepicker .ui-datepicker-calendar td a.ui-state-active, .ui-datepicker .ui-datepicker-calendar td a:hover {
-                border: 1px solid#DA001B
+                border: 1px solid#8DC53E
             }
 
         .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-today a {
-            background-color: #DA001B;
+            background-color: #8DC53E;
             color: #fff;
-            border-color: #DA001B
+            border-color: #8DC53E
         }
 
 .owl-controls .owl-prev, .owl-controls .owl-next {
@@ -1048,8 +1048,8 @@ blockquote {
 }
 
     .owl-controls .owl-prev:hover, .owl-controls .owl-next:hover {
-        color: #DA001B;
-        border-color: #DA001B
+        color: #8DC53E;
+        border-color: #8DC53E
     }
 
 .owl-controls .owl-prev {
@@ -1173,7 +1173,7 @@ blockquote {
             content: '';
             height: 2px;
             width: 20px;
-            background-color: #DA001B;
+            background-color: #8DC53E;
             position: absolute;
             top: 0;
             left: 0;
@@ -1202,55 +1202,55 @@ blockquote {
 }
 
 .bg-1 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-2 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-3 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-4 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-5 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-6 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-7 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-8 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-9 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-10 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-11 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-12 {
-    background-image: url('/Images/header/header.jpg')
+    background-image: url('/images/header/header.jpg')
 }
 
 .bg-13 {
-    background-image: url('/Images/header/bg-review.jpg')
+    background-image: url('/images/header/bg-review.jpg')
 }
 
 .bg-14 {
@@ -1310,12 +1310,12 @@ blockquote {
 
         #header.header-v2 .header_content .menu li .sub-menu li a:hover {
             color: #fff;
-            background: #DA001B
+            background: #8DC53E
         }
 
     #header.header-v2 .header_content .menu li .sub-menu li.current-menu-item a {
         color: #fff;
-        background: #DA001B
+        background: #8DC53E
     }
 
     #header.header-sticky {
@@ -1426,12 +1426,12 @@ blockquote {
                 }
 
                     .header_top .header_right .dropdown ul li a:hover {
-                        background-color: #DA001B;
+                        background-color: #8DC53E;
                         color: #fff
                     }
 
                 .header_top .header_right .dropdown ul li.active a {
-                    background-color: #DA001B;
+                    background-color: #8DC53E;
                     color: #fff
                 }
 
@@ -1510,12 +1510,12 @@ blockquote {
             }
 
             .header_content .menu > li.current-menu-item > a {
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 color: #fff
             }
 
             .header_content .menu > li:hover > a {
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 color: #fff
             }
 
@@ -1578,12 +1578,12 @@ blockquote {
                         }
 
                     .header_content .menu > li .sub-menu li.current-menu-item > a {
-                        background-color: #DA001B;
+                        background-color: #8DC53E;
                         color: #fff
                     }
 
                     .header_content .menu > li .sub-menu li:hover > a {
-                        background-color: #DA001B;
+                        background-color: #8DC53E;
                         color: #fff
                     }
 
@@ -1676,7 +1676,7 @@ blockquote {
         }
 
             .menu-bars:hover span:after {
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 -webkit-transform: rotate(-45deg);
                 -moz-transform: rotate(-45deg);
                 -ms-transform: rotate(-45deg);
@@ -1684,7 +1684,7 @@ blockquote {
             }
 
             .menu-bars:hover span:before {
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 -webkit-transform: rotate(45deg);
                 -moz-transform: rotate(45deg);
                 -ms-transform: rotate(45deg);
@@ -1700,7 +1700,7 @@ blockquote {
         }
 
             .menu-bars.active span:after {
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 -webkit-transform: rotate(45deg);
                 -moz-transform: rotate(45deg);
                 -ms-transform: rotate(45deg);
@@ -1708,7 +1708,7 @@ blockquote {
             }
 
             .menu-bars.active span:before {
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 -webkit-transform: rotate(-45deg);
                 -moz-transform: rotate(-45deg);
                 -ms-transform: rotate(-45deg);
@@ -1747,7 +1747,7 @@ blockquote {
         right: -270px;
         width: 270px;
         overflow-y: auto;
-        background-color: #DA001B;
+        background-color: #8DC53E;
         -webkit-transition: right .5s cubic-bezier(0, .67, .35, .94);
         -moz-transition: right .5s cubic-bezier(0, .67, .35, .94);
         -ms-transition: right .5s cubic-bezier(0, .67, .35, .94);
@@ -1974,7 +1974,7 @@ blockquote {
     #preloader .preloader-dot {
         width: 0;
         height: 0;
-        border: 2px solid#DA001B;
+        border: 2px solid#8DC53E;
         position: absolute;
         top: 0;
         left: 0;
@@ -2152,11 +2152,11 @@ blockquote {
             }
 
                 .accomd-modations-room .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .accomd-modations-room .text .price {
-            color: #DA001B;
+            color: #8DC53E;
             margin-bottom: 0;
             font-family: 'Montserrat';
             margin-top: 0;
@@ -2252,7 +2252,7 @@ blockquote {
             }
 
                 .accomd-modations-room_1 .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .accomd-modations-room_1 .text .desc {
@@ -2277,7 +2277,7 @@ blockquote {
         }
 
             .accomd-modations-room_1 .text .price .amout {
-                color: #DA001B;
+                color: #8DC53E;
                 font-size: 30px
             }
 
@@ -2364,8 +2364,8 @@ blockquote {
 
         .check-availability h2:before {
             content: '\f00c';
-            border: 3px solid#DA001B;
-            color: #DA001B;
+            border: 3px solid#8DC53E;
+            color: #8DC53E;
             font-size: 18px;
             display: block;
             width: 40px;
@@ -2463,6 +2463,11 @@ blockquote {
 
 .home-about .text span.box-border {
     width: 250px
+}
+
+.home-about .text .our-story-desc {
+    overflow: hidden;
+    height: 240px;
 }
 
 .home-about .text p {
@@ -2727,7 +2732,7 @@ blockquote {
         }
 
             .news-item .text h2 a {
-                color: #DA001B;
+                color: #8DC53E;
                 -webkit-transition: all .3s ease;
                 -moz-transition: all .3s ease;
                 -ms-transition: all .3s ease;
@@ -2735,7 +2740,7 @@ blockquote {
             }
 
                 .news-item .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .news-item .text .read-more {
@@ -2750,7 +2755,7 @@ blockquote {
         }
 
             .news-item .text .read-more:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .news-item:hover img {
@@ -3042,11 +3047,11 @@ blockquote {
             -ms-transition: all .3s ease-out;
             -o-transition: all .3s ease-out;
             background-color: transparent;
-            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #DA001B));
-            background: -webkit-linear-gradient(top, transparent,#DA001B);
-            background: -moz-linear-gradient(top, transparent,#DA001B);
-            background: -ms-linear-gradient(top, transparent,#DA001B);
-            background: -o-linear-gradient(top, transparent,#DA001B)
+            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #8DC53E));
+            background: -webkit-linear-gradient(top, transparent,#8DC53E);
+            background: -moz-linear-gradient(top, transparent,#8DC53E);
+            background: -ms-linear-gradient(top, transparent,#8DC53E);
+            background: -o-linear-gradient(top, transparent,#8DC53E)
         }
 
         .gallery-content .gallery_item .text {
@@ -3160,7 +3165,7 @@ blockquote {
         }
 
         .gallery-cat ul li:hover a, .gallery-cat ul li.active a {
-            background-color: #DA001B;
+            background-color: #8DC53E;
             color: #fff
         }
 
@@ -3201,7 +3206,7 @@ blockquote {
         }
 
             .mfp-wrap .mfp-content .mfp-figure .mfp-close:hover {
-                background-color: #DA001B
+                background-color: #8DC53E
             }
 
         .mfp-wrap .mfp-content .mfp-figure .mfp-img {
@@ -3259,8 +3264,8 @@ blockquote {
     }
 
         .mfp-wrap .mfp-prevent-close:hover {
-            color: #DA001B;
-            border-color: #DA001B
+            color: #8DC53E;
+            border-color: #8DC53E
         }
 
         .mfp-wrap .mfp-prevent-close.mfp-prevent-left {
@@ -3318,7 +3323,7 @@ blockquote {
 
                 .sidebar .widget.widget_check_availability .check_availability .check_availability_title {
                     margin-top: 25px;
-                    color: #DA001B;
+                    color: #8DC53E;
                     font-size: 14px;
                     text-transform: uppercase;
                     font-family: 'Montserrat';
@@ -3505,7 +3510,7 @@ blockquote {
             }
 
             .sidebar .widget.widget_categories ul li:hover > a, .sidebar .widget.widget_categories ul li.current-cat > a {
-                color: #DA001B
+                color: #8DC53E
             }
 
             .sidebar .widget.widget_categories ul li .sub-menu {
@@ -3565,7 +3570,7 @@ blockquote {
                     }
 
                         .sidebar .widget.widget_upcoming_events ul li .text a:hover {
-                            color: #DA001B
+                            color: #8DC53E
                         }
 
                     .sidebar .widget.widget_upcoming_events ul li .text .date {
@@ -3575,8 +3580,8 @@ blockquote {
                     }
 
                 .sidebar .widget.widget_upcoming_events ul li:hover .event-date {
-                    border-color: #DA001B;
-                    color: #DA001B
+                    border-color: #8DC53E;
+                    color: #8DC53E
                 }
 
         .sidebar .widget.widget_recent_entries ul {
@@ -3610,7 +3615,7 @@ blockquote {
                 }
 
                     .sidebar .widget.widget_recent_entries ul li a:hover {
-                        color: #DA001B
+                        color: #8DC53E
                     }
 
                 .sidebar .widget.widget_recent_entries ul li .date {
@@ -3648,8 +3653,8 @@ blockquote {
 
                 .sidebar .widget.widget_tag_cloud .tagcloud a:hover {
                     color: #fff;
-                    background-color: #DA001B;
-                    border-color: #DA001B
+                    background-color: #8DC53E;
+                    border-color: #8DC53E
                 }
 
         .sidebar .widget.widget_social .widget-social {
@@ -3678,8 +3683,8 @@ blockquote {
             }
 
                 .sidebar .widget.widget_social .widget-social a:hover {
-                    color: #DA001B;
-                    border-color: #DA001B
+                    color: #8DC53E;
+                    border-color: #8DC53E
                 }
 
 .widgetsearch {
@@ -3844,7 +3849,7 @@ blockquote {
             }
 
                 .post .entry-header h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .post .entry-header .entry-meta {
@@ -3902,7 +3907,7 @@ blockquote {
         }
 
             .post .entry-meta a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
             .post .entry-meta a .entry-author-name {
@@ -3915,7 +3920,7 @@ blockquote {
             }
 
                 .post .entry-meta a .entry-author-name:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
     .post .entry-content {
@@ -3936,7 +3941,7 @@ blockquote {
         }
 
             .post .entry-content a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .post .entry-footer {
@@ -4013,7 +4018,7 @@ blockquote {
         }
 
             .page-navigation li a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
         .page-navigation li.first a, .page-navigation li.last a {
@@ -4030,7 +4035,7 @@ blockquote {
         }
 
             .page-navigation li.first a:hover, .page-navigation li.last a:hover {
-                border-color: #DA001B
+                border-color: #8DC53E
             }
 
         .page-navigation li.current-page {
@@ -4130,7 +4135,7 @@ blockquote {
                     }
 
                         #comments .commentlist li .comment-body .comment-meta a:hover {
-                            color: #DA001B
+                            color: #8DC53E
                         }
 
                 #comments .commentlist li .comment-body .action {
@@ -4220,7 +4225,7 @@ blockquote {
             }
 
             .comment-respond .comment-form .field-text:focus, .comment-respond .comment-form .field-textarea:focus {
-                border-color: #DA001B
+                border-color: #8DC53E
             }
 
         .comment-respond .comment-form .field-textarea {
@@ -4277,8 +4282,8 @@ blockquote {
             }
 
             .restaurant_item .img a:before {
-                border-right: 3px solid#DA001B;
-                border-bottom: 3px solid#DA001B;
+                border-right: 3px solid#8DC53E;
+                border-bottom: 3px solid#8DC53E;
                 -webkit-transform-origin: bottom right;
                 -moz-transform-origin: bottom right;
                 -ms-transform-origin: bottom right;
@@ -4286,8 +4291,8 @@ blockquote {
             }
 
             .restaurant_item .img a:after {
-                border-left: 3px solid#DA001B;
-                border-top: 3px solid#DA001B;
+                border-left: 3px solid#8DC53E;
+                border-top: 3px solid#8DC53E;
                 -webkit-transform-origin: top left;
                 -moz-transform-origin: top left;
                 -ms-transform-origin: top left;
@@ -4337,7 +4342,7 @@ blockquote {
             }
 
                 .restaurant_item .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .restaurant_item .text .desc {
@@ -4352,7 +4357,7 @@ blockquote {
             text-align: right;
             font-family: 'Montserrat';
             font-size: 18px;
-            color: #DA001B;
+            color: #8DC53E;
             line-height: 1.428em;
             position: absolute;
             top: 0;
@@ -4412,7 +4417,7 @@ blockquote {
                 font-size: 30px;
                 margin-bottom: 0;
                 margin-top: 15px;
-                color: #DA001B
+                color: #8DC53E
             }
 
                 .restaurant_item.lager-thumbs .text .price del {
@@ -4541,7 +4546,7 @@ blockquote {
             left: 0;
             width: 0;
             bottom: -2px;
-            border-top: 2px solid#DA001B;
+            border-top: 2px solid#8DC53E;
             -webkit-transition: all .3s ease;
             -moz-transition: all .3s ease;
             -ms-transition: all .3s ease;
@@ -4573,7 +4578,7 @@ blockquote {
             }
 
         .tabs-restaurant .ui-tabs-nav li:hover a, .tabs-restaurant .ui-tabs-nav li.ui-state-active a {
-            color: #DA001B
+            color: #8DC53E
         }
 
         .tabs-restaurant .ui-tabs-nav li:hover:before, .tabs-restaurant .ui-tabs-nav li.ui-state-active:before {
@@ -4813,7 +4818,7 @@ blockquote {
             }
 
                 .event-restaurant_content li .text a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
 .section-room {
@@ -4821,13 +4826,28 @@ blockquote {
     padding-bottom: 100px
 }
 
+.fade-overflow {
+    position: relative;
+}
+
+    .fade-overflow:after {
+        content: "";
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+        height: 1.2em;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+    }
+
 .room_item-1 {
     position: relative
 }
 
     .room_item-1 h2 {
         text-transform: uppercase;
-        font-size: 26px;
+        font-size: 22px;
         font-family: 'Montserrat';
         font-weight: bold
     }
@@ -4841,7 +4861,7 @@ blockquote {
         }
 
             .room_item-1 h2 a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .room_item-1 .img {
@@ -4860,11 +4880,11 @@ blockquote {
             opacity: 0;
             pointer-events: none;
             background-color: transparent;
-            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #DA001B));
-            background: -webkit-linear-gradient(top, transparent,#DA001B);
-            background: -moz-linear-gradient(top, transparent,#DA001B);
-            background: -ms-linear-gradient(top, transparent,#DA001B);
-            background: -o-linear-gradient(top, transparent,#DA001B);
+            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #8DC53E));
+            background: -webkit-linear-gradient(top, transparent,#8DC53E);
+            background: -moz-linear-gradient(top, transparent,#8DC53E);
+            background: -ms-linear-gradient(top, transparent,#8DC53E);
+            background: -o-linear-gradient(top, transparent,#8DC53E);
             -webkit-transition: all .3s ease-out;
             -moz-transition: all .3s ease-out;
             -ms-transition: all .3s ease-out;
@@ -4888,7 +4908,6 @@ blockquote {
             line-height: 1.5em;
             font-size: 14px;
             min-height: 40px;
-            max-height: 60px;
         }
 
         .room_item-1 .desc ul {
@@ -4898,6 +4917,10 @@ blockquote {
             margin-top: 15px
         }
 
+        .room_item-1 .desc .room-desc {
+            overflow: hidden;
+            height: 80px;
+        }
             .room_item-1 .desc ul li {
                 position: relative;
                 padding-left: 25px;
@@ -5012,11 +5035,11 @@ blockquote {
             z-index: 1;
             pointer-events: none;
             background-color: transparent;
-            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #DA001B));
-            background: -webkit-linear-gradient(top, transparent,#DA001B);
-            background: -moz-linear-gradient(top, transparent,#DA001B);
-            background: -ms-linear-gradient(top, transparent,#DA001B);
-            background: -o-linear-gradient(top, transparent,#DA001B);
+            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #8DC53E));
+            background: -webkit-linear-gradient(top, transparent,#8DC53E);
+            background: -moz-linear-gradient(top, transparent,#8DC53E);
+            background: -ms-linear-gradient(top, transparent,#8DC53E);
+            background: -o-linear-gradient(top, transparent,#8DC53E);
             -webkit-transition: all .3s ease-out;
             -moz-transition: all .3s ease-out;
             -ms-transition: all .3s ease-out;
@@ -5052,7 +5075,7 @@ blockquote {
             }
 
                 .room_item-2 .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .room_item-2 .text .price {
@@ -5112,11 +5135,11 @@ blockquote {
         opacity: 0;
         pointer-events: none;
         background-color: transparent;
-        background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #DA001B));
-        background: -webkit-linear-gradient(top, transparent,#DA001B);
-        background: -moz-linear-gradient(top, transparent,#DA001B);
-        background: -ms-linear-gradient(top, transparent,#DA001B);
-        background: -o-linear-gradient(top, transparent,#DA001B);
+        background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #8DC53E));
+        background: -webkit-linear-gradient(top, transparent,#8DC53E);
+        background: -moz-linear-gradient(top, transparent,#8DC53E);
+        background: -ms-linear-gradient(top, transparent,#8DC53E);
+        background: -o-linear-gradient(top, transparent,#8DC53E);
         -webkit-transition: all .3s ease-out;
         -moz-transition: all .3s ease-out;
         -ms-transition: all .3s ease-out;
@@ -5179,8 +5202,8 @@ blockquote {
         }
 
         .room_item-3 .text-thumbs .thumbs:before {
-            border-right: 4px solid#DA001B;
-            border-bottom: 4px solid#DA001B;
+            border-right: 4px solid#8DC53E;
+            border-bottom: 4px solid#8DC53E;
             -webkit-transform-origin: bottom right;
             -moz-transform-origin: bottom right;
             -ms-transform-origin: bottom right;
@@ -5188,8 +5211,8 @@ blockquote {
         }
 
         .room_item-3 .text-thumbs .thumbs:after {
-            border-left: 4px solid#DA001B;
-            border-top: 4px solid#DA001B;
+            border-left: 4px solid#8DC53E;
+            border-top: 4px solid#8DC53E;
             -webkit-transform-origin: top left;
             -moz-transform-origin: top left;
             -ms-transform-origin: top left;
@@ -5223,7 +5246,7 @@ blockquote {
             }
 
                 .room_item-3 .text-thumbs .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .room_item-3 .text-thumbs .text .price {
@@ -5296,11 +5319,11 @@ blockquote {
             opacity: 0;
             pointer-events: none;
             background-color: transparent;
-            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #DA001B));
-            background: -webkit-linear-gradient(top, transparent,#DA001B);
-            background: -moz-linear-gradient(top, transparent,#DA001B);
-            background: -ms-linear-gradient(top, transparent,#DA001B);
-            background: -o-linear-gradient(top, transparent,#DA001B);
+            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #8DC53E));
+            background: -webkit-linear-gradient(top, transparent,#8DC53E);
+            background: -moz-linear-gradient(top, transparent,#8DC53E);
+            background: -ms-linear-gradient(top, transparent,#8DC53E);
+            background: -o-linear-gradient(top, transparent,#8DC53E);
             -webkit-transition: all .3s ease-out;
             -moz-transition: all .3s ease-out;
             -ms-transition: all .3s ease-out;
@@ -5328,7 +5351,7 @@ blockquote {
             }
 
                 .room_item-4 .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .room_item-4 .text .price {
@@ -5385,8 +5408,8 @@ blockquote {
         }
 
         .room_item-4 .thumbs:before {
-            border-right: 3px solid#DA001B;
-            border-bottom: 3px solid#DA001B;
+            border-right: 3px solid#8DC53E;
+            border-bottom: 3px solid#8DC53E;
             -webkit-transform-origin: bottom right;
             -moz-transform-origin: bottom right;
             -ms-transform-origin: bottom right;
@@ -5394,8 +5417,8 @@ blockquote {
         }
 
         .room_item-4 .thumbs:after {
-            border-left: 3px solid#DA001B;
-            border-top: 3px solid#DA001B;
+            border-left: 3px solid#8DC53E;
+            border-top: 3px solid#8DC53E;
             -webkit-transform-origin: top left;
             -moz-transform-origin: top left;
             -ms-transform-origin: top left;
@@ -5490,11 +5513,11 @@ blockquote {
             opacity: 0;
             pointer-events: none;
             background-color: transparent;
-            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #DA001B));
-            background: -webkit-linear-gradient(top, transparent,#DA001B);
-            background: -moz-linear-gradient(top, transparent,#DA001B);
-            background: -ms-linear-gradient(top, transparent,#DA001B);
-            background: -o-linear-gradient(top, transparent,#DA001B);
+            background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #8DC53E));
+            background: -webkit-linear-gradient(top, transparent,#8DC53E);
+            background: -moz-linear-gradient(top, transparent,#8DC53E);
+            background: -ms-linear-gradient(top, transparent,#8DC53E);
+            background: -o-linear-gradient(top, transparent,#8DC53E);
             -webkit-transition: all .3s ease-out;
             -moz-transition: all .3s ease-out;
             -ms-transition: all .3s ease-out;
@@ -5669,12 +5692,12 @@ blockquote {
             }
 
                 .room_item-6 .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .room_item-6 .text .price {
             display: block;
-            color: #DA001B;
+            color: #8DC53E;
             text-transform: uppercase;
             font-family: 'Montserrat';
             margin-top: 7px
@@ -5815,7 +5838,7 @@ blockquote {
     }
 
         .room-detail_img .apb-zoom:hover {
-            color: #DA001B
+            color: #8DC53E
         }
 
 .room-detail_thumbs {
@@ -5827,7 +5850,7 @@ blockquote {
     }
 
         .room-detail_thumbs .owl-item.active a:before {
-            border-color: #DA001B
+            border-color: #8DC53E
         }
 
     .room-detail_thumbs a {
@@ -5852,7 +5875,7 @@ blockquote {
         }
 
         .room-detail_thumbs a:hover::before {
-            border-color: #DA001B
+            border-color: #8DC53E
         }
 
         .room-detail_thumbs a img {
@@ -5877,7 +5900,7 @@ blockquote {
     }
 
         .room-detail_thumbs .owl-prev:hover, .room-detail_thumbs .owl-next:hover {
-            background-color: #DA001B;
+            background-color: #8DC53E;
             color: #fff
         }
 
@@ -6026,7 +6049,7 @@ blockquote {
                 position: absolute;
                 left: 0;
                 bottom: -2px;
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 -webkit-transition: all .3s ease;
                 -moz-transition: all .3s ease;
                 -ms-transition: all .3s ease;
@@ -6034,7 +6057,7 @@ blockquote {
             }
 
         .room-detail_tab-header li.active a, .room-detail_tab-header li:hover a {
-            color: #DA001B
+            color: #8DC53E
         }
 
             .room-detail_tab-header li.active a:before, .room-detail_tab-header li:hover a:before {
@@ -6141,7 +6164,7 @@ blockquote {
             }
 
                 .room-package_item .text h4 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .room-package_item .text p {
@@ -6273,8 +6296,8 @@ blockquote {
         }
 
             .calendar_custom .calendar_title .calendar_corner:hover {
-                color: #DA001B;
-                border-color: #DA001B
+                color: #8DC53E;
+                border-color: #8DC53E
             }
 
             .calendar_custom .calendar_title .calendar_corner.calendar_prev {
@@ -6430,7 +6453,7 @@ blockquote {
             }
 
                 .room-compare_item .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .room-compare_item .text ul {
@@ -6465,7 +6488,7 @@ blockquote {
     padding-bottom: 75px
 }
 
-.activiti_content .row.flex-attractions {
+.activiti_content .row.flex-attractions, .row.flex-attractions {
     display: flex;
     flex-wrap: wrap;
 }
@@ -6509,7 +6532,7 @@ blockquote {
             }
 
                 .activiti_item .text h2 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .activiti_item .text p {
@@ -6536,7 +6559,7 @@ blockquote {
             }
 
             .activiti_item .text .view-more:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .activiti_item:hover .img:before {
@@ -6595,7 +6618,7 @@ blockquote {
     }
 
         .checkout .checkout_login a:hover {
-            color: #DA001B
+            color: #8DC53E
         }
 
 .checkout .checkout_head {
@@ -6636,7 +6659,7 @@ blockquote {
     }
 
         .checkout .bootstrap-select.btn-group.awe-select .dropdown-toggle:hover {
-            border-color: #DA001B
+            border-color: #8DC53E
         }
 
         .checkout .bootstrap-select.btn-group.awe-select .dropdown-toggle .filter-option {
@@ -6675,7 +6698,7 @@ blockquote {
     }
 
     .checkout .field-text:focus {
-        border-color: #DA001B
+        border-color: #8DC53E
     }
 
 .checkout .field-textarea {
@@ -6707,7 +6730,7 @@ blockquote {
     }
 
     .checkout .field-textarea:focus {
-        border-color: #DA001B
+        border-color: #8DC53E
     }
 
 .checkout .field-radio {
@@ -6734,7 +6757,7 @@ blockquote {
     }
 
         .checkout .code-enter a:hover {
-            color: #DA001B
+            color: #8DC53E
         }
 
 .checkout .checkout_text {
@@ -6778,11 +6801,11 @@ blockquote {
                 z-index: 10;
                 pointer-events: none;
                 background-color: transparent;
-                background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #DA001B));
-                background: -webkit-linear-gradient(top, transparent,#DA001B);
-                background: -moz-linear-gradient(top, transparent,#DA001B);
-                background: -ms-linear-gradient(top, transparent,#DA001B);
-                background: -o-linear-gradient(top, transparent,#DA001B);
+                background: -webkit-gradient(linear, left top, left bottom, from(transparent), to( #8DC53E));
+                background: -webkit-linear-gradient(top, transparent,#8DC53E);
+                background: -moz-linear-gradient(top, transparent,#8DC53E);
+                background: -ms-linear-gradient(top, transparent,#8DC53E);
+                background: -o-linear-gradient(top, transparent,#8DC53E);
                 -webkit-transition: all .3s ease-out;
                 -moz-transition: all .3s ease-out;
                 -ms-transition: all .3s ease-out;
@@ -6806,7 +6829,7 @@ blockquote {
             }
 
                 .checkout .checkout_cart .cart-item .text a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
             .checkout .checkout_cart .cart-item .text p {
@@ -6836,7 +6859,7 @@ blockquote {
         }
 
             .checkout .checkout_cart .cart-item .remove:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
         .checkout .checkout_cart .cart-item:hover .img:before {
@@ -6998,7 +7021,7 @@ blockquote {
     }
 
         .attraction_sidebar .attraction_sidebar-content .attraction_title {
-            background-color: #DA001B;
+            background-color: #8DC53E;
             color: #fff;
             font-family: 'Montserrat';
             font-size: 12px;
@@ -7060,11 +7083,11 @@ blockquote {
                 }
 
                     .attraction_sidebar .attraction_sidebar-content .attraction_location li a:hover {
-                        color: #DA001B
+                        color: #8DC53E
                     }
 
                 .attraction_sidebar .attraction_sidebar-content .attraction_location li.active a {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
 .attraction_detail {
@@ -7080,7 +7103,7 @@ blockquote {
     }
 
         .attraction_detail .attraction_detail-title i {
-            color: #DA001B;
+            color: #8DC53E;
             margin-right: 20px
         }
 
@@ -7106,7 +7129,7 @@ blockquote {
             }
 
             .attraction_detail ul li a {
-                color: #DA001B
+                color: #8DC53E
             }
 
 .attraction_content {
@@ -7136,13 +7159,13 @@ blockquote {
         }
 
         .attraction_content p a {
-            color: #DA001B;
+            color: #8DC53E;
             text-decoration: underline;
             font-weight: bold
         }
 
             .attraction_content p a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .attraction_content .wp_caption {
@@ -7387,8 +7410,8 @@ blockquote {
             }
 
                 .team_item .text .team-share a:hover {
-                    border-color: #DA001B;
-                    color: #DA001B
+                    border-color: #8DC53E;
+                    color: #8DC53E
                 }
 
     .team_item:hover:before {
@@ -7396,7 +7419,7 @@ blockquote {
     }
 
     .team_item:hover .img:before {
-        border-color: #DA001B
+        border-color: #8DC53E
     }
 
     .team_item:hover .img img {
@@ -7498,8 +7521,8 @@ blockquote {
     }
 
     .guest-book_item:before {
-        border-right: 2px solid#DA001B;
-        border-bottom: 2px solid#DA001B;
+        border-right: 2px solid#8DC53E;
+        border-bottom: 2px solid#8DC53E;
         -webkit-transform-origin: bottom right;
         -moz-transform-origin: bottom right;
         -ms-transform-origin: bottom right;
@@ -7507,8 +7530,8 @@ blockquote {
     }
 
     .guest-book_item:after {
-        border-left: 2px solid#DA001B;
-        border-top: 2px solid#DA001B;
+        border-left: 2px solid#8DC53E;
+        border-top: 2px solid#8DC53E;
         -webkit-transform-origin: top left;
         -moz-transform-origin: top left;
         -ms-transform-origin: top left;
@@ -7552,7 +7575,7 @@ blockquote {
     }
 
         .guest-book_item .avatar:before {
-            border: 3px solid#DA001B;
+            border: 3px solid#8DC53E;
             position: absolute;
             content: '';
             top: 0;
@@ -7705,7 +7728,7 @@ blockquote {
     }
 
         .comingsoon h1 span {
-            color: #DA001B
+            color: #8DC53E
         }
 
     .comingsoon h6 {
@@ -7797,7 +7820,7 @@ blockquote {
         }
 
             .comingsoon .widget_social .widget-social a:hover {
-                border-color: #DA001B
+                border-color: #8DC53E
             }
 
 .section-account {
@@ -7857,7 +7880,7 @@ blockquote {
             }
 
                 .login-register .text .account_form .field-form .view-pass:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
             .login-register .text .account_form .field-form .field-text {
@@ -7892,7 +7915,7 @@ blockquote {
                 }
 
                 .login-register .text .account_form .field-form .field-text:focus {
-                    border-color: #DA001B
+                    border-color: #8DC53E
                 }
 
             .login-register .text .account_form .field-form .awe-btn {
@@ -7921,7 +7944,7 @@ blockquote {
             }
 
                 .login-register .text .account_form .account-desc a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
 .section-404 {
@@ -7955,7 +7978,7 @@ blockquote {
     }
 
         .page-404 h1 span {
-            color: #DA001B
+            color: #8DC53E
         }
 
     .page-404 h6 {
@@ -7986,7 +8009,7 @@ blockquote {
         }
 
             .page-404 p a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .page-404 .search-404 {
@@ -8023,7 +8046,7 @@ blockquote {
             }
 
             .page-404 .search-404 .filed-text:focus {
-                border-color: #DA001B
+                border-color: #8DC53E
             }
 
         .page-404 .search-404 .awe-btn {
@@ -8072,7 +8095,7 @@ blockquote {
         }
 
             .contact .text ul li .icon {
-                color: #DA001B;
+                color: #8DC53E;
                 font-size: 20px;
                 margin-right: 20px;
                 vertical-align: middle
@@ -8103,7 +8126,7 @@ blockquote {
         }
 
         .contact .contact-location .btn-collapse:hover {
-            color: #DA001B
+            color: #8DC53E
         }
 
     .contact .contact-location .location-group {
@@ -8152,7 +8175,7 @@ blockquote {
                     line-height: 28px;
                     text-align: center;
                     color: #fff;
-                    background-color: #DA001B;
+                    background-color: #8DC53E;
                     -webkit-border-radius: 100%;
                     -moz-border-radius: 100%;
                     border-radius: 100%
@@ -8206,7 +8229,7 @@ blockquote {
     }
 
     .contact .contact-form .field-text:focus, .contact .contact-form .field-textarea:focus {
-        border-color: #DA001B
+        border-color: #8DC53E
     }
 
 .contact .contact-form .field-textarea {
@@ -8400,7 +8423,7 @@ blockquote {
             }
 
         .reservation_step ul li.active:before, .reservation_step ul li:hover:before {
-            background-color: #DA001B
+            background-color: #8DC53E
         }
 
 .reservation-date {
@@ -8484,14 +8507,14 @@ blockquote {
                 }
 
                     .reservation-room-selected .reservation-room-seleted_item .reservation-room-seleted_name h2 a:hover {
-                        color: #DA001B
+                        color: #8DC53E
                     }
 
             .reservation-room-selected .reservation-room-seleted_item .reservation-room-seleted_name .reservation-amout {
                 float: right;
                 font-weight: bold;
                 font-size: 14px;
-                color: #DA001B
+                color: #8DC53E
             }
 
             .reservation-room-selected .reservation-room-seleted_item .reservation-room-seleted_name.has-package h2 {
@@ -8499,7 +8522,7 @@ blockquote {
             }
 
                 .reservation-room-selected .reservation-room-seleted_item .reservation-room-seleted_name.has-package h2 a {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .reservation-room-selected .reservation-room-seleted_item .reservation-room-seleted_change {
@@ -8516,7 +8539,7 @@ blockquote {
         }
 
             .reservation-room-selected .reservation-room-seleted_item .reservation-room-seleted_change:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
         .reservation-room-selected .reservation-room-seleted_item .reservation-room-seleted_package {
@@ -8565,7 +8588,7 @@ blockquote {
 
             .reservation-room-selected .reservation-room-seleted_item .reservation-room-seleted_total-room .reservation-amout {
                 float: right;
-                color: #DA001B
+                color: #8DC53E
             }
 
         .reservation-room-selected .reservation-room-seleted_item.reservation_disable {
@@ -8632,7 +8655,7 @@ blockquote {
 
         .reservation-room-selected .reservation-room-seleted_total .reservation-total {
             float: right;
-            color: #DA001B;
+            color: #8DC53E;
             font-size: 18px
         }
 
@@ -8671,7 +8694,7 @@ blockquote {
 
     .reservation-sidebar_availability .check_availability_title {
         margin-top: 20px;
-        color: #DA001B;
+        color: #8DC53E;
         font-size: 14px;
         text-transform: uppercase;
         font-family: 'Montserrat';
@@ -8813,7 +8836,7 @@ blockquote {
     }
 
         .reservation-calendar_custom .reservation-calendar_title .reservation-calendar_corner:hover {
-            color: #DA001B
+            color: #8DC53E
         }
 
         .reservation-calendar_custom .reservation-calendar_title .reservation-calendar_corner.reservation-calendar_prev {
@@ -8891,11 +8914,11 @@ blockquote {
             }
 
             .reservation-calendar_custom .reservation-calendar_tabel td a:hover:before {
-                border-color: #DA001B
+                border-color: #8DC53E
             }
 
         .reservation-calendar_custom .reservation-calendar_tabel td.current-select {
-            background-color: #DA001B
+            background-color: #8DC53E
         }
 
             .reservation-calendar_custom .reservation-calendar_tabel td.current-select a {
@@ -8931,7 +8954,7 @@ blockquote {
         }
 
             .reservation-room_item .reservation-room_name a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .reservation-room_item .reservation-room_img {
@@ -8979,7 +9002,7 @@ blockquote {
             display: inline-block;
             clear: both;
             margin-top: 10px;
-            color: #DA001B;
+            color: #8DC53E;
             font-size: 12px;
             font-weight: 600;
             margin-bottom: 25px;
@@ -8991,7 +9014,7 @@ blockquote {
         }
 
             .reservation-room_item .reservation-room_text .reservation-room_view-more:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
         .reservation-room_item .reservation-room_text .reservation-room_price {
@@ -9089,7 +9112,7 @@ blockquote {
             }
 
                 .reservation-package_item .reservation-package_text h4 a:hover {
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         .reservation-package_item .reservation-package_text p {
@@ -9183,7 +9206,7 @@ blockquote {
         }
 
             .reservation-billing-detail .reservation-login a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .reservation-billing-detail h4 {
@@ -9258,7 +9281,7 @@ blockquote {
         }
 
             .reservation-billing-detail .reservation-code a:hover {
-                color: #DA001B
+                color: #8DC53E
             }
 
     .reservation-billing-detail .option-bank {
@@ -9327,9 +9350,9 @@ blockquote {
 
             #footer .footer_top .mailchimp h4:before {
                 content: "\f003";
-                border: 3px solid#DA001B;
+                border: 3px solid#8DC53E;
                 padding: 10px;
-                color: #DA001B;
+                color: #8DC53E;
                 margin-right: 20px;
                 font-size: 18px;
                 font-family: 'FontAwesome';
@@ -9378,7 +9401,7 @@ blockquote {
                 padding: 10px 10px;
                 height: 40px;
                 color: #fff;
-                background-color: #DA001B;
+                background-color: #8DC53E;
                 font-size: 16px;
                 text-transform: uppercase;
                 margin-right: 10px
@@ -9386,7 +9409,7 @@ blockquote {
 
                 #footer .footer_top .mailchimp .mailchimp-form .awe-btn:hover {
                     background: #fff;
-                    color: #DA001B
+                    color: #8DC53E
                 }
 
         #footer .footer_top .social .social-content {
@@ -9415,7 +9438,7 @@ blockquote {
             }
 
                 #footer .footer_top .social .social-content a:hover {
-                    border-color: #DA001B
+                    border-color: #8DC53E
                 }
 
     #footer .footer_center {
@@ -9466,7 +9489,7 @@ blockquote {
                     }
 
                         #footer .footer_center .widget-logo .text p a:hover {
-                            color: #DA001B;
+                            color: #8DC53E;
                             text-decoration: underline
                         }
 
@@ -9507,7 +9530,7 @@ blockquote {
                 }
 
                     #footer .footer_center .widget ul li a:hover {
-                        color: #DA001B
+                        color: #8DC53E
                     }
 
                 #footer .footer_center .widget ul li .sub-menu {

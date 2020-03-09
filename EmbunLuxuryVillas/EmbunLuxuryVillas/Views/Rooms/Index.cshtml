@@ -21,7 +21,7 @@
     <section class="section-room bg-white">
         <div class="container">
             <div class="room-wrap-1">
-                <div class="row">
+                <div class="row flex-attractions">
                     @{
                         foreach (var room in rooms)
                         {
@@ -37,7 +37,7 @@
                                     </div>
 
                                     <div class="desc">
-                                        <p>@Html.Raw(room.Description)</p>
+                                        <div class="room-desc fade-overflow">@Html.Raw(room.Description)</div>
                                         <ul>
                                             @if (room.BedRelationship != null)
                                             {

@@ -40,7 +40,7 @@
         $(document).ready(function () {
             var promotionCode = getUrlParameter("promotionCode");
 
-            var iframeSrc = "https://booking.mysoftinn.com/BookHotelRoom/Web?hotelId=" + "@ViewBag.ViewModel.Hotel.Id" + "&startDate=" + "@ViewBag.StartDate" + "&endDate=" + "@ViewBag.EndDate" + "&themeColor=DA001B&darkenColor=DA001B";
+            var iframeSrc = "https://booking.mysoftinn.com/BookHotelRoom/Web?hotelId=" + "@ViewBag.ViewModel.Hotel.Id" + "&startDate=" + "@ViewBag.StartDate" + "&endDate=" + "@ViewBag.EndDate" + "&themeColor=8DC53E&darkenColor=8DC53E";
             var iframe = $(".softinn-booking-engine")[0];
 
             if (promotionCode) {

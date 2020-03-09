@@ -7,7 +7,7 @@
   max-height: 70px; }
 
 #header .header_mobile .header_menu ul li .sub-menu {
-  background-color: #8D0606; }
+  background-color: #5A920B; }
 
 #page-home .section-slider {
   max-height: 568px !important; }
@@ -56,7 +56,7 @@
 #page-home .section-accomd {
   background-color: #f9f9f9; }
   #page-home .section-accomd .accomd-modations-room {
-    border: #DA001B solid 2px; }
+    border: #8DC53E solid 2px; }
     #page-home .section-accomd .accomd-modations-room img {
       height: 290px;
       object-fit: cover; }
@@ -160,11 +160,11 @@
     width: 200px;
     height: 48px;
     background: inherit;
-    background-color: #DA001B;
+    background-color: #8DC53E;
     box-sizing: border-box;
     border-width: 2px;
     border-style: solid;
-    border-color: #DA001B;
+    border-color: #8DC53E;
     border-radius: 0px;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -179,8 +179,8 @@
     padding-top: 12px;
     padding-bottom: 12px; }
     .section-inquiry .inquiry .contact-form .inquirybutton:hover {
-      color: #DA001B;
-      border-color: #DA001B;
+      color: #8DC53E;
+      border-color: #8DC53E;
       background-color: white; }
 
 #page-reservation .booking-subtitle p {
@@ -206,13 +206,13 @@
   object-fit: cover; }
 
 #page-contact-us .section-contact .contact-icon {
-  color: #DA001B;
+  color: #8DC53E;
   font-size: 20px;
   margin-right: 20px;
   vertical-align: middle; }
 
 #page-contact-us .section-contact .divider-line {
-  background: #DA001B;
+  background: #8DC53E;
   display: inline-block;
   width: 480px;
   height: 1px; }
@@ -297,7 +297,7 @@
     #footer .mailchimp p:before {
       content: "\f00c";
       padding: 10px;
-      color: #DA001B;
+      color: #8DC53E;
       margin-right: 5px;
       font-family: 'FontAwesome';
       -webkit-border-radius: 100%;
@@ -354,7 +354,7 @@
     background-color: #101010;
     color: #acacac; }
     #footer .footer_bottom .poweredBy {
-      color: #DA001B; }
+      color: #8DC53E; }
       #footer .footer_bottom .poweredBy:hover {
         color: #acacac; }
 
@@ -391,7 +391,7 @@
       padding: 10px 30px !important;
       font-size: 14px !important; }
   #page-our-story .about-item .img img {
-    min-height: 320px; } }
+    min-height: 390px; } }
 
 /*#endregion*/
 /*#region FOR SMALL LAPTOPS */

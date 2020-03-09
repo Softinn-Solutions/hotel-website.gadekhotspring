@@ -62,7 +62,7 @@ namespace EmbunLuxuryVillas.Controllers
                 var locationResult = new LocationUrls_Result()
                 {
                     Url = pageUrl.ToLowerInvariant(),
-                    ImageUrls = c1.GetImagesUrlOfSite(pageUrl),
+                    ImageUrls = c1.GetimagesUrlOfSite(pageUrl),
                 };
                 Crawl.Urls.Add(locationResult);
             }
@@ -223,7 +223,7 @@ namespace EmbunLuxuryVillas.Controllers
             }
         }
 
-        public List<string> GetImagesUrlOfSite(string url)
+        public List<string> GetimagesUrlOfSite(string url)
         {
             var imagesUrl = new List<string>();
 
