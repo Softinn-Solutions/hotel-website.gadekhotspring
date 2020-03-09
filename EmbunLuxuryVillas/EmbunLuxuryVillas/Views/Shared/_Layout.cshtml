@@ -32,7 +32,7 @@
     }
     if (ViewBag.MetaImage == null)
     {
-        ViewBag.MetaImage = @Url.Content("~/images/hotel/meta-image-01.jpg");
+        ViewBag.MetaImage = @Url.Content("~/images/hotel/meta-image.jpg");
     }
     if (ViewBag.MetaAuthor == null)
     {
@@ -228,7 +228,9 @@
                         <div class="col-lg-2 col-xs-12">
                             <div class="social">
                                 <div class="social-content">
-                                    <a href="@hotel.URLFacebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    @if(@hotel.URLFacebook != null){
+                                        <a href="@hotel.URLFacebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    }
                                     <a href="https://www.instagram.com/embunvillas/" target="_blank"><i class="fa fa-instagram"></i></a>
                                 </div>
                             </div>
