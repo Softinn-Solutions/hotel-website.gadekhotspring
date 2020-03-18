@@ -32,7 +32,7 @@ namespace EmbunLuxuryVillas.Helpers
                 HtmlContent = emailHtml,
                 ReplyTo = new EmailAddress(mailViewModel.Email)
             };
-            msg.AddTo(new EmailAddress(hotelViewModel.Email));
+            msg.AddTo(new EmailAddress(hotelViewModel.DisplayEmail));
             msg.AddBcc(new EmailAddress("support@mysoftinn.com"));
             var response = await client.SendEmailAsync(msg);
         }
@@ -123,7 +123,7 @@ namespace EmbunLuxuryVillas.Helpers
                 HtmlContent = emailHtml,
                 ReplyTo = new EmailAddress(tourPackageInquiryMailViewModel.Email)
             };
-            msg.AddTo(new EmailAddress(hotelViewModel.Email));
+            msg.AddTo(new EmailAddress(hotelViewModel.DisplayEmail));
             msg.AddBcc(new EmailAddress("support@mysoftinn.com"));
 
             var response = await client.SendEmailAsync(msg);
@@ -153,7 +153,7 @@ namespace EmbunLuxuryVillas.Helpers
                 HtmlContent = emailHtml,
                 ReplyTo = new EmailAddress(miceInquiryMailViewModel.Email)
             };
-            msg.AddTo(new EmailAddress(hotelViewModel.Email));
+            msg.AddTo(new EmailAddress(hotelViewModel.DisplayEmail));
             msg.AddBcc(new EmailAddress("support@mysoftinn.com"));
 
             var response = await client.SendEmailAsync(msg);
@@ -182,7 +182,7 @@ namespace EmbunLuxuryVillas.Helpers
                 HtmlContent = emailHtml,
                 ReplyTo = new EmailAddress(sendDiningInquiryMailViewModel.Email)
             };
-            msg.AddTo(new EmailAddress(hotelViewModel.Email));
+            msg.AddTo(new EmailAddress(hotelViewModel.DisplayEmail));
             msg.AddBcc(new EmailAddress("support@mysoftinn.com"));
 
             var response = await client.SendEmailAsync(msg);
