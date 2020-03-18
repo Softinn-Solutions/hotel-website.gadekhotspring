@@ -1,0 +1,45 @@
+﻿@using Softinn.EntityModels.ViewModel
+@{
+    List<PhotoViewModel> photos = ViewBag.ViewModel.Photos;
+    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+
+    var sliderPhotos = photos.Where(p => p.PhotoType.Name == Softinn.EntityModels.AppSettings.PhotoType_HomePageSlider).OrderBy(p => p.Number);
+}
+
+<div id="page-our-story">
+
+    <section class="section-sub-banner bg-1">
+        <div class="awe-overlay"></div>
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-center">
+                    <h2>The Villas & Suite</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-about">
+        <div class="container">
+            <div class="about margin-top-15px">
+                <div class="about-item">
+                    <div class="img owl-single">
+                        @foreach (var photo in sliderPhotos)
+                        {
+                            <img src="//softinnstorage.blob.core.windows.net@(photo.URLStorage)" alt="Hotel">
+                        }
+                    </div>
+                    <div class="text">
+                        <h2 class="heading">The Villas & Suite</h2>
+                        <div class="desc">
+                            <p style="text-align: justify;">
+                                Embun Luxury Villas is made up of seven pool villas and one suite, each unit built to ensure privacy, each offering spacious separate living area, a full kitchen with microwave and fridge and large en-suite bathrooms with upscale designer fittings. Even at full capacity, with only a total of 14 bedrooms within seven pool villas and one suite room, you are assured of a truly intimate and wonderful experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
