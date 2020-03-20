@@ -7,9 +7,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using EmbunLuxuryVillas.Helpers;
+using EmbunLuxuryVillas.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Softinn.SiteMap.AWS;
 
 namespace EmbunLuxuryVillas.Controllers
 {
@@ -17,9 +21,17 @@ namespace EmbunLuxuryVillas.Controllers
     {
         protected readonly IHostingEnvironment HostingEnvironment;
 
-        public SeoHelperController(IHostingEnvironment hostingEnv)
+        //public SeoHelperController(IHostingEnvironment hostingEnv)
+        //{
+        //    this.HostingEnvironment = hostingEnv;
+        //}
+
+        private readonly IOptions<AppConfigurations> _appConfigurations;
+
+        public SeoHelperController(IHostingEnvironment hostingEnv, IOptions<AppConfigurations> config)
         {
             this.HostingEnvironment = hostingEnv;
+            _appConfigurations = config;
         }
 
         [Route("robots.txt")]
@@ -44,36 +56,37 @@ namespace EmbunLuxuryVillas.Controllers
         }
 
         [Route("sitemap.xml")]
-        public XmlSitemapResult GenerateSiteMap()
+        public async Task<ActionResult> GenerateSiteMap()
         {
-            string sitePrimaryUrl = $"{Request.Scheme}://{Request.Host}{Request.Path}{Request.QueryString}";
+            var hotelId = this._appConfigurations.Value.HotelId;
 
-            if (Request.Path != "/")
-                sitePrimaryUrl = sitePrimaryUrl.Replace(Request.Path, "");
-
-            UriBuilder uri = new UriBuilder(sitePrimaryUrl);
-            Crawl c1 = new Crawl(Request, this.HostingEnvironment);
-            c1.PrimaryUrl = sitePrimaryUrl;
-            c1.PrimaryHost = uri.Host;
-            c1.GetUrlsOfSite(sitePrimaryUrl);
-
-            foreach (var pageUrl in Crawl.PageUrls)
+            var hostUrl = Request.Host.ToString();
+            // prevent sending localhost as host into service.
+            // prevent azurewebsites being capture.
+            if (this.HostingEnvironment.IsDevelopment() || hostUrl.Contains("azurewebsites"))
             {
-                var locationResult = new LocationUrls_Result()
-                {
-                    Url = pageUrl.ToLowerInvariant(),
-                    ImageUrls = c1.GetimagesUrlOfSite(pageUrl),
-                };
-                Crawl.Urls.Add(locationResult);
+                var liteDbHelper = new LiteDbHelper();
+                hostUrl = liteDbHelper.GetHotel().URLDomain;
             }
 
-            List<LocationUrls_Result> lstSItemapResult = new List<LocationUrls_Result>();
-            foreach (var url in Crawl.Urls)
+            if (string.IsNullOrEmpty(hostUrl))
             {
-                lstSItemapResult.Add(new LocationUrls_Result() { Url = url.Url, ImageUrls = url.ImageUrls, Changefreq = "monthly", LastModified = DateTime.UtcNow });
+                return new FileStreamResult(new MemoryStream(Encoding.UTF8.GetBytes(
+                    $"no valid url detect: {hostUrl}")),
+                    "text/plain");
             }
 
-            return new XmlSitemapResult(lstSItemapResult, Request);
+            var siteMapRequestViewModel = new SiteMapRequestViewModel
+            {
+                Id = hotelId,
+                Host = hostUrl
+            };
+
+            var softinnSiteMapAwsService = new SoftinnSiteMapAWSService(siteMapRequestViewModel);
+
+            var siteMapResult = await softinnSiteMapAwsService.GetSiteMap();
+
+            return new FileStreamResult(siteMapResult.Item1, siteMapResult.Item2);
         }
     }
 
@@ -223,7 +236,7 @@ namespace EmbunLuxuryVillas.Controllers
             }
         }
 
-        public List<string> GetimagesUrlOfSite(string url)
+        public List<string> GetImagesUrlOfSite(string url)
         {
             var imagesUrl = new List<string>();
 
