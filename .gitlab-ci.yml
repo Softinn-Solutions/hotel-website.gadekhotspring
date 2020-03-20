@@ -1,0 +1,65 @@
+stages:
+    - build
+    - test
+   
+   variables:
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}
+   
+   build:
+    image: docker:latest
+    services:
+      - docker:dind
+    only:
+      - master
+      - develop
+    before_script:
+      - apk update && apk add bash
+      - chmod +x ./function.sh
+      - . function.sh
+      - get_image_tag
+      - echo $TAG
+      - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+    script:
+      - cd Fifty4Ferns/Fifty4Ferns/Fifty4Ferns
+      - docker build -t $IMAGE_NAME:$TAG . --build-arg PAT=n3adqmqltbkbwckyn6ccoxo54ffihzq6x7nj6jvpmeg57wo2rtpa
+      - docker push $IMAGE_NAME:$TAG
+    after_script:
+      - apk update && apk add bash
+      - chmod +x ./function.sh
+      - . function.sh
+      - get_image_tag
+      - docker rmi -f $IMAGE_NAME:$TAG
+      - docker logout ${CI_REGISTRY}
+    stage: build
+    tags:
+      - docker
+   
+   test:
+    image: docker:latest
+    services:
+      - docker:dind
+      - microsoft/dotnet
+    only:
+      - master
+      - develop
+    stage: test
+    before_script:
+      - apk update && apk add bash
+      - chmod +x ./function.sh
+      - . function.sh
+      - get_image_tag
+      - echo $TAG
+      - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+    script:
+      - docker pull $IMAGE_NAME:$TAG
+      - docker run -d -p 3001 --name aspwebcore $IMAGE_NAME:$TAG -it
+      - docker ps
+    after_script:
+      - apk update && apk add bash
+      - chmod +x ./function.sh
+      - . function.sh
+      - get_image_tag
+      - docker kill aspwebcore
+      - docker rm -f aspwebcore || true
+      - docker rmi -f $IMAGE_NAME:$TAG
+      - docker logout ${CI_REGISTRY}
