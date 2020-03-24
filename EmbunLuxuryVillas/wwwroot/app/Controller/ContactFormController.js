@@ -1,5 +1,6 @@
 ﻿var contactFormController = ["$scope","$http",function ($scope, $http) {
     $scope.form = {
+        Salutation: "Mr",
         Name: "",
         Email: "",
         Subject: "",

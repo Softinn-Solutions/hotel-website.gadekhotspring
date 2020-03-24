@@ -48,17 +48,28 @@
                         <div class="contact-form" ng-app="app" ng-controller="contactFormController">
                             <form novalidate angular-validator angular-validator-submit="onContactFormSubmit()" name="contactForm">
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="text" class="field-text" name="Name" placeholder="Name" ng-model="form.Name" validate-on="dirty" required>
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-md-3 col-xs-4">
+                                                <select class="field-text" required tabindex="4" ng-model="form.Salutation">
+                                                    <option>Mr</option>
+                                                    <option>Mrs</option>
+                                                    <option>Ms</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-9 col-xs-8">
+                                                <input type="text" class="field-text" name="Name" placeholder="Name" ng-model="form.Name" validate-on="dirty" required>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text" class="field-text" name="Email" placeholder="Email" ng-model="form.Email" validate-on="blur" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*&#64[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="field-text" name="Subject" placeholder="Subject" ng-model="form.Subject" validate-on="dirty" required>
-                                    </div>
-                                    <div class="col-sm-6">
                                         <input type="text" class="field-text" name="Phone" placeholder="Phone.No" ng-model="form.Phone" validate-on="dirty" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="field-text" name="Subject" placeholder="Subject" ng-model="form.Subject" validate-on="dirty" required>
                                     </div>
                                     <div class="col-sm-12">
                                         <textarea cols="30" rows="10" name="Message" class="field-textarea" placeholder="Your Message" ng-model="form.Message" validate-on="dirty" required></textarea>
@@ -75,10 +86,28 @@
         </div>
     </section>
 
-    <section class="section-map">
-        <h1 class="element-invisible">Map</h1>
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0808528576044!2d101.83463411525194!3d3.3302017529404235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc3dd53892f7dd%3A0xe2c451565f83cc9!2sEmbun%20Luxury%20Villas!5e0!3m2!1sen!2smy!4v1583395087917!5m2!1sen!2smy" frameborder="0" style="border: 0; width: 100%; height: 470px; " allowfullscreen></iframe>
+    <section class="section-contact">
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="contact">
+                    <div class="text">
+                        <h2 class="text-center">Map</h2>
+                        <div class="contact-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0808528576044!2d101.83463411525194!3d3.3302017529404235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc3dd53892f7dd%3A0xe2c451565f83cc9!2sEmbun%20Luxury%20Villas!5e0!3m2!1sen!2smy!4v1583395087917!5m2!1sen!2smy" frameborder="0" style="border: 0; width: 100%; height: 470px; " allowfullscreen></iframe>
+                        </div>
+                        <h2 class="text-center">Getting Here</h2>
+                        <p style="text-align: justify;">
+                            Using the Waze app is the best bet to get here. Simply type in "Embun Luxury Villas".
+                        </p>
+                        <p style="text-align: justify;">
+                            From Kuala Lumpur, it is about a 45 minute drive.
+                            The drive will take you on the Karak Highway, turning off at Genting Sempah, and continuing through to Kampung Janda Baik. We are located in Hulu Sum-Sum, a small little area in Kampung Janda Baik.
+                            We request guests to park their cars in the allocated parking spots outside the lobby.
+                            A buggy will shuttle guests from the lobby up to the clubhouse/villa.”
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

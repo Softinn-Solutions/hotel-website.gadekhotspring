@@ -17,7 +17,7 @@ namespace EmbunLuxuryVillas.Helpers
             var liteDbHelper = new LiteDbHelper();
             var hotelViewModel = liteDbHelper.GetHotel();
 
-            var emailHtml = "Name : " + mailViewModel.Name +
+            var emailHtml = "Name : " + mailViewModel.Salutation + ". " + mailViewModel.Name +
                             "<br />Phone: " + mailViewModel.Phone + "<br />" +
                             "<br />Subject: " + mailViewModel.Subject + "<br />" +
                             "<br />Email: " + mailViewModel.Email + "<br />" +
@@ -108,7 +108,7 @@ namespace EmbunLuxuryVillas.Helpers
 
             var emailHtml = "Package : " + tourPackageInquiryMailViewModel.Package +
                             "<br />Travel Date : " + tourPackageInquiryMailViewModel.TravelDate +
-                            "<br />Name : " + tourPackageInquiryMailViewModel.Name +
+                            "<br />Name : " + tourPackageInquiryMailViewModel.Salutation + ". " + tourPackageInquiryMailViewModel.Name +
                             "<br />Company Name : " + tourPackageInquiryMailViewModel.CompanyName +
                             "<br />Phone: " + tourPackageInquiryMailViewModel.Phone +
                             "<br />Email: " + tourPackageInquiryMailViewModel.Email +
@@ -138,7 +138,7 @@ namespace EmbunLuxuryVillas.Helpers
                             "<br />Event Date : " + miceInquiryMailViewModel.EventDate +
                             "<br />No. of pax : " + miceInquiryMailViewModel.NoPax +
                             "<br />Total budget : " + miceInquiryMailViewModel.Budget +
-                            "<br />Name : " + miceInquiryMailViewModel.Name +
+                            "<br />Name : " + miceInquiryMailViewModel.Salutation + ". " + miceInquiryMailViewModel.Name +
                             "<br />Company Name : " + miceInquiryMailViewModel.CompanyName +
                             "<br />Phone: " + miceInquiryMailViewModel.Phone +
                             "<br />Email: " + miceInquiryMailViewModel.Email +
@@ -164,7 +164,7 @@ namespace EmbunLuxuryVillas.Helpers
             var liteDbHelper = new LiteDbHelper();
             var hotelViewModel = liteDbHelper.GetHotel();
 
-            var emailHtml = "Name : " + sendDiningInquiryMailViewModel.Name +
+            var emailHtml = "Name : " + sendDiningInquiryMailViewModel.Salutation + ". " + sendDiningInquiryMailViewModel.Name +
                             "<br />Phone: " + sendDiningInquiryMailViewModel.Phone +
                             "<br />Email: " + sendDiningInquiryMailViewModel.Email +
                             "<br />Date: " + sendDiningInquiryMailViewModel.DateTime +

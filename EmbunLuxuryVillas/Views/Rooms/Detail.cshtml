@@ -171,7 +171,7 @@
                                     <br />
                                     <p>Refundable safety deposit RM500.00 is required upon check-in.</p>
                                     <br />
-                                    <p>During the eve of and on Chinese New Year & New Year gazetted public holidays, additional surcharge rates are RM150+ for the Suite, RM200+ for one bedroom villas, RM250+ for two bedroom villas and RM300+ for three bedroom villas.</p>
+                                    <p>During the eve of and on Chinese New Year & New Year gazetted public holidays, additional surcharge rates are RM200+ for the suite and one bedroom villas, RM250+ for two bedroom villas and RM300+ for three bedroom villas.</p>
                                     <br />
                                     <p>Room Occupancy</p>
                                     <ul>
@@ -254,7 +254,7 @@
                                                 <a href="/Rooms/Detail/@otherRoom.Name.ToSeoFriendly()">@otherRoom.Name</a>
                                             </h2>
                                             <ul>
-                                                <li><i class="fa fa-male"></i> Max: @otherRoom.GuestNumberMax Adults</li>
+                                                <li><i class="fa fa-male"></i> Max: @otherRoom.GuestNumberMax @(otherRoom.GuestNumberMax > 1 ? "Adults" : "Adult")</li>
                                                 @if (otherRoom.BedRelationship != null)
                                                 {
                                                     <li>

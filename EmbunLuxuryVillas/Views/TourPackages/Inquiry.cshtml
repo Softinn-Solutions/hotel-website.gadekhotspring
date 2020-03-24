@@ -34,7 +34,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <label class="col-sm-6 margin-top-20px">Package <span class="text-danger">*</span></label>
+                                        <label class="col-xs-12 margin-top-20px">Package <span class="text-danger">*</span></label>
                                         <div class="col-sm-12">
                                             <select class="chosen-select" data-placeholder="Choose a Package..." required multiple tabindex="4">
                                                 <option></option>
@@ -49,8 +49,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                       
-                                        <label class="col-sm-6 margin-top-20px">Travel Date </label>
+                                        <label class="col-xs-12 margin-top-20px">Travel Date </label>
                                         <div class="col-sm-12">
                                             <div class="input-group input-daterange">
                                                 <input type="text" class="field-text traveldate-from" ng-model="TravelDateFrom">
@@ -60,13 +59,20 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <label class="col-sm-6 margin-top-20px">Full Name <span class="text-danger">*</span></label>
-                                        <div class="col-sm-12">
+                                        <label class="col-xs-12 margin-top-20px">Full Name <span class="text-danger">*</span></label>
+                                        <div class="col-md-3 col-xs-4">
+                                            <select class="field-text" required tabindex="4" ng-model="form.Salutation">
+                                                <option>Mr</option>
+                                                <option>Mrs</option>
+                                                <option>Ms</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-9 col-xs-8">
                                             <input type="text" class="field-text" name="Name" placeholder="" ng-model="form.Name" validate-on="dirty" required>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <label class="col-sm-6 margin-top-20px">Company Name </label>
+                                        <label class="col-xs-12 margin-top-20px">Company Name </label>
                                         <div class="col-sm-12">
                                             <input type="text" class="field-text" name="CompanyName" placeholder="" ng-model="form.CompanyName">
                                         </div>
@@ -74,7 +80,7 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="row">
-                                                <label class="col-sm-6 margin-top-20px">Email <span class="text-danger">*</span></label>
+                                                <label class="col-xs-12 margin-top-20px">Email <span class="text-danger">*</span></label>
                                                 <div class="col-sm-12">
                                                     <input type="text" class="field-text" name="Email" placeholder="" ng-model="form.Email" validate-on="blur" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*&#64[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
                                                 </div>
@@ -82,7 +88,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="row">
-                                                <label class="col-sm-6 margin-top-20px">Phone. No <span class="text-danger">*</span></label>
+                                                <label class="col-xs-12 margin-top-20px">Phone. No <span class="text-danger">*</span></label>
                                                 <div class="col-sm-12">
                                                     <input type="text" class="field-text" name="Phone" placeholder="" ng-model="form.Phone" validate-on="dirty" required>
                                                 </div>
@@ -90,7 +96,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <label class="col-sm-6 margin-top-20px">Message </label>
+                                        <label class="col-xs-12 margin-top-20px">Message </label>
                                         <div class="col-sm-12">
                                             <textarea cols="30" rows="10" name="Message" class="field-textarea" placeholder="" ng-model="form.Message"></textarea>
                                         </div>

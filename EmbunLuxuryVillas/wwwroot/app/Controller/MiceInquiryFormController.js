@@ -4,6 +4,7 @@
         EventDate: "",
         NoPax: null,
         Budget: null,
+        Salutation: "Mr",
         Name: "",
         CompanyName: "",
         Email: "",

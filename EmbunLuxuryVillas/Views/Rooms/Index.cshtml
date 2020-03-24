@@ -53,7 +53,7 @@
                                                         }
                                                     </li>
                                                 }
-                                                <li>@room.GuestNumberMax Adult</li>
+                                                <li>@room.GuestNumberMax @(room.GuestNumberMax > 1 ? "Adults" : "Adult")</li>
                                             </ul>
                                             <p>@Html.Raw(room.Description)</p>
                                         </div>

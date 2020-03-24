@@ -2,6 +2,7 @@
     $scope.form = {
         Package: [],
         TravelDate:"",
+        Salutation: "Mr",
         Name: "",
         CompanyName: "",
         Email: "",

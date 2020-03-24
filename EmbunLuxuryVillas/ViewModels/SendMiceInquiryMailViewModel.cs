@@ -11,6 +11,7 @@ namespace EmbunLuxuryVillas.ViewModels
         public string EventDate { get; set; }
         public int? NoPax { get; set; }
         public double? Budget { get; set; }
+        public string Salutation { get; set; }
         public string Name { get; set; }
         public string CompanyName { get; set; }
         public string Email { get; set; }

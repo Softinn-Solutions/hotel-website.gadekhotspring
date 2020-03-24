@@ -1,5 +1,6 @@
 ﻿var diningInquiryFormController = ["$scope", "$http", "$filter", function ($scope, $http, $filter) {
     $scope.form = {
+        Salutation: "Mr",
         Name: "",
         Email: "",
         Phone: "",
