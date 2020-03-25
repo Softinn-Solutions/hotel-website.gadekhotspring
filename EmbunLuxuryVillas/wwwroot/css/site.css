@@ -252,7 +252,10 @@
 
 #page-contact-us .contact-map {
   height: 470px;
-  margin: 15px 0px; }
+  margin-bottom: 50px; }
+
+#page-contact-us .map .text h2 {
+  padding-bottom: 10px; }
 
 #footer {
   background-color: #232323; }
