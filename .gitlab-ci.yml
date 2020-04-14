@@ -20,7 +20,7 @@ build:
   - echo $TAG
   - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
  script:
-  - cd Hotel7Suria
+  - cd EmbunLuxuryVillas
   - docker build -t $IMAGE_NAME:$TAG . --build-arg PAT=n3adqmqltbkbwckyn6ccoxo54ffihzq6x7nj6jvpmeg57wo2rtpa
   - docker push $IMAGE_NAME:$TAG
  after_script:
