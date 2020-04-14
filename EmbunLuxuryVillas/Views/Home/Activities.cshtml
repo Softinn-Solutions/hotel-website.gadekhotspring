@@ -1,0 +1,91 @@
+﻿@using Softinn.EntityModels.ViewModel
+@{
+    List<PhotoViewModel> photos = ViewBag.ViewModel.Photos;
+    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+
+    var sliderPhotos = photos.Where(p => p.PhotoType.Name == Softinn.EntityModels.AppSettings.PhotoType_HomePageSlider).OrderBy(p => p.Number);
+}
+
+<div id="page-our-story">
+
+    <section class="section-sub-banner bg-1">
+        <div class="awe-overlay"></div>
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-center">
+                    <h2>Activities</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-about">
+        <div class="container">
+            <div class="about margin-top-15px">
+                <div class="about-item">
+                    <div class="img owl-single">
+                        @foreach (var photo in sliderPhotos)
+                        {
+                            <img src="//softinnstorage.blob.core.windows.net@(photo.URLStorage)" alt="Hotel">
+                        }
+                    </div>
+                    <div class="text">
+                        <h2 class="heading">Activities</h2>
+                        <div class="desc">
+                            <p style="text-align: justify;">
+                                Most of the team at Embun Luxury Villas are from Janda Baik itself so have a wealth of information about nearby places of interest.
+                                Just let us know and we’ll help arrange transport and make bookings required.
+                                Do also ask our team about the local area and they will be able to give an interesting insight into Janda Baik and Malaysia.
+                            </p>
+                            <p style="text-align: justify;">
+                                In the meantime, here is a taste of the varied activities on offer in and around Embun Luxury Villas.
+                            </p>
+                            <p style="text-align: justify;">
+                                <i>Enjoy a pampering spa treatment</i><br />
+                                Relaxing massages are also available in-house, with experienced and trained masseurs kneading your cares away in the comfort of your own villa.
+                            </p>
+                            <p style="text-align: justify;">
+                                <i>Experience Janda Baik</i><br />
+                                If you would like to take time out from all that relaxing and venture out into Janda Baik, the following are just some of the activities we’ll be happy to help arrange:
+                            </p>
+                            <p>
+                                Agriculture Visits
+                                <ol>
+                                    <li>Janda Baik Fig Farms</li>
+                                    <li>Janda Baik Goat Farm</li>
+                                    <li>Fitrah Farm</li>
+                                    <li>Janda Baik Flower Farm</li>
+                                </ol>
+                            </p>
+                            <p>
+                                Nature Excursions
+                                <ol>
+                                    <li>Waterfall Hiking and Abseiling</li>
+                                    <li>River Trekking</li>
+                                </ol>
+                            </p>
+                            <p>
+                                Adventure Seekers
+                                <ol>
+                                    <li>ATV Rides</li>
+                                    <li>SWAT Spartan Obstacle Course</li>
+                                    <li>Rafting</li>
+                                    <li>Paintball</li>
+                                </ol>
+                            </p>
+                            <p>
+                                Family Fun
+                                <ol>
+                                    <li>Cycling Tours</li>
+                                    <li>Horse Riding</li>
+                                    <li>Archery</li>
+                                </ol>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

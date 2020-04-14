@@ -1,0 +1,475 @@
+﻿@charset "UTF-8";
+/*#region VARIABLES*/
+/*#endregion*/
+/*#region FOR MOBILE (MOBILE FIRST)*/
+#header .header_logo img {
+  height: 70px;
+  max-height: 70px; }
+
+#header .header_mobile .header_menu ul li .sub-menu {
+  background-color: #5A920B; }
+
+#page-home .section-slider {
+  max-height: 568px !important; }
+  #page-home .section-slider .slider-revolution.show-xs {
+    display: block !important; }
+  #page-home .section-slider .slider-revolution.show-sm {
+    display: none !important; }
+  #page-home .section-slider .slider-revolution.show-md {
+    display: none !important; }
+  #page-home .section-slider .slider-revolution.show-lg {
+    display: none !important; }
+  #page-home .section-slider .slider-revolution ul .slider-hotel-logo {
+    min-width: 110px;
+    min-height: 110px; }
+  #page-home .section-slider .slider-revolution ul .slider-hotel-name {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px !important;
+    line-height: 1;
+    display: inline-block; }
+  #page-home .section-slider .slider-revolution ul .slider-subtitle {
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 24px !important;
+    font-family: Montserrat; }
+  #page-home .section-slider .slider-revolution ul .slider-button {
+    min-width: 180px !important;
+    min-height: 36px !important;
+    line-height: 18px !important;
+    padding: 10px 20px !important;
+    font-size: 12px !important;
+    font-family: Montserrat;
+    border-width: 2px !important; }
+  #page-home .section-slider .slider-revolution .tp-revslider-slidesli .slotholder ::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.3); }
+
+#page-home .section-check-availability h2 {
+  padding-left: 0px; }
+
+#page-home .section-accomd {
+  background-color: #f9f9f9; }
+  #page-home .section-accomd .accomd-modations-room {
+    border: #8DC53E solid 2px; }
+    #page-home .section-accomd .accomd-modations-room img {
+      height: 290px;
+      object-fit: cover; }
+
+#page-home .home-about .img img {
+  height: 300px;
+  object-fit: cover; }
+
+#page-home .section-testimonial .apostrophe {
+  font-family: 'Montserrat';
+  font-size: 40px;
+  padding-right: 10px;
+  top: 12px;
+  position: relative; }
+  #page-home .section-testimonial .apostrophe:after {
+    content: '“'; }
+
+#page-home .section-testimonial .guestbook-item .testimonial {
+  overflow: hidden;
+  padding-top: 10px;
+  padding-left: 20px; }
+  #page-home .section-testimonial .guestbook-item .testimonial p {
+    color: #ffffff;
+    line-height: 1.4em;
+    font-size: 15px;
+    position: relative;
+    margin-bottom: 15px; }
+    #page-home .section-testimonial .guestbook-item .testimonial p:after {
+      font-family: 'Montserrat';
+      content: '„';
+      font-size: 40px;
+      line-height: 0;
+      margin-left: 10px; }
+    #page-home .section-testimonial .guestbook-item .testimonial p span {
+      color: #ffffff;
+      display: unset;
+      width: 100%; }
+  #page-home .section-testimonial .guestbook-item .testimonial span {
+    color: #ffffff;
+    display: inline-block;
+    width: 100%; }
+    #page-home .section-testimonial .guestbook-item .testimonial span strong {
+      font-size: 20px; }
+
+#page-home .news-item img {
+  height: 140px;
+  object-fit: cover; }
+
+#page-our-story .about-item .img img {
+  height: auto;
+  min-height: 225px;
+  object-fit: cover; }
+
+#page-room-index .room_item-1 .img img {
+  height: 290px;
+  object-fit: cover; }
+
+#page-room-detail .room-detail_img .room_img-item img {
+  height: auto;
+  max-height: 550px;
+  object-fit: cover; }
+
+#page-room-detail .room-detail_thumbs a img {
+  height: 76px;
+  object-fit: cover; }
+
+#page-room-detail .room-compare_item .img img {
+  height: 170px;
+  object-fit: cover; }
+
+#page-attractions-index .activiti_item img {
+  height: 230px;
+  object-fit: cover; }
+
+.section-inquiry {
+  background-color: #fff;
+  padding-top: 45px;
+  padding-bottom: 85px; }
+  .section-inquiry .inquiry .contact-form .col-centered {
+    float: none;
+    margin: 0 auto; }
+  .section-inquiry .inquiry .contact-form .deco {
+    text-decoration: underline;
+    font-size: 13px;
+    padding-top: 5px; }
+  .section-inquiry .inquiry .contact-form .color-black-border {
+    border: 1px solid black;
+    color: black; }
+  .section-inquiry .inquiry .contact-form .field-text, .section-inquiry .inquiry .contact-form .field-textarea {
+    border: 2px solid #232323;
+    width: 100%;
+    margin-top: 0px;
+    color: #232323;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease; }
+  .section-inquiry .inquiry .contact-form .inquirybutton {
+    left: 0px;
+    top: 0px;
+    width: 200px;
+    height: 48px;
+    background: inherit;
+    background-color: #8DC53E;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #8DC53E;
+    border-radius: 0px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px; }
+    .section-inquiry .inquiry .contact-form .inquirybutton:hover {
+      color: #8DC53E;
+      border-color: #8DC53E;
+      background-color: white; }
+
+#page-reservation .booking-subtitle p {
+  font-family: 'Montserrat Bold', 'Montserrat Regular', 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: #232323;
+  text-align: center;
+  margin-bottom: 20px; }
+
+#page-reservation .iframe-booking {
+  width: 100%;
+  min-height: 920px;
+  padding-top: 50px;
+  padding-bottom: 100px; }
+
+#page-reservation .softinn-booking-engine {
+  width: 100%; }
+
+#page-photos-index .gallery_item img {
+  height: 160px;
+  object-fit: cover; }
+
+#page-contact-us .section-contact .contact-icon {
+  color: #8DC53E;
+  font-size: 20px;
+  margin-right: 20px;
+  vertical-align: middle; }
+
+#page-contact-us .section-contact .divider-line {
+  background: #8DC53E;
+  display: inline-block;
+  width: 480px;
+  height: 1px; }
+
+#page-contact-us .section-contact .contact .text .chgfont p {
+  font-family: 'Montserrat Bold', 'Montserrat Regular', 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  color: #232323;
+  text-align: left; }
+
+#page-contact-us .section-contact .ghostbutton {
+  left: 0px;
+  top: 0px;
+  width: 200px;
+  height: 48px;
+  background: inherit;
+  background-color: white;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #2e2e2e;
+  border-radius: 0px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #2E2E2E;
+  margin-top: 20px;
+  width: 200px;
+  padding-top: 12px;
+  padding-bottom: 12px; }
+
+#page-contact-us .contact-map {
+  height: 470px;
+  margin-bottom: 50px; }
+
+#page-contact-us .map .text h2 {
+  padding-bottom: 10px; }
+
+#footer {
+  background-color: #232323; }
+  #footer .footer_top {
+    background-color: #2e2e2e;
+    padding: 20px 0; }
+    #footer .footer_top .mailchimp h4 {
+      font-size: 17px;
+      text-transform: inherit;
+      line-height: 38px;
+      font-weight: 400;
+      color: #fff; }
+      #footer .footer_top .mailchimp h4:before {
+        content: "\f087"; }
+    #footer .footer_top .mailchimp .mailchimp-form {
+      text-align: right; }
+      #footer .footer_top .mailchimp .mailchimp-form .awe-btn {
+        text-transform: inherit;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: 0px;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 15px;
+        color: #FFFFFF;
+        position: relative; }
+    #footer .footer_top .mailchimp .button-container {
+      padding-right: 0; }
+    #footer .footer_top .social .social-content {
+      text-align: center; }
+      #footer .footer_top .social .social-content a:last-child {
+        margin-right: 0; }
+  #footer .mailchimp p {
+    display: inline-block;
+    font-family: 'Montserrat';
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-right: 10px;
+    line-height: 88px; }
+    #footer .mailchimp p:before {
+      content: "\f00c";
+      padding: 10px;
+      color: #8DC53E;
+      margin-right: 5px;
+      font-family: 'FontAwesome';
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      border-radius: 100%; }
+  #footer .payment_method {
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 30px 0; }
+    #footer .payment_method .container {
+      margin: auto; }
+      #footer .payment_method .container div {
+        display: block;
+        text-align: center;
+        margin: 10px 0; }
+    #footer .payment_method p {
+      font-size: 16px;
+      font-weight: 700;
+      margin-right: 0;
+      margin-bottom: 15px; }
+    #footer .payment_method ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; }
+      #footer .payment_method ul li {
+        display: inline-block;
+        margin-top: 10px; }
+        #footer .payment_method ul li:last-child {
+          display: block;
+          margin-top: 20px; }
+        #footer .payment_method ul li img {
+          width: 82px;
+          height: auto;
+          margin-right: 4px; }
+  #footer .footer_center {
+    border-top: 0px;
+    background-color: #232323;
+    color: #ffffff; }
+    #footer .footer_center .widget-logo .text p {
+      color: #acacac; }
+      #footer .footer_center .widget-logo .text p i {
+        color: #ffffff; }
+      #footer .footer_center .widget-logo .text p a {
+        color: #acacac; }
+    #footer .footer_center .widget-logo .img {
+      margin-bottom: 50px !important; }
+    #footer .footer_center .widget .widget-title {
+      color: #ffffff; }
+    #footer .footer_center .widget ul li a {
+      color: #acacac; }
+  #footer .footer_bottom {
+    background-color: #101010;
+    color: #acacac; }
+    #footer .footer_bottom .poweredBy {
+      color: #8DC53E; }
+      #footer .footer_bottom .poweredBy:hover {
+        color: #acacac; }
+
+.owl-controls .owl-prev, .owl-controls .owl-next {
+  line-height: 34px; }
+
+.mfp-wrap .mfp-content .mfp-figure .mfp-img {
+  padding: 0; }
+
+/*#endregion*/
+/*#region FOR TABLETS */
+@media screen and (min-width: 768px) {
+  #page-home .section-slider {
+    max-height: 988px !important; }
+    #page-home .section-slider .slider-revolution.show-xs {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution.show-sm {
+      display: block !important; }
+    #page-home .section-slider .slider-revolution.show-md {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution.show-lg {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution ul .slider-hotel-logo {
+      min-width: 120px;
+      min-height: 120px; }
+    #page-home .section-slider .slider-revolution ul .slider-hotel-name {
+      font-size: 24px !important; }
+    #page-home .section-slider .slider-revolution ul .slider-subtitle {
+      font-size: 42px !important; }
+    #page-home .section-slider .slider-revolution ul .slider-button {
+      min-width: 220px !important;
+      min-height: 42px !important;
+      line-height: 18px !important;
+      padding: 10px 30px !important;
+      font-size: 14px !important; }
+  #page-our-story .about-item .img img {
+    min-height: 390px; } }
+
+/*#endregion*/
+/*#region FOR SMALL LAPTOPS */
+@media screen and (min-width: 992px) {
+  #page-home .section-slider {
+    max-height: 732px !important; }
+    #page-home .section-slider .slider-revolution.show-xs {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution.show-sm {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution.show-md {
+      display: block !important; }
+    #page-home .section-slider .slider-revolution.show-lg {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution ul .slider-hotel-logo {
+      min-width: 120px;
+      min-height: 120px; }
+    #page-home .section-slider .slider-revolution ul .slider-hotel-name {
+      font-size: 24px !important; }
+    #page-home .section-slider .slider-revolution ul .slider-subtitle {
+      font-size: 42px !important; }
+    #page-home .section-slider .slider-revolution ul .slider-button {
+      min-width: 220px !important;
+      min-height: 42px !important;
+      line-height: 18px !important;
+      padding: 10px 30px !important;
+      font-size: 14px !important; }
+  #page-home .section-check-availability h2 {
+    padding-left: 60px; } }
+
+/*#endregion*/
+/*#region FOR LARGE SCREENS */
+@media screen and (min-width: 1200px) {
+  #page-home .section-slider {
+    max-height: 933px !important; }
+    #page-home .section-slider .slider-revolution.show-xs {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution.show-sm {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution.show-md {
+      display: none !important; }
+    #page-home .section-slider .slider-revolution.show-lg {
+      display: block !important; }
+    #page-home .section-slider .slider-revolution ul .slider-hotel-logo {
+      min-width: 120px;
+      min-height: 120px; }
+    #page-home .section-slider .slider-revolution ul .slider-hotel-name {
+      font-size: 30px !important; }
+    #page-home .section-slider .slider-revolution ul .slider-subtitle {
+      font-size: 60px !important; }
+    #page-home .section-slider .slider-revolution ul .slider-button {
+      min-width: 220px !important;
+      min-height: 42px !important;
+      line-height: 18px !important;
+      padding: 10px 30px !important;
+      font-size: 14px !important; }
+  #footer .payment_method {
+    padding: 20px 0;
+    height: 90px; }
+    #footer .payment_method .container {
+      margin: auto; }
+      #footer .payment_method .container div {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0; }
+    #footer .payment_method p {
+      margin-bottom: 0;
+      margin-right: 10px; }
+    #footer .payment_method ul li {
+      margin-top: 0px; }
+      #footer .payment_method ul li:last-child {
+        display: inline-block;
+        margin-top: 10px; } }
+
+/*#endregion*/

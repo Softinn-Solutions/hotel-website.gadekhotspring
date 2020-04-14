@@ -1,0 +1,28 @@
+﻿@using Softinn.EntityModels.ViewModel
+@{
+    List<PolicyViewModel> policies = ViewBag.ViewModel.Policies;
+}
+<section class="section-sub-banner bg-1">
+    <div class="awe-overlay"></div>
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>Hotel Policies</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-term-condition bg-white">
+    <div class="container">
+        <div class="term-condition">
+            <h3 class="text-uppercase">GENERAL TERMS AND CONDITIONS</h3>
+            <br>
+            @foreach (var policy in policies)
+            {
+                @Html.Raw(policy.Value)
+            }
+            <br>
+        </div>
+    </div>
+</section>
