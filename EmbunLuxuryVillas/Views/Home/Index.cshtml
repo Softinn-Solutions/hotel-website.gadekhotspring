@@ -1,0 +1,363 @@
+﻿@using Softinn.EntityModels.ViewModel
+@using EmbunLuxuryVillas.Helpers
+@{
+    ViewBag.Title = "Official Site";
+
+    List<PhotoViewModel> photos = ViewBag.ViewModel.Photos;
+    List<AttractionViewModel> attractions = ViewBag.ViewModel.Attractions;
+    List<RoomTypeViewModel> roomTypes = ViewBag.ViewModel.RoomTypes;
+    List<GoogleReviewViewModel> googleReviews = ViewBag.ViewModel.GoogleReviews;
+    List<CustomReviewViewModel> customReviews = ViewBag.ViewModel.CustomReviews;
+    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+
+    CountryViewModel country = ViewBag.ViewModel.Country;
+
+    var sliderPhotos = photos.Where(p => p.PhotoType.Name == Softinn.EntityModels.AppSettings.PhotoType_HomePageSlider).OrderBy(p => p.Number);
+    var placesToGo = attractions.Where(a => a.AttractionType.Name == Softinn.EntityModels.AppSettings.AttractionType_PlacesToGo);
+    var foodsToEat = attractions.Where(a => a.AttractionType.Name == Softinn.EntityModels.AppSettings.AttractionType_FoodsToEat);
+    var hotelPhoto = photos.FirstOrDefault(x => x.PhotoTypeId == 2);
+}
+
+    <div id="page-home">
+        <section class="section-slider">
+            <h1 class="element-invisible">Slider</h1>
+            <div class="slider-revolution show-xs">
+                <ul>
+                    @foreach (var photo in sliderPhotos)
+                    {
+                        <li data-transition="fade">
+                            <img src="//softinnstorage.blob.core.windows.net@(photo.URLStorage)"
+                                 data-bgposition="center center"
+                                 data-duration="14000"
+                                 data-bgpositionend="right center"
+                                 alt="slider">
+
+                            @*<div class="tp-caption sft fadeout"
+                                 data-x="center"
+                                 data-y="40"
+                                 data-speed="700"
+                                 data-start="1500"
+                                 data-easing="easeOutBack">
+                                <img class="slider-hotel-logo" src="/images/Logo/icon.png" alt="icons">
+                            </div>
+
+                            <div class="tp-caption sft fadeout slider-hotel-name"
+                                 data-x="center"
+                                 data-y="480"
+                                 data-speed="700"
+                                 data-start="1500"
+                                 data-easing="easeOutBack">
+                                @hotel.DisplayName
+                            </div>
+
+                            <a href="/Reservation"
+                               class="tp-caption sfb fadeout awe-btn awe-btn-12 awe-btn-slider slider-button"
+                               data-x="center"
+                               data-y="700"
+                               data-easing="easeOutBack"
+                               data-speed="700"
+                               data-start="2200">
+                                BOOK DIRECT FOR BEST RATES
+                            </a>*@
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="slider-revolution show-sm">
+                <ul>
+                    @foreach (var photo in sliderPhotos)
+                    {
+                        <li data-transition="fade">
+                            <img src="//softinnstorage.blob.core.windows.net@(photo.URLStorage)"
+                                 data-bgposition="center center"
+                                 data-duration="14000"
+                                 data-bgpositionend="right center"
+                                 alt="slider">
+
+                            @*<div class="tp-caption sft fadeout"
+                                 data-x="center"
+                                 data-y="170"
+                                 data-speed="700"
+                                 data-start="1500"
+                                 data-easing="easeOutBack">
+                                <img class="slider-hotel-logo" src="/images/Logo/icon.png" alt="icons">
+                            </div>
+
+                            <div class="tp-caption sft fadeout slider-hotel-name"
+                                 data-x="center"
+                                 data-y="380"
+                                 data-speed="700"
+                                 data-start="1500"
+                                 data-easing="easeOutBack">
+                                @hotel.DisplayName
+                            </div>
+
+                            <a href="/Reservation"
+                               class="tp-caption sfb fadeout awe-btn awe-btn-12 awe-btn-slider slider-button"
+                               data-x="center"
+                               data-y="520"
+                               data-easing="easeOutBack"
+                               data-speed="700"
+                               data-start="2200">
+                                BOOK DIRECT FOR BEST RATES
+                            </a>*@
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="slider-revolution show-md">
+                <ul>
+                    @foreach (var photo in sliderPhotos)
+                    {
+                        <li data-transition="fade">
+                            <img src="//softinnstorage.blob.core.windows.net@(photo.URLStorage)"
+                                 data-bgposition="center center"
+                                 data-duration="14000"
+                                 data-bgpositionend="right center"
+                                 alt="slider">
+
+                            @*<div class="tp-caption sft fadeout"
+                                 data-x="center"
+                                 data-y="225"
+                                 data-speed="700"
+                                 data-start="1500"
+                                 data-easing="easeOutBack">
+                                <img class="slider-hotel-logo" src="/images/Logo/icon.png" alt="icons">
+                            </div>
+
+                            <div class="tp-caption sft fadeout slider-hotel-name"
+                                 data-x="center"
+                                 data-y="380"
+                                 data-speed="700"
+                                 data-start="1500"
+                                 data-easing="easeOutBack">
+                                @hotel.DisplayName
+                            </div>
+
+                            <a href="/Reservation"
+                               class="tp-caption sfb fadeout awe-btn awe-btn-12 awe-btn-slider slider-button"
+                               data-x="center"
+                               data-y="500"
+                               data-easing="easeOutBack"
+                               data-speed="700"
+                               data-start="2200">
+                                BOOK DIRECT FOR BEST RATES
+                            </a>*@
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="slider-revolution show-lg">
+                <ul>
+                    @foreach (var photo in sliderPhotos)
+                    {
+                        <li data-transition="fade">
+                            <img src="//softinnstorage.blob.core.windows.net@(photo.URLStorage)"
+                                 data-bgposition="center center"
+                                 data-duration="14000"
+                                 data-bgpositionend="right center"
+                                 alt="slider">
+
+                            @*<div class="tp-caption sft fadeout"
+                                 data-x="center"
+                                 data-y="200"
+                                 data-speed="700"
+                                 data-start="1500"
+                                 data-easing="easeOutBack">
+                                <img class="slider-hotel-logo" src="/images/Logo/icon.png" alt="icons">
+                            </div>
+
+                            <div class="tp-caption sft fadeout slider-hotel-name"
+                                 data-x="center"
+                                 data-y="350"
+                                 data-speed="700"
+                                 data-start="1500"
+                                 data-easing="easeOutBack">
+                                @hotel.DisplayName
+                            </div>
+
+                            <a href="/Reservation"
+                               class="tp-caption sfb fadeout awe-btn awe-btn-12 awe-btn-slider slider-button"
+                               data-x="right"
+                               data-y="600"
+                               data-easing="easeOutBack"
+                               data-speed="700"
+                               data-start="2200">
+                                BOOK DIRECT FOR BEST RATES
+                            </a>*@
+                        </li>
+                    }
+                </ul>
+            </div>
+        </section>
+
+        <section class="section-check-availability">
+            <div class="container">
+                <div class="check-availability">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <h2>CHECK AVAILABILITY</h2>
+                        </div>
+                        <div class="col-lg-9">
+                            <form id="ajax-form-search-room" action="/Reservation" method="post">
+                                <div class="availability-form">
+                                    <input type="text" name="startDate" class="awe-calendar from" placeholder="Check-In Date" readonly>
+                                    <input type="text" name="endDate" class="awe-calendar to" placeholder="Check-Out Date" readonly>
+
+                                    <div class="vailability-submit">
+                                        <button class="awe-btn awe-btn-13">BOOK NOW</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-home-about bg-white">
+            <div class="container">
+                <div class="home-about">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img">
+                                @if(hotelPhoto.URLStorage != null){
+                                    <a href="/Home/OurStory"><img src="//softinnstorage.blob.core.windows.net@(hotelPhoto.URLStorage)" alt="Hotel Front View"></a>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text">
+                                <h2 class="heading">Our Story</h2>
+                                <span class="box-border"></span>
+                                <div class="our-story-desc fade-overflow">
+                                    @Html.Raw(hotel.FullDescription)
+                                </div>
+                                <a href="/Home/OurStory" class="awe-btn awe-btn-default">READ MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-accomd awe-parallax">
+            <div class="container">
+                <div class="accomd-modations">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="accomd-modations-header">
+                                <h2 class="heading">ROOMS & RATES</h2>
+                                <img src="/images/Logo/icon_accmod.png" alt="icon">
+                                <p>Designed for perfect relaxation, our rooms offer discerning travellers a luxurious private retreat with all the modern amenities necessary to guarantee an incredible stay.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="accomd-modations-content owl-single">
+
+                                <div class="row">
+                                    @{
+                                        foreach (var room in roomTypes)
+                                        {
+                                            <div class="col-xs-6">
+                                                <div class="accomd-modations-room">
+                                                    <div class="img">
+                                                        <a href="/Rooms/Detail/@room.Name.ToSeoFriendly()"><img src="@room.ImagePath" alt="@room.Name"></a>
+                                                    </div>
+                                                    <div class="text">
+                                                        <h2>
+                                                            <a href="/Rooms/Detail/@room.Name.Replace(" ", "").Replace("/", "")">@room.Name</a>
+                                                        </h2>
+                                                        <p class="price">
+                                                            <span class="amout">From RM @room.RackRates.SingleOrDefault(rr => rr.RackRateType.Name == "Weekday").Rates.ToString("#")</span>/night
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-testimonial awe-parallax bg-13">
+            <div class="container">
+                <div class="home-guestbook">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6 col-lg-offset-3">
+                            <div class="guestbook-content owl-single">
+
+                                @foreach (var customTestimonial in customReviews)
+                                {
+                                    <div class="guestbook-item">
+                                        <div class="testimonial">
+                                            <p>
+                                                <span class="apostrophe"></span>
+                                                @customTestimonial.Review
+                                            </p>
+                                            <span><strong>@customTestimonial.AuthorName</strong>@(customTestimonial.Date.HasValue ? (", " + customTestimonial.Date.Value.AddHours(Convert.ToDouble(country.TimeZone)).ToString("dd MMM yyyy")) : "")</span><br>
+                                            <span>From @customTestimonial.Source</span>
+                                        </div>
+                                    </div>
+                                }
+                                @foreach (var googleTestimonial in googleReviews.Where(g => g.Rating > 3).Take(5))
+                                {
+                                    <div class="guestbook-item">
+                                        <div class="testimonial">
+                                            <p>
+                                                <span class="apostrophe"></span>
+                                                @googleTestimonial.Review
+                                            </p>
+                                            <span><strong>@googleTestimonial.AuthorName</strong>@(googleTestimonial.Date.HasValue ? (", " + googleTestimonial.Date.Value.AddHours(Convert.ToDouble(country.TimeZone)).ToString("dd MMM yyyy")) : "")</span><br>
+                                            <span>From Google Places Reviews</span>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (attractions.Any())
+        {
+            <section class="section-event-news bg-white">
+                <div class="container">
+                    <div class="event-news">
+                        <div class="row">
+                            @foreach (var attractionType in attractions.Select(a => a.AttractionType.Name).Distinct())
+                            {
+                                <div class="col-md-6">
+                                    <div class="news">
+                                        <h2 class="heading">@attractionType</h2>
+                                        <span class="box-border w350 space-5"></span>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="news-item">
+                                                    <div class="img">
+                                                        <a href="/Attractions/@attractionType.ToSeoFriendly()"><img src="@BvHelper.GetImageLinkFromStorage(attractions.FirstOrDefault(a => a.AttractionType.Name == attractionType).Photos.FirstOrDefault().URLStorage)" alt="@attractionType"></a>
+                                                    </div>
+                                                    <div class="text">
+                                                        <h2>
+                                                            <a href="/Attractions/@attractionType.ToSeoFriendly()">@attractionType</a>
+                                                        </h2>
+                                                        <a href="/Attractions/@attractionType.ToSeoFriendly()" class="read-more">[ Read More ]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="hr"></div>
+                    </div>
+                </div>
+            </section>
+        }
+    </div>

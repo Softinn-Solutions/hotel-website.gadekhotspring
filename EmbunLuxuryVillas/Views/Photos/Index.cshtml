@@ -1,0 +1,73 @@
+﻿@using Softinn.EntityModels.ViewModel
+@using AppSettings = Softinn.EntityModels.AppSettings
+@using EmbunLuxuryVillas.Helpers
+@{
+    ViewBag.MetaTitle = "Photo Gallery";
+    ViewBag.MetaDescription = $"Photos of {ViewBag.ViewModel.Hotel.DisplayName}";
+
+    List<string> photoTypes = new List<string>();
+    List<PhotoViewModel> photos = ViewBag.ViewModel.Photos;
+    photos = photos.Where(x => x.PhotoType.Filter != null).OrderBy(x => x.PhotoTypeId).ThenBy(x => x.RoomTypeId).ThenBy(x => x.Number).ToList(); // remove no filter case
+
+    for (int index = 0; index < photos.Count; index++)
+    {
+        if (!string.IsNullOrEmpty(photos[index].PhotoType.Filter) && !photoTypes.Contains(photos[index].PhotoType.Filter))
+        {
+            photoTypes.Add(photos[index].PhotoType.Filter);
+        }
+    }
+}
+
+<div id="page-photos-index">
+
+    <section class="section-sub-banner bg-6">
+        <div class="awe-overlay"></div>
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-center">
+                    <h2>Gallery</h2>
+                    <p>Sneak peek of our hotel and rooms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section_page-gallery">
+        <div class="container">
+            <div class="gallery">
+                <h1 class="element-invisible">Gallery</h1>
+
+                <div class="gallery-cat text-center">
+                    <ul class="list-inline">
+                        <li class="active"><a href="#" data-filter="*">All</a></li>
+                        @foreach (var filter in photoTypes)
+                        {
+                            <li><a href="#" data-filter=".@filter">@filter</a></li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="gallery-content">
+                    <div class="row">
+                        <div class="gallery-isotope col-4">
+                            <div class="item-size"></div>
+                            @foreach (var photo in photos)
+                            {
+                                var title = photo.PhotoType.Filter == "Room" ? photo.RoomType.Name : photo.PhotoType.Filter;
+                                <div class="item-isotope @photo.PhotoType.Filter">
+                                    <div class="gallery_item">
+                                        <a href="@BvHelper.GetImageLinkFromStorage(photo.URLStorage)" class="mfp-image">
+                                            <img src="@BvHelper.GetImageLinkFromStorage(photo.URLStorage)" alt="Gallery">
+                                        </a>
+                                        <h6 class="text">@title</h6>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

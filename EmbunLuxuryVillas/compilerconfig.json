@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/promotion.css",
+    "inputFile": "wwwroot/css/promotion.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/site.css",
+    "inputFile": "wwwroot/css/site.scss"
+  }
+]

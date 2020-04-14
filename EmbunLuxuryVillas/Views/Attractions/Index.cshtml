@@ -1,0 +1,53 @@
+﻿@using Softinn.EntityModels.ViewModel
+@using EmbunLuxuryVillas.Helpers
+@{
+    ViewBag.MetaTitle = $"Attractions NearBy {ViewBag.ViewModel.Hotel.DisplayName}";
+    ViewBag.MetaDescription = $"Attractions, transportation guides, maps and interesting places around {ViewBag.ViewModel.Hotel.DisplayName}";
+
+    List<AttractionViewModel> attractions = ViewBag.ViewModel.Attractions;
+    attractions = attractions.Where(a => a.AttractionType.Name.ToSeoFriendly().ToLower() == ViewBag.AttractionType.ToLower()).ToList();
+    var attractionType = attractions.FirstOrDefault().AttractionType.Name;
+}
+
+<div id="page-attractions-index">
+
+    <section class="section-sub-banner bg-3">
+        <div class="awe-overlay"></div>
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-center">
+                    <h2>@attractionType</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-activiti bg-white">
+        <div class="container">
+
+            <div class="activiti">
+
+                <div class="activiti_content">
+
+                    <div class="row flex-attractions">
+                        @foreach (var attraction in attractions)
+                        {
+                            <div class="col-md-4 col-xs-6">
+                                <div class="activiti_item">
+                                    <div class="img">
+                                        <img src="//softinnstorage.blob.core.windows.net@(attraction.Photos.FirstOrDefault().URLStorage)" alt="@attraction.Title">
+                                    </div>
+                                    <div class="text">
+                                        <h2>@attraction.Title</h2>
+                                        @Html.Raw(attraction.Content)
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

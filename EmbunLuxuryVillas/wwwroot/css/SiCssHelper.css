@@ -1,0 +1,523 @@
+﻿/* ======================== Layout Margin */
+.margin-0px-auto {
+    margin: 0 auto;
+}
+
+.margin-0px {
+    margin: 0px;
+}
+
+/* ======================== Layout Margin Top */
+.margin_top_-5px {
+    margin-top: -5px;
+}
+
+.margin_top_-15px {
+    margin-top: -15px;
+}
+
+.margin-top-5px {
+    margin-top: 5px;
+}
+
+.margin-top-10px {
+    margin-top: 10px;
+}
+
+.margin-top-15px {
+    margin-top: 15px;
+}
+
+.margin-top-20px {
+    margin-top: 20px
+}
+
+.margin-top-30px {
+    margin-top: 30px;
+}
+
+.margin-top-35px {
+    margin-top: 35px;
+}
+
+.margin-top-40px {
+    margin-top: 40px;
+}
+
+.margin-top-60px {
+    margin-top: 60px;
+}
+
+.margin-top-80px {
+    margin-top: 80px;
+}
+
+.margin-top-100px {
+    margin-top: 100px;
+}
+
+.margin-top-150px {
+    margin-top: 150px;
+}
+
+.margin-top-200px {
+    margin-top: 200px;
+}
+
+.margin-top-250px {
+    margin-top: 250px;
+}
+
+.margin-top-300px {
+    margin-top: 300px;
+}
+
+/* ======================== Layout Margin Bottom */
+.margin-bottom-5px {
+    margin-bottom: 5px;
+}
+
+.margin-bottom-10px {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-15px {
+    margin-bottom: 15px;
+}
+
+.margin-bottom-30px {
+    margin-bottom: 30px;
+}
+
+.margin-bottom-60px {
+    margin-bottom: 60px;
+}
+
+.margin-bottom-100px {
+    margin-bottom: 100px;
+}
+
+.margin-bottom-150px {
+    margin-bottom: 150px;
+}
+
+.margin-bottom-300px {
+    margin-bottom: 300px;
+}
+
+/* ======================== Layout Margin : Left */
+.margin_left_-15px {
+    margin-left: -15px;
+}
+
+.margin_left_-20px {
+    margin-left: -20px;
+}
+
+.margin-left-5px {
+    margin-left: 5px;
+}
+
+.margin-left-10px {
+    margin-left: 10px;
+}
+
+.margin-left-15px {
+    margin-left: 15px;
+}
+
+.margin-left-30px {
+    margin-left: 30px;
+}
+
+.margin-left-50px {
+    margin-left: 50px;
+}
+
+.margin-left-70px {
+    margin-left: 70px;
+}
+
+/* ======================== Layout Margin : Right */
+.margin-right-5px {
+    margin-right: 5px;
+}
+
+.margin-right-10px {
+    margin-right: 10px;
+}
+
+.margin-right-15px {
+    margin-right: 15px;
+}
+
+.margin-right-24px {
+    margin-right: 24px;
+}
+
+/* ======================== Layout Padding */
+.padding-0px {
+    padding: 0px;
+}
+
+.padding-5px {
+    padding: 5px;
+}
+
+.padding-10px {
+    padding: 10px;
+}
+
+.padding-15px {
+    padding: 15px;
+}
+
+.padding-20px {
+    padding: 20px;
+}
+
+.padding-25px {
+    padding: 25px;
+}
+
+.padding-30px {
+    padding: 30px;
+}
+
+/* ======================== Layout Padding : Top */
+.padding-top-5px {
+    padding-top: 5px;
+}
+
+.padding-top-10px {
+    padding-top: 10px;
+}
+
+.padding-top-15px {
+    padding-top: 15px;
+}
+
+.padding-top-30px {
+    padding-top: 30px;
+}
+
+.padding-top-60px {
+    padding-top: 60px;
+}
+
+.padding-top-130px {
+    padding-top: 130px;
+}
+
+/* ======================== Layout Padding : Bottom */
+.padding-bottom-5px {
+    padding-bottom: 5px;
+}
+
+.padding-bottom-10px {
+    padding-bottom: 10px;
+}
+
+.padding-bottom-15px {
+    padding-bottom: 15px;
+}
+
+.padding-bottom-25px {
+    padding-bottom: 25px;
+}
+
+/* ======================== Layout Padding : Left */
+.padding-left-10px {
+    padding-left: 10px;
+}
+
+.padding-left-20px {
+    padding-left: 20px;
+}
+
+.padding-left-100px {
+    padding-left: 100px;
+}
+
+
+/* ======================== Layout  */
+.full-width {
+    width: 100%;
+    display: block;
+}
+
+.full-height {
+    height: 100%;
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.clear-both {
+    clear: both;
+}
+
+/* ======================== Looks */
+.round-border {
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.square-border {
+    border-radius: 0px;
+}
+
+.no-border {
+    border: 0px;
+}
+
+.white-background {
+    background-color: #ffffff;
+}
+
+.transparent-background {
+    background-image: none;
+    background-color: transparent !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.carousel-with-no-background-cursor .carousel-control.left,
+.carousel-with-no-background-cursor .carousel-control.right {
+    background-image: none;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+/* ======================== Fonts */
+.text-line-through {
+    text-decoration: line-through;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.white-font {
+    color: #ffffff;
+}
+
+/* ======================== Fonts : Pixels */
+.font-size-28px {
+    font-size: 28px;
+}
+
+.font-size-30px {
+    font-size: 30px;
+}
+
+/* ======================== Fonts : Point */
+.font-size-10pt {
+    font-size: 10pt;
+}
+
+.font-size-15pt {
+    font-size: 15pt;
+}
+
+.font-size-18pt {
+    font-size: 18pt;
+}
+
+.font-size-20pt {
+    font-size: 20pt;
+}
+
+.font-size-25pt {
+    font-size: 25pt;
+}
+
+.font-size-30pt {
+    font-size: 30pt;
+}
+
+.font-size-35pt {
+    font-size: 35pt;
+}
+
+/* ======================== Fonts : Percentage */
+.font-size-75 {
+    font-size: 85%;
+}
+
+.font-size-125 {
+    font-size: 125%;
+}
+
+.font-size-150 {
+    font-size: 150%;
+}
+
+.font-size-175 {
+    font-size: 175%;
+}
+
+.font-size-200 {
+    font-size: 200%;
+}
+
+.font-size-300 {
+    font-size: 300%;
+}
+
+.text-center img {
+    margin: auto;
+}
+
+/* ======================== Buttons */
+.btn-xl {
+    padding: 18px 28px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.btn-xxl {
+    padding: 23px 35px;
+    font-size: 28px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.delete-button {
+    cursor: pointer;
+}
+
+/* ======================== Inputs */
+.input-xl {
+    border-radius: 6px;
+    font-size: 22px;
+    height: 58px;
+    line-height: 1.33333;
+    padding: 13px 20px;
+}
+
+.input-xxl {
+    border-radius: 6px;
+    font-size: 27px;
+    height: 69px;
+    line-height: 1.33333;
+    padding: 15px 24px;
+}
+
+.fuel-ux-input-xl input {
+    font-size: 22px;
+    height: 64px;
+    line-height: 1.33333;
+    padding: 13px 20px;
+}
+
+.form-control-feedback-xl {
+    width: 58px;
+    height: 58px;
+    line-height: 58px;
+    font-size: 20px;
+}
+
+/* ======================== Image */
+.img-150 {
+    height: 150px;
+}
+
+.img-200 {
+    height: 200px;
+}
+
+.img-300 {
+    height: 300px;
+}
+
+/* ======================== List */
+.list-hover li:hover {
+    background-color: #fbfbfb;
+}
+
+/* ======================== Additional Support for AngularJS ng-cloak */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+@media all and (max-width: 1200px) {
+}
+
+@media all and (max-width: 1000px) {
+}
+
+@media (min-width: 768px) {
+    .modal-md {
+        width: 400px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .btn {
+        font-size: 13px;
+    }
+}
+
+/* ======================== Width */
+
+.width-5 {
+    width: 5%;
+}
+
+.width-10 {
+    width: 10%;
+}
+
+.width-85 {
+    width: 85%;
+}
+
+.width-90 {
+    width: 90%;
+}
+
+.width-95 {
+    width: 95%;
+}
+
+/* ======================== vertical align */
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+.vertical-align-top {
+    vertical-align: top;
+}
+
+/* ======================== text align */
+.text-align-center {
+    text-align: center;
+}
+
+/* ======================== max-width */
+.max-width-35px {
+    max-width: 35px;
+}

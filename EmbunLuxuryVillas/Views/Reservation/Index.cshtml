@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.MetaTitle = $"Booking Page of {ViewBag.ViewModel.Hotel.DisplayName}";
+    ViewBag.MetaDescription = $"Make reservation direct with {ViewBag.ViewModel.Hotel.DisplayName} and save more.";
+
+}
+
+<div id="page-reservation">
+
+    <section class="section-sub-banner bg-5">
+        <div class="awe-overlay"></div>
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-center">
+                    <h2>Reservation</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="booking-subtitle">
+                        <p>Book with us now to enjoy best rates!</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <p class="text-center">
+                                <i>
+                                    If you have children, please indicate to us upon booking the number of children in your group and their ages.
+                                    Kindly note that the maximum occupancy per room is two (2) adults and one (1) child 12 years and below OR two (2) adults and two (2) children 6 years.
+                                </i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="iframe-booking">
+                        <iframe class="softinn-booking-engine" frameborder="0" src=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@section scripts {
+    <script src="https://booking.mysoftinn.com/scripts/hotel-website/custom.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var promotionCode = getUrlParameter("promotionCode");
+
+            var iframeSrc = "https://booking.mysoftinn.com/BookHotelRoom/Web?hotelId=" + "@ViewBag.ViewModel.Hotel.Id" + "&startDate=" + "@ViewBag.StartDate" + "&endDate=" + "@ViewBag.EndDate" + "&themeColor=8DC53E&darkenColor=8DC53E";
+            var iframe = $(".softinn-booking-engine")[0];
+
+            if (promotionCode) {
+                iframe.src = iframeSrc + "&promotionCode=" + promotionCode;
+            } else {
+                iframe.src = iframeSrc;
+            }
+        });
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)), sURLVariables = sPageURL.split('&'), sParameterName, i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? "" : sParameterName[1];
+                }
+            }
+        };
+    </script>
+}
