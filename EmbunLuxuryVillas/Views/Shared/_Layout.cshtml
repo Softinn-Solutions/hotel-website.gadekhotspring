@@ -11,6 +11,7 @@
     List<PromotionalEventViewModel> promotionalEvents = ViewBag.ViewModel.PromotionalEvents;
     List<MiceViewModel> mices = ViewBag.ViewModel.Mices;
     List<TourPackageViewModel> tourPackages = ViewBag.ViewModel.TourPackages;
+    List<BlogViewModel> blogs = ViewBag.ViewModel.Blogs;
 
     ViewBag.MetaUrl = hotel.URLDomain;
 
@@ -93,18 +94,21 @@
     <link href="~/css/SiCssHelper.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
     <link href="~/css/sweetalert.css" rel="stylesheet" />
+    <link href="~/css/SoftinnLibrary.css" rel="stylesheet" />
 
     <!--[if lt IE 9]>
         <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
     @RenderSection("css", required: false)
+    <script src="/Scripts/headScript.js"></script>
 </head>
 <!--[if IE 7]> <body class="ie7 lt-ie8 lt-ie9 lt-ie10"> <![endif]-->
 <!--[if IE 8]> <body class="ie8 lt-ie9 lt-ie10"> <![endif]-->
 <!--[if IE 9]> <body class="ie9 lt-ie10"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <body>
+    <script src="/Scripts/startingOfBodyScript.js"></script>
     <!--<![endif]-->
     <!-- PRELOADER -->
     @*<div id="preloader">
@@ -188,6 +192,11 @@
                             {
                                 <li class="@Html.IsSelected(controller:"TourPackages", action:"Index")"><a href="/TourPackages">Packages</a></li>
                             }
+
+                            @if (blogs.Where(b => b.IsPublished && !b.IsStandalone).Any())
+                            {
+                                <li class="@Html.IsSelected(controller:"Blogs", action:"Index")"><a href="/Blogs">Blogs</a></li>
+                            }
                             <li class="@Html.IsSelected(controller: "Reservation", action: "Index")"><a href="/Reservation">Reservation</a></li>
                             <li class="@Html.IsSelected(controller: "Photos", action: "Index")"><a href="/Photos">Gallery</a></li>
                             <li class="@Html.IsSelected(controller: "ContactUs", action: "Index")"><a href="/ContactUs">Contact</a></li>
@@ -231,7 +240,8 @@
                         <div class="col-lg-2 col-xs-12">
                             <div class="social">
                                 <div class="social-content">
-                                    @if(@hotel.URLFacebook != null){
+                                    @if (@hotel.URLFacebook != null)
+                                    {
                                         <a href="@hotel.URLFacebook" target="_blank"><i class="fa fa-facebook"></i></a>
                                     }
                                     <a href="https://www.instagram.com/embunvillas/" target="_blank"><i class="fa fa-instagram"></i></a>
@@ -385,6 +395,7 @@
     <script type="text/javascript" src="/Scripts/lib/jquery.validate.min.js"></script>
     <!-- Custom jQuery -->
     <script type="text/javascript" src="/Scripts/scripts.js"></script>
+    <script src="/Scripts/SoftinnLibrary.js"></script>
 
     <!--Web Font Loader-->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
@@ -399,5 +410,6 @@
 
     @{await Html.RenderPartialAsync("~/Views/Shared/_GoogleStructuredData.cshtml");}
     @RenderSection("scripts", required: false)
+    <script src="/Scripts/endingOfBodyScript.js"></script>
 </body>
 </html>

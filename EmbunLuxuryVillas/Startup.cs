@@ -40,6 +40,7 @@ namespace EmbunLuxuryVillas
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddOptions();
             services.Configure<AppConfigurations>(Configuration.GetSection("AppSettings"));
+            services.AddHttpClient();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,6 +79,11 @@ namespace EmbunLuxuryVillas
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                   name: "Blog Post",
+                   defaults: new { controller = "Blogs", action = "Detail" },
+                   template: "p/{titleSlug}");
             });
         }
     }
