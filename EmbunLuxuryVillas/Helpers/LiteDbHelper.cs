@@ -52,6 +52,8 @@ namespace EmbunLuxuryVillas.Helpers
             var googleReviews = GetGoogleReviews(dbPath);
             var customReviews = GetCustomReviews(dbPath);
 
+            var blogs = GetBlogs();
+
             var viewModel = new FullHotelViewModel()
             {
                 Hotel = hotel,
@@ -131,7 +133,9 @@ namespace EmbunLuxuryVillas.Helpers
                               TourPackage = photo.TourPackageId != null && tourPackages.Any(p => p.Id == photo.TourPackageId) ? new TourPackageViewModel(tourPackages.FirstOrDefault(p => p.Id == photo.TourPackageId)) : new TourPackageViewModel(),
                               Mice = photo.MiceId != null && mices.Any(p => p.Id == photo.MiceId) ? new MiceViewModel(mices.FirstOrDefault(p => p.Id == photo.MiceId)) : new MiceViewModel(),
                               RoomType = photo.RoomTypeId != null && roomTypes.Any(rt => rt.Id == photo.RoomTypeId) ? new RoomTypeViewModel(roomTypes.FirstOrDefault(rt => rt.Id == photo.RoomTypeId)) : new RoomTypeViewModel()
-                          }).ToList()
+                          }).ToList(),
+
+                Blogs = blogs.ToList()
             };
 
             return viewModel;
@@ -460,6 +464,18 @@ namespace EmbunLuxuryVillas.Helpers
             }
 
             return customReviews;
+        }
+
+        public List<BlogViewModel> GetBlogs()
+        {
+            List<BlogViewModel> blogs;
+
+            using (var db = new LiteRepository(dbPath))
+            {
+                blogs = db.Query<BlogViewModel>().ToList();
+            }
+
+            return blogs;
         }
     }
 }

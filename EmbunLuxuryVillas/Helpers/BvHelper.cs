@@ -1,4 +1,5 @@
 ﻿using EmbunLuxuryVillas.ViewModels;
+using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using SendGrid;
 using SendGrid.Helpers.Mail;
@@ -186,6 +187,14 @@ namespace EmbunLuxuryVillas.Helpers
             msg.AddBcc(new EmailAddress("support@mysoftinn.com"));
 
             var response = await client.SendEmailAsync(msg);
+        }
+
+        public static string GetReadableText(string input)
+        {
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml(input);
+
+            return doc.DocumentNode.InnerText;
         }
     }
 }

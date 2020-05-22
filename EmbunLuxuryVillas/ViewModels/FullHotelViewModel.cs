@@ -21,5 +21,6 @@ namespace EmbunLuxuryVillas.ViewModels
         public List<AttractionViewModel> Attractions { get; set; }
         public List<GoogleReviewViewModel> GoogleReviews { get; set; }
         public List<CustomReviewViewModel> CustomReviews { get; set; }
+        public List<BlogViewModel> Blogs { get; set; }
     }
 }
