@@ -473,3 +473,5 @@
         margin-top: 10px; } }
 
 /*#endregion*/
+.entry-content img {
+  max-width: 100% !important; }
