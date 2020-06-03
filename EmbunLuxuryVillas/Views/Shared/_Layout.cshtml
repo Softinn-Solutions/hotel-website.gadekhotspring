@@ -193,7 +193,7 @@
                                 <li class="@Html.IsSelected(controller:"TourPackages", action:"Index")"><a href="/TourPackages">Packages</a></li>
                             }
 
-                            @if (blogs.Where(b => b.IsPublished && !b.IsStandalone).Any())
+                            @if (blogs.Any(b => b.IsPublished && !b.IsStandalone))
                             {
                                 <li class="@Html.IsSelected(controller:"Blogs", action:"Index")"><a href="/Blogs">Blogs</a></li>
                             }
