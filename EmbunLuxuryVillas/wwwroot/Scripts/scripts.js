@@ -401,15 +401,15 @@
                     startheight: 700,
                     hideThumbs: 200,
 
-                    thumbWidth: 100,
+                    thumbWidth: 10,
                     thumbHeight: 50,
                     thumbAmount: 5,
 
                     navigationType: "both",
                     navigationArrows: "none",
-                    navigationStyle: "round",
+                    navigationStyle: "none",
 
-                    touchenabled: "on",
+                    touchenabled: "off",
                     onHoverStop: "off",
 
                     swipe_velocity: 0.7,
