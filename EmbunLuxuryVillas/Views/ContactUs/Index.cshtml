@@ -77,7 +77,12 @@
                                         <textarea cols="30" rows="10" name="Message" class="field-textarea" placeholder="Your Message" ng-model="form.Message" validate-on="dirty" required></textarea>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" class="ghostbutton" ng-disabled="myFormName.$invalid">SEND</button>
+                                        @*<button type="submit" class="ghostbutton" ng-disabled="myFormName.$invalid">SEND</button>*@
+                                        <button type="submit" class="ghostbutton" ng-disabled="isLoading || myFormName.$invalid">
+                                            <i class="fa fa-paper-plane" ng-show="!isLoading"></i>
+                                            <i class="fa fa-circle-o-notch fa-spin fa-fw" ng-show="isLoading"></i>
+                                            &nbsp;&nbsp;SEND
+                                        </button>
                                     </div>
                                 </div>
                             </form>
