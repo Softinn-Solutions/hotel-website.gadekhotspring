@@ -29,8 +29,9 @@
                             <ul>
                                 <li><i class="fa fa-map-marker contact-icon"></i> @hotel.DisplayAddress</li>
                                 <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@hotel.DisplayPhone" rel="nofollow">@hotel.DisplayPhone</a></li>
-                                @if (hotel.SecondDisplayPhone != null) { }
-                                <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@hotel.SecondDisplayPhone" rel="nofollow">@hotel.SecondDisplayPhone</a> (Mon - Sat from 9am to 5pm)</li>
+                                @if (hotel.SecondDisplayPhone != null)
+                                {
+                                    <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@hotel.SecondDisplayPhone" rel="nofollow">@hotel.SecondDisplayPhone</a> (Mon - Sat from 9am to 5pm)</li>
                                 }
                                 <li><i class="fa fa-phone contact-icon"></i> <a href="tel:+6013 6042460" rel="nofollow">+6013 6042460</a> (for calls only)</li>
                                 @if (hotel.DisplayFax != null)
