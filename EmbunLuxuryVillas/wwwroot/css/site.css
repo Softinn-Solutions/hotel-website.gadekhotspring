@@ -250,6 +250,9 @@
   padding-top: 12px;
   padding-bottom: 12px; }
 
+#page-contact-us .section-contact .ghostbutton:disabled {
+  background-color: #c4c4c4; }
+
 #page-contact-us .contact-map {
   height: 470px;
   margin-bottom: 50px; }

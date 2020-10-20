@@ -28,7 +28,7 @@ namespace EmbunLuxuryVillas.Helpers
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("support@mysoftinn.com", $"{hotelViewModel.DisplayName} Website Contact Form"),
+                From = new EmailAddress("marketing@mysoftinn.com", $"{hotelViewModel.DisplayName} Website Contact Form"),
                 Subject = $"{hotelViewModel.DisplayName}, You have a new message from the website.",
                 HtmlContent = emailHtml,
                 ReplyTo = new EmailAddress(mailViewModel.Email)
@@ -119,7 +119,7 @@ namespace EmbunLuxuryVillas.Helpers
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("support@mysoftinn.com", $"{hotelViewModel.DisplayName} Tour Package Inquiry"),
+                From = new EmailAddress("marketing@mysoftinn.com", $"{hotelViewModel.DisplayName} Tour Package Inquiry"),
                 Subject = $"{hotelViewModel.DisplayName}, you have a new tour package inquiry",
                 HtmlContent = emailHtml,
                 ReplyTo = new EmailAddress(tourPackageInquiryMailViewModel.Email)
@@ -149,7 +149,7 @@ namespace EmbunLuxuryVillas.Helpers
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("support@mysoftinn.com", $"{hotelViewModel.DisplayName} Meetings & Events Inquiry"),
+                From = new EmailAddress("marketing@mysoftinn.com", $"{hotelViewModel.DisplayName} Meetings & Events Inquiry"),
                 Subject = $"{hotelViewModel.DisplayName}, you have a new meetings & events inquiry",
                 HtmlContent = emailHtml,
                 ReplyTo = new EmailAddress(miceInquiryMailViewModel.Email)
@@ -178,7 +178,7 @@ namespace EmbunLuxuryVillas.Helpers
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("support@mysoftinn.com", $"{hotelViewModel.DisplayName} Dining Reservations Inquiry"),
+                From = new EmailAddress("marketing@mysoftinn.com", $"{hotelViewModel.DisplayName} Dining Reservations Inquiry"),
                 Subject = $"{hotelViewModel.DisplayName}, you have a new dining reservations inquiry",
                 HtmlContent = emailHtml,
                 ReplyTo = new EmailAddress(sendDiningInquiryMailViewModel.Email)
