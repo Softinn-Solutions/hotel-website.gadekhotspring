@@ -17,6 +17,7 @@ namespace EmbunLuxuryVillas.Helpers
         public FullHotelViewModel GetFullHotelViewModel()
         {
             var hotel = GetHotel();
+            var cmsSetting = GetCmsSetting();
 
             var promotions = GetPromotions();
             var promotionStatuses = GetPromotionStatuses();
@@ -57,6 +58,7 @@ namespace EmbunLuxuryVillas.Helpers
             var viewModel = new FullHotelViewModel()
             {
                 Hotel = hotel,
+                CMSSetting = cmsSetting,
                 State = state,
                 Country = country,
 
@@ -151,6 +153,18 @@ namespace EmbunLuxuryVillas.Helpers
             }
 
             return hotel;
+        }
+
+        public CMSSettingViewModel GetCmsSetting()
+        {
+            CMSSettingViewModel cmsSetting;
+
+            using (var db = new LiteRepository(dbPath))
+            {
+                cmsSetting = db.Query<CMSSettingViewModel>().FirstOrDefault();
+            }
+
+            return cmsSetting;
         }
 
         public List<PromotionViewModel> GetPromotions()

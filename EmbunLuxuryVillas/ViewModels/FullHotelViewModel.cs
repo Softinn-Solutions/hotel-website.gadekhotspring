@@ -9,6 +9,7 @@ namespace EmbunLuxuryVillas.ViewModels
     public class FullHotelViewModel
     {
         public HotelViewModel Hotel { get; set; }
+        public CMSSettingViewModel CMSSetting { get; set; }
         public CountryViewModel Country { get; set; }
         public StateViewModel State { get; set; }
         public List<PhotoViewModel> Photos { get; set; }
