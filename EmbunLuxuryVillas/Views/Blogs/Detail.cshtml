@@ -38,7 +38,7 @@
     <div class="sub-banner">
         <div class="container">
             <div class="text text-center">
-                <h2>Our BLOG</h2>
+                <h2>Privacy Policy</h2>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
                         <h1 class="element-invisible">Blog detail</h1>
                         <!-- POST SINGLE -->
                         <article class="post post-single">
-                            <div class="entry-media">
+                            @*<div class="entry-media">
                                 <img src="@blog.FeaturedImage" alt="Image for @blog.Title">
                                 <span class="posted-on"><strong>@blog.Posted.ToString("dd")</strong>@blog.Posted.ToString("MMM")</span>
                             </div>
@@ -67,7 +67,7 @@
                                         <span class="entry-time">@blog.Posted.ToString("MMM dd, yyyy")</span>
                                     </span>
                                 </p>
-                            </div>
+                            </div>*@
 
                             <div class="entry-content">
                                 @Html.Raw(blog.Content)
