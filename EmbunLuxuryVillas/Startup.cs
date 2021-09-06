@@ -8,8 +8,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace EmbunLuxuryVillas
 {
@@ -17,12 +19,12 @@ namespace EmbunLuxuryVillas
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IHostingEnvironment env)
+        public Startup(IWebHostEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-           .SetBasePath(env.ContentRootPath)
-           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-           .AddEnvironmentVariables();
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables();
 
             Configuration = builder.Build();
         }
@@ -37,14 +39,14 @@ namespace EmbunLuxuryVillas
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddOptions();
+            services.AddControllersWithViews();
+            services.AddRazorPages();
             services.Configure<AppConfigurations>(Configuration.GetSection("AppSettings"));
             services.AddHttpClient();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -58,32 +60,33 @@ namespace EmbunLuxuryVillas
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseRouting();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(routes =>
             {
-                routes.MapRoute(
-                   name: "Promotion Detail",
-                   defaults: new { controller = "Promotions", action = "Detail" },
-                   template: "Promotions/{id}");
+                routes.MapControllerRoute(
+                    name: "Promotion Detail",
+                    defaults: new { controller = "Promotions", action = "Detail" },
+                    pattern: "Promotions/{id}");
 
-                routes.MapRoute(
+                routes.MapControllerRoute(
                     name: "Room Details",
-                    template: "{controller=Rooms}/{action=Details}/{name?}");
+                    pattern: "{controller=Rooms}/{action=Details}/{name?}");
 
-                routes.MapRoute(
+                routes.MapControllerRoute(
                     name: "Attractions",
                     defaults: new { controller = "Attractions", action = "Index" },
-                    template: "Attractions/{attractionType}");
+                    pattern: "Attractions/{attractionType}");
 
-                routes.MapRoute(
+                routes.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-                routes.MapRoute(
-                   name: "Blog Post",
-                   defaults: new { controller = "Blogs", action = "Detail" },
-                   template: "p/{titleSlug}");
+                routes.MapControllerRoute(
+                    name: "Blog Post",
+                    defaults: new { controller = "Blogs", action = "Detail" },
+                    pattern: "p/{titleSlug}");
             });
         }
     }
