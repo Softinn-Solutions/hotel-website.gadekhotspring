@@ -129,285 +129,285 @@
         </div>*@
     <!-- END / PRELOADER -->
     <!-- PAGE WRAP -->
-<div id="page-wrap">
+    <div id="page-wrap">
 
-    <!-- HEADER -->
-    <header id="header">
-        <!-- HEADER TOP -->
-        <div class="header_top">
-            <div class="container">
-                <div class="header_left float-left">
-                    <span><i class="fa fa-map-marker"></i> @hotel.DisplayAddress</span>
+        <!-- HEADER -->
+        <header id="header">
+            <!-- HEADER TOP -->
+            <div class="header_top">
+                <div class="container">
+                    <div class="header_left float-left">
+                        <span><i class="fa fa-map-marker"></i> @hotel.DisplayAddress</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- END / HEADER TOP -->
-        <!-- HEADER LOGO & MENU -->
-        <div class="header_content" id="header_content">
+            <!-- END / HEADER TOP -->
+            <!-- HEADER LOGO & MENU -->
+            <div class="header_content" id="header_content">
 
-            <div class="container">
-                <!-- HEADER LOGO -->
-                <div class="header_logo">
-                    <a href="/"><img src="~/images/Logo/web_logo.png" alt="Logo"></a>
-                </div>
-                <!-- END / HEADER LOGO -->
-                <!-- HEADER MENU -->
-                <nav class="header_menu">
-                    <ul class="menu">
-                        <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="/">Home</a></li>
+                <div class="container">
+                    <!-- HEADER LOGO -->
+                    <div class="header_logo">
+                        <a href="/"><img src="~/images/Logo/web_logo.png" alt="Logo"></a>
+                    </div>
+                    <!-- END / HEADER LOGO -->
+                    <!-- HEADER MENU -->
+                    <nav class="header_menu">
+                        <ul class="menu">
+                            <li class="@Html.IsSelected(controller: "Home", action: "Index")"><a href="/">Home</a></li>
 
-                        <li class="@Html.IsSelected(controller: "Home", notAction: "Index")">
-                            <a href="#">About Us <span class="fa fa-caret-down"></span></a>
-                            <ul class="sub-menu">
-                                <li class="@Html.IsSelected(controller: "Home", action: "OurStory")"><a href="/Home/OurStory">Our Story</a></li>
-                                <li class="@Html.IsSelected(controller: "Home", action: "TheVillasSuite")"><a href="/Home/TheVillasSuite">The Villas & Suite</a></li>
-                                <li class="@Html.IsSelected(controller: "Home", action: "Activities")"><a href="/Home/Activities">Activities</a></li>
-                                <li class="@Html.IsSelected(controller: "Home", action: "Policy")"><a href="/Home/Policy">Hotel Policies</a></li>
-                            </ul>
-                        </li>
-                        <li class="@Html.IsSelected(controller: "Rooms")">
-                            <a href="/Rooms">Villas & Suite <span class="fa fa-caret-down"></span></a>
-                            <ul class="sub-menu width-220">
-                                <li class="@Html.IsSelected(controller: "Rooms", action: "Index")"><a href="/Rooms">All Rooms</a></li>
-                                @{
-                                    foreach (var room in rooms)
-                                    {
-                                        <li class="@Html.IsSelected(controller: "Rooms", action: "Detail", name: room.Name.ToSeoFriendly())"><a href="/Rooms/Detail/@room.Name.ToSeoFriendly()">@room.Name</a></li>
-                                    }
-                                }
-                            </ul>
-                        </li>
-                        <li class="@Html.IsSelected(controller: "Dining", action: "Index")"><a href="/Dining">Dining</a></li>
-                        @if (attractions.Any())
-                        {
-                            <li class="@Html.IsSelected(controller: "Attractions", action: "Index")">
-                                <a href="#">Attraction <span class="fa fa-caret-down"></span></a>
+                            <li class="@Html.IsSelected(controller: "Home", notAction: "Index")">
+                                <a href="#">About Us <span class="fa fa-caret-down"></span></a>
                                 <ul class="sub-menu">
-                                    @foreach (var attractionType in attractions.Select(a => a.AttractionType.Name).Distinct())
-                                    {
-                                        <li class="@Html.IsSelected(controller: "Attractions", attractionType: attractionType.ToSeoFriendly())"><a href="/Attractions/@attractionType.ToSeoFriendly()">@attractionType</a></li>
+                                    <li class="@Html.IsSelected(controller: "Home", action: "OurStory")"><a href="/Home/OurStory">Our Story</a></li>
+                                    <li class="@Html.IsSelected(controller: "Home", action: "TheVillasSuite")"><a href="/Home/TheVillasSuite">The Villas & Suite</a></li>
+                                    <li class="@Html.IsSelected(controller: "Home", action: "Activities")"><a href="/Home/Activities">Activities</a></li>
+                                    <li class="@Html.IsSelected(controller: "Home", action: "Policy")"><a href="/Home/Policy">Hotel Policies</a></li>
+                                </ul>
+                            </li>
+                            <li class="@Html.IsSelected(controller: "Rooms")">
+                                <a href="/Rooms">Villas & Suite <span class="fa fa-caret-down"></span></a>
+                                <ul class="sub-menu width-220">
+                                    <li class="@Html.IsSelected(controller: "Rooms", action: "Index")"><a href="/Rooms">All Rooms</a></li>
+                                    @{
+                                        foreach (var room in rooms)
+                                        {
+                                            <li class="@Html.IsSelected(controller: "Rooms", action: "Detail", name: room.Name.ToSeoFriendly())"><a href="/Rooms/Detail/@room.Name.ToSeoFriendly()">@room.Name</a></li>
+                                        }
                                     }
                                 </ul>
                             </li>
-                        }
-                        @if (mices.Any())
-                        {
-                            <li class="@Html.IsSelected(controller:"MeetingEvents", action:"Index")"><a href="/MeetingEvents">Meetings & Events</a></li>
-                        }
+                            <li class="@Html.IsSelected(controller: "Dining", action: "Index")"><a href="/Dining">Dining</a></li>
+                            @if (attractions.Any())
+                            {
+                                <li class="@Html.IsSelected(controller: "Attractions", action: "Index")">
+                                    <a href="#">Attraction <span class="fa fa-caret-down"></span></a>
+                                    <ul class="sub-menu">
+                                        @foreach (var attractionType in attractions.Select(a => a.AttractionType.Name).Distinct())
+                                        {
+                                            <li class="@Html.IsSelected(controller: "Attractions", attractionType: attractionType.ToSeoFriendly())"><a href="/Attractions/@attractionType.ToSeoFriendly()">@attractionType</a></li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                            @if (mices.Any())
+                            {
+                                <li class="@Html.IsSelected(controller:"MeetingEvents", action:"Index")"><a href="/MeetingEvents">Meetings & Events</a></li>
+                            }
 
-                        @if (promotions.Any() || promotionalEvents.Any())
-                        {
+                            @if (promotions.Any() || promotionalEvents.Any())
+                            {
 
-                            <li class="@Html.IsSelected(controller: "Promotions", action: "Index")"><a href="/Promotions">Promotions</a></li>
-                        }
+                                <li class="@Html.IsSelected(controller: "Promotions", action: "Index")"><a href="/Promotions">Promotions</a></li>
+                            }
 
-                        @if (tourPackages.Any())
-                        {
-                            <li class="@Html.IsSelected(controller:"TourPackages", action:"Index")"><a href="/TourPackages">Packages</a></li>
-                        }
+                            @if (tourPackages.Any())
+                            {
+                                <li class="@Html.IsSelected(controller:"TourPackages", action:"Index")"><a href="/TourPackages">Packages</a></li>
+                            }
 
-                        @if (blogs.Where(b => b.IsPublished && !b.IsStandalone).Any())
-                        {
-                            <li class="@Html.IsSelected(controller:"Blogs", action:"Index")"><a href="/Blogs">Blogs</a></li>
-                        }
-                        <li class="@Html.IsSelected(controller: "Reservation", action: "Index")"><a href="/Reservation">Reservation</a></li>
-                        <li class="@Html.IsSelected(controller: "Photos", action: "Index")"><a href="/Photos">Gallery</a></li>
-                        <li class="@Html.IsSelected(controller: "ContactUs", action: "Index")"><a href="/ContactUs">Contact</a></li>
-                    </ul>
-                </nav>
-                <!-- END / HEADER MENU -->
-                <!-- MENU BAR -->
-                <span class="menu-bars">
-                    <span></span>
-                </span>
-                <!-- END / MENU BAR -->
+                            @if (blogs.Where(b => b.IsPublished && !b.IsStandalone).Any())
+                            {
+                                <li class="@Html.IsSelected(controller:"Blogs", action:"Index")"><a href="/Blogs">Blogs</a></li>
+                            }
+                            <li class="@Html.IsSelected(controller: "Reservation", action: "Index")"><a href="/Reservation">Reservation</a></li>
+                            <li class="@Html.IsSelected(controller: "Photos", action: "Index")"><a href="/Photos">Gallery</a></li>
+                            <li class="@Html.IsSelected(controller: "ContactUs", action: "Index")"><a href="/ContactUs">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <!-- END / HEADER MENU -->
+                    <!-- MENU BAR -->
+                    <span class="menu-bars">
+                        <span></span>
+                    </span>
+                    <!-- END / MENU BAR -->
 
+                </div>
             </div>
-        </div>
-        <!-- END / HEADER LOGO & MENU -->
+            <!-- END / HEADER LOGO & MENU -->
 
-    </header>
-    <!-- END / HEADER -->
-    @RenderBody()
+        </header>
+        <!-- END / HEADER -->
+        @RenderBody()
 
-    <!-- Custom HTML Tags - Body -->
-    @{
-        string bodyCustomTag = "";
-        foreach (var bodyCustomHtmlTag in bodyCustomHtmlTags)
-        {
-            bodyCustomTag += bodyCustomHtmlTag.Script;
+        <!-- Custom HTML Tags - Body -->
+        @{
+            string bodyCustomTag = "";
+            foreach (var bodyCustomHtmlTag in bodyCustomHtmlTags)
+            {
+                bodyCustomTag += bodyCustomHtmlTag.Script;
+            }
+
+            @Html.Raw(bodyCustomTag);
         }
 
-        @Html.Raw(bodyCustomTag);
-    }
+        <!-- FOOTER -->
+        <footer id="footer">
 
-    <!-- FOOTER -->
-    <footer id="footer">
-
-        <!-- FOOTER TOP -->
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <!-- WIDGET MAILCHIMP -->
-                    <div class="col-lg-6 col-xs-12">
-                        <div class="mailchimp">
-                            <h4>Book directly with us for best rates</h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-xs-12">
-                        <div class="mailchimp">
-                            <div class="button-container mailchimp-form ">
-                                <a class="awe-btn btn-block" href="/Reservation">Book Now</a>
+            <!-- FOOTER TOP -->
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <!-- WIDGET MAILCHIMP -->
+                        <div class="col-lg-6 col-xs-12">
+                            <div class="mailchimp">
+                                <h4>Book directly with us for best rates</h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-2 col-xs-12">
-                        <div class="social">
-                            <div class="social-content">
-                                @if (@hotel.URLFacebook != null)
-                                {
-                                    <a href="@hotel.URLFacebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                                }
-                                <a href="https://www.instagram.com/embunvillas/" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <div class="col-lg-2 col-xs-12">
+                            <div class="mailchimp">
+                                <div class="button-container mailchimp-form ">
+                                    <a class="awe-btn btn-block" href="/Reservation">Book Now</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- END / WIDGET MAILCHIMP -->
-                </div>
-            </div>
-        </div>
-        <!-- END / FOOTER TOP -->
-        <!-- PAYMENT -->
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="mailchimp">
-                        <p>Direct Booking</p>
-                        <p>Secure Payment</p>
-                        <p>No Hidden Charges</p>
+                        <div class="col-lg-2 col-xs-12">
+                            <div class="social">
+                                <div class="social-content">
+                                    @if (@hotel.URLFacebook != null)
+                                    {
+                                        <a href="@hotel.URLFacebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    }
+                                    <a href="https://www.instagram.com/embunvillas/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END / WIDGET MAILCHIMP -->
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="payment_method">
-            <div class="container">
-                <div>
-                    <p>Pay Securely With</p>
-                    <ul>
-                        <li><img src="/images/PaymentGatewayMY/01-visa.svg" alt="Visa Card" id="visa-card"></li>
-                        <li><img src="/images/PaymentGatewayMY/02-mastercard.svg" alt="Master Card" id="master-card"></li>
-                        <li><img src="/images/PaymentGatewayMY/04-fpx.svg" alt="FPX" id="fpx"></li>
-                        <li><img src="/images/PaymentGatewayMY/05-maybank.svg" alt="M2U" id="m2u"></li>
-                        <li><img src="/images/PaymentGatewayMY/06-cimb.svg" alt="CIMB" id="cimb"></li>
-                        <li><img src="/images/PaymentGatewayMY/07-pbebank.svg" alt="PBE" id="pbe"></li>
-                        <li><img src="/images/PaymentGatewayMY/08-rhbnow.svg" alt="RHB" id="rhb"></li>
-                        <li><img src="/images/PaymentGatewayMY/09-hongleong.svg" alt="Hong Leong" id="hong-leong"></li>
-                        <li><img src="/images/PaymentGatewayMY/03-paypal.svg" alt="Paypal" id="paypal"></li>
-                        <li><img src="/images/PaymentGatewayMY/11-boost.svg" alt="Boost" id="boost"></li>
-                        <li>and more...</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- END PAYMENT-->
-        <!-- FOOTER CENTER -->
-        <div class="footer_center">
+            <!-- END / FOOTER TOP -->
+            <!-- PAYMENT -->
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-7">
-                        <div class="widget widget_logo">
-                            <div class="widget-logo">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="img">
-                                            <a href="#"><img src="~/images/Logo/web_logo.png" alt="@hotel.DisplayName"></a>
+                    <div class="col-xs-12">
+                        <div class="mailchimp">
+                            <p>Direct Booking</p>
+                            <p>Secure Payment</p>
+                            <p>No Hidden Charges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment_method">
+                <div class="container">
+                    <div>
+                        <p>Pay Securely With</p>
+                        <ul>
+                            <li><img src="/images/PaymentGatewayMY/01-visa.svg" alt="Visa Card" id="visa-card"></li>
+                            <li><img src="/images/PaymentGatewayMY/02-mastercard.svg" alt="Master Card" id="master-card"></li>
+                            <li><img src="/images/PaymentGatewayMY/04-fpx.svg" alt="FPX" id="fpx"></li>
+                            <li><img src="/images/PaymentGatewayMY/05-maybank.svg" alt="M2U" id="m2u"></li>
+                            <li><img src="/images/PaymentGatewayMY/06-cimb.svg" alt="CIMB" id="cimb"></li>
+                            <li><img src="/images/PaymentGatewayMY/07-pbebank.svg" alt="PBE" id="pbe"></li>
+                            <li><img src="/images/PaymentGatewayMY/08-rhbnow.svg" alt="RHB" id="rhb"></li>
+                            <li><img src="/images/PaymentGatewayMY/09-hongleong.svg" alt="Hong Leong" id="hong-leong"></li>
+                            <li><img src="/images/PaymentGatewayMY/03-paypal.svg" alt="Paypal" id="paypal"></li>
+                            <li><img src="/images/PaymentGatewayMY/11-boost.svg" alt="Boost" id="boost"></li>
+                            <li>and more...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAYMENT-->
+            <!-- FOOTER CENTER -->
+            <div class="footer_center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="widget widget_logo">
+                                <div class="widget-logo">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="img">
+                                                <a href="#"><img src="~/images/Logo/web_logo.png" alt="@hotel.DisplayName"></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="text">
-                                            <p>
-                                                <i class="fa fa-phone"></i> <a href="tel:@hotel.DisplayPhone" rel="nofollow">@hotel.DisplayPhone</a>
-                                            </p>
-                                            @if (hotel.SecondDisplayPhone != null)
-                                            {
+                                        <div class="col-md-8">
+                                            <div class="text">
                                                 <p>
-                                                    <i class="fa fa-phone"></i> <a href="tel:@hotel.SecondDisplayPhone" rel="nofollow">@hotel.SecondDisplayPhone</a> (Mon - Sat from 9am to 5pm)
+                                                    <i class="fa fa-phone"></i> <a href="tel:@hotel.DisplayPhone" rel="nofollow">@hotel.DisplayPhone</a>
                                                 </p>
-                                            }
-                                            <p>
-                                                <i class="fa fa-phone"></i> <a href="tel:+6013 6042460" rel="nofollow">+6013 6042460</a> (for calls only)
-                                            </p>
-                                            @if (hotel.DisplayFax != null)
-                                            {
+                                                @if (hotel.SecondDisplayPhone != null)
+                                                {
+                                                    <p>
+                                                        <i class="fa fa-phone"></i> <a href="tel:@hotel.SecondDisplayPhone" rel="nofollow">@hotel.SecondDisplayPhone</a> (Mon - Sat from 9am to 5pm)
+                                                    </p>
+                                                }
                                                 <p>
-                                                    <i class="fa fa-fax"></i> @hotel.DisplayFax
+                                                    <i class="fa fa-phone"></i> <a href="tel:+6013 6042460" rel="nofollow">+6013 6042460</a> (for calls only)
                                                 </p>
-                                            }
-                                            <p>
-                                                <i class="fa fa-envelope-o"></i> <a href="mailto:@hotel.DisplayEmail">@hotel.DisplayEmail</a>
-                                            </p>
-                                            <p>
-                                                <i class="fa fa-map-marker"></i>  @hotel.DisplayAddress
-                                            </p>
-                                            <p>
-                                                A resort managed by Embunaz Ventures Sdn Bhd (620304-X)
-                                            </p>
+                                                @if (hotel.DisplayFax != null)
+                                                {
+                                                    <p>
+                                                        <i class="fa fa-fax"></i> @hotel.DisplayFax
+                                                    </p>
+                                                }
+                                                <p>
+                                                    <i class="fa fa-envelope-o"></i> <a href="mailto:@hotel.DisplayEmail">@hotel.DisplayEmail</a>
+                                                </p>
+                                                <p>
+                                                    <i class="fa fa-map-marker"></i>  @hotel.DisplayAddress
+                                                </p>
+                                                <p>
+                                                    A resort managed by Embunaz Ventures Sdn Bhd (620304-X)
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-xs-4 col-sm-2">
-                        <div class="widget">
-                            <h4 class="widget-title">Links</h4>
-                            <ul>
-                                <li><a href="/Rooms">Villas & Suite</a></li>
-                                <li><a href="/p/privacy-policy">Privacy Policy</a></li>
-                                <li><a href="/Photos">Gallery</a></li>
-                                <li><a href="/Reservation">Reservation</a></li>
-                                <li><a href="/ContactUs">Contact Us</a></li>
-                            </ul>
+                        <div class="col-xs-4 col-sm-2">
+                            <div class="widget">
+                                <h4 class="widget-title">Links</h4>
+                                <ul>
+                                    <li><a href="/Rooms">Villas & Suite</a></li>
+                                    <li><a href="/p/privacy-policy">Privacy Policy</a></li>
+                                    <li><a href="/Photos">Gallery</a></li>
+                                    <li><a href="/Reservation">Reservation</a></li>
+                                    <li><a href="/ContactUs">Contact Us</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-xs-4 col-sm-2">
-                        <div class="widget">
-                            <h4 class="widget-title">About Us</h4>
-                            <ul>
-                                <li><a href="/Home/OurStory">Our Story</a></li>
-                                <li><a href="/Home/TheVillasSuite">The Villas & Suite</a></li>
-                                <li><a href="/Home/Activities">Activities</a></li>
-                                <li><a href="/Home/Policy">Hotel Policies</a></li>
-                                @if (attractions.Any())
-                                {
-                                    @foreach (var attractionType in attractions.Select(a => a.AttractionType.Name).Distinct())
+                        <div class="col-xs-4 col-sm-2">
+                            <div class="widget">
+                                <h4 class="widget-title">About Us</h4>
+                                <ul>
+                                    <li><a href="/Home/OurStory">Our Story</a></li>
+                                    <li><a href="/Home/TheVillasSuite">The Villas & Suite</a></li>
+                                    <li><a href="/Home/Activities">Activities</a></li>
+                                    <li><a href="/Home/Policy">Hotel Policies</a></li>
+                                    @if (attractions.Any())
                                     {
-                                        <li><a href="/Attractions/@attractionType.ToSeoFriendly()">@attractionType</a></li>
+                                        @foreach (var attractionType in attractions.Select(a => a.AttractionType.Name).Distinct())
+                                        {
+                                            <li><a href="/Attractions/@attractionType.ToSeoFriendly()">@attractionType</a></li>
+                                        }
                                     }
-                                }
 
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- END / FOOTER CENTER -->
-        <!-- FOOTER BOTTOM -->
-        <div class="footer_bottom">
-            <div class="container">
-                &copy; @DateTime.Now.Year @hotel.DisplayName All rights reserved. Powered by <a class="poweredBy" target="_blank" href="http://mysoftinn.com/">Softinn Solutions.</a>
+            <!-- END / FOOTER CENTER -->
+            <!-- FOOTER BOTTOM -->
+            <div class="footer_bottom">
+                <div class="container">
+                    &copy; @DateTime.Now.Year @hotel.DisplayName All rights reserved. Powered by <a class="poweredBy" target="_blank" href="http://mysoftinn.com/">Softinn Solutions.</a>
+                </div>
             </div>
-        </div>
-        <!-- END / FOOTER BOTTOM -->
+            <!-- END / FOOTER BOTTOM -->
 
-    </footer>
-    <!-- END / FOOTER -->
+        </footer>
+        <!-- END / FOOTER -->
 
-</div>
+    </div>
     <!-- END / PAGE WRAP -->
     <!-- LOAD JQUERY -->
     <script type="text/javascript" src="/Scripts/lib/jquery-1.11.0.min.js"></script>
