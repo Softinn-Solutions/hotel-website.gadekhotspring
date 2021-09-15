@@ -23,5 +23,7 @@ namespace EmbunLuxuryVillas.ViewModels
         public List<GoogleReviewViewModel> GoogleReviews { get; set; }
         public List<CustomReviewViewModel> CustomReviews { get; set; }
         public List<BlogViewModel> Blogs { get; set; }
+        public List<CustomHtmlTagViewModel> HeadCustomHtmlTags { get; set; }
+        public List<CustomHtmlTagViewModel> BodyCustomHtmlTags { get; set; }
     }
 }
