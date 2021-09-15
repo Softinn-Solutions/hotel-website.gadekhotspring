@@ -47,7 +47,6 @@ namespace EmbunLuxuryVillas
             if (digestedMessage != GetDigestedMessage(publicKey, dateTimeString))
                 return BadRequest("Please check the public key provided!");
 #endif
-
             //Download all necessary files
             HttpClient client = _factory.CreateClient();
 
@@ -56,9 +55,6 @@ namespace EmbunLuxuryVillas
 
             //CMS Staging
             //var baseUrl = "https://cms-dev.mysoftinn.com";
-
-            //CMS Local
-            //baseUrl = "http://cms.mysoftinn.local:58893";
 
             var cssLibrary = $"{baseUrl}/CustomFile/softinnCsslibrary";
             var scriptLibrary = $"{baseUrl}/CustomFile/softinnScriptlibrary";

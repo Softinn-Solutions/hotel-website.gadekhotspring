@@ -206,7 +206,7 @@
                                 <li class="@Html.IsSelected(controller:"TourPackages", action:"Index")"><a href="/TourPackages">Packages</a></li>
                             }
 
-                            @if (blogs.Where(b => b.IsPublished && !b.IsStandalone).Any())
+                            @if (blogs.Any(b => b.IsPublished && !b.IsStandalone))
                             {
                                 <li class="@Html.IsSelected(controller:"Blogs", action:"Index")"><a href="/Blogs">Blogs</a></li>
                             }
@@ -429,7 +429,6 @@
     <script type="text/javascript" src="/Scripts/lib/jquery.validate.min.js"></script>
     <!-- Custom jQuery -->
     <script type="text/javascript" src="/Scripts/scripts.js"></script>
-    <script src="/Scripts/SoftinnLibrary.js"></script>
 
     <!--Web Font Loader-->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
@@ -444,6 +443,10 @@
 
     @{await Html.RenderPartialAsync("~/Views/Shared/_GoogleStructuredData.cshtml");}
     @RenderSection("scripts", required: false)
+
+    <script src="/Scripts/SoftinnLibrary.js"></script>
     <script src="/Scripts/endingOfBodyScript.js"></script>
+    <script src="/Scripts/SoftinnFunctions.js"></script>
+
 </body>
 </html>
