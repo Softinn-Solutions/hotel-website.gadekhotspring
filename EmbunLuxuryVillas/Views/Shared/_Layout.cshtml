@@ -12,6 +12,8 @@
     List<MiceViewModel> mices = ViewBag.ViewModel.Mices;
     List<TourPackageViewModel> tourPackages = ViewBag.ViewModel.TourPackages;
     List<BlogViewModel> blogs = ViewBag.ViewModel.Blogs;
+    List<CustomHtmlTagViewModel> headCustomHtmlTags = ViewBag.ViewModel.HeadCustomHtmlTags;
+    List<CustomHtmlTagViewModel> bodyCustomHtmlTags = ViewBag.ViewModel.BodyCustomHtmlTags;
 
     ViewBag.MetaUrl = hotel.URLDomain;
 
@@ -102,6 +104,17 @@
     <![endif]-->
     @RenderSection("css", required: false)
     <script src="/Scripts/headScript.js"></script>
+
+    <!-- Custom HTML Tags - Head -->
+    @{
+        string headCustomTag = "";
+        foreach (var headCustomHtmlTag in headCustomHtmlTags)
+        {
+            headCustomTag += headCustomHtmlTag.Script;
+        }
+
+        @Html.Raw(headCustomTag);
+    }
 </head>
 <!--[if IE 7]> <body class="ie7 lt-ie8 lt-ie9 lt-ie10"> <![endif]-->
 <!--[if IE 8]> <body class="ie8 lt-ie9 lt-ie10"> <![endif]-->
@@ -217,6 +230,17 @@
         <!-- END / HEADER -->
         @RenderBody()
 
+        <!-- Custom HTML Tags - Body -->
+        @{
+            string bodyCustomTag = "";
+            foreach (var bodyCustomHtmlTag in bodyCustomHtmlTags)
+            {
+                bodyCustomTag += bodyCustomHtmlTag.Script;
+            }
+
+            @Html.Raw(bodyCustomTag);
+        }
+
         <!-- FOOTER -->
         <footer id="footer">
 
@@ -304,8 +328,14 @@
                                                 <p>
                                                     <i class="fa fa-phone"></i> <a href="tel:@hotel.DisplayPhone" rel="nofollow">@hotel.DisplayPhone</a>
                                                 </p>
+                                                @if (hotel.SecondDisplayPhone != null)
+                                                {
+                                                    <p>
+                                                        <i class="fa fa-phone"></i> <a href="tel:@hotel.SecondDisplayPhone" rel="nofollow">@hotel.SecondDisplayPhone</a> (Mon - Sat from 9am to 5pm)
+                                                    </p>
+                                                }
                                                 <p>
-                                                    <i class="fa fa-phone"></i> <a href="tel:+609 2330376" rel="nofollow">+609 2330376</a> (Mon - Sat from 9am to 5pm)
+                                                    <i class="fa fa-phone"></i> <a href="tel:+6013 6042460" rel="nofollow">+6013 6042460</a> (for calls only)
                                                 </p>
                                                 @if (hotel.DisplayFax != null)
                                                 {
@@ -319,6 +349,9 @@
                                                 <p>
                                                     <i class="fa fa-map-marker"></i>  @hotel.DisplayAddress
                                                 </p>
+                                                <p>
+                                                    A resort managed by Embunaz Ventures Sdn Bhd (620304-X)
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -331,6 +364,7 @@
                                 <h4 class="widget-title">Links</h4>
                                 <ul>
                                     <li><a href="/Rooms">Villas & Suite</a></li>
+                                    <li><a href="/p/privacy-policy">Privacy Policy</a></li>
                                     <li><a href="/Photos">Gallery</a></li>
                                     <li><a href="/Reservation">Reservation</a></li>
                                     <li><a href="/ContactUs">Contact Us</a></li>

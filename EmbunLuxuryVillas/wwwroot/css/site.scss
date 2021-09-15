@@ -406,6 +406,10 @@ $secondary-theme-color: #5A920B;
             padding-top: 12px;
             padding-bottom: 12px;
         }
+
+        .ghostbutton:disabled {
+            background-color: #c4c4c4;
+        }
     }
 
     .contact-map {

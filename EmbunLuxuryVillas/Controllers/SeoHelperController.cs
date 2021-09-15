@@ -13,13 +13,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Hosting;
 using Softinn.SiteMap.AWS;
 
 namespace EmbunLuxuryVillas.Controllers
 {
     public class SeoHelperController : Controller
     {
-        protected readonly IHostingEnvironment HostingEnvironment;
+        protected readonly IWebHostEnvironment HostingEnvironment;
 
         //public SeoHelperController(IHostingEnvironment hostingEnv)
         //{
@@ -28,7 +29,7 @@ namespace EmbunLuxuryVillas.Controllers
 
         private readonly IOptions<AppConfigurations> _appConfigurations;
 
-        public SeoHelperController(IHostingEnvironment hostingEnv, IOptions<AppConfigurations> config)
+        public SeoHelperController(IWebHostEnvironment hostingEnv, IOptions<AppConfigurations> config)
         {
             this.HostingEnvironment = hostingEnv;
             _appConfigurations = config;
@@ -152,7 +153,7 @@ namespace EmbunLuxuryVillas.Controllers
 
     public class Crawl
     {
-        protected readonly IHostingEnvironment HostingEnvironment;
+        protected readonly IWebHostEnvironment HostingEnvironment;
 
         public static List<LocationUrls_Result> Urls = null;
         public static List<string> PageUrls = null;
@@ -163,7 +164,7 @@ namespace EmbunLuxuryVillas.Controllers
         string CurrentUrl { get; set; }
 
 
-        public Crawl(HttpRequest request, IHostingEnvironment hostingEnv)
+        public Crawl(HttpRequest request, IWebHostEnvironment hostingEnv)
         {
             this.request = request;
 

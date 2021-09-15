@@ -29,7 +29,11 @@
                             <ul>
                                 <li><i class="fa fa-map-marker contact-icon"></i> @hotel.DisplayAddress</li>
                                 <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@hotel.DisplayPhone" rel="nofollow">@hotel.DisplayPhone</a></li>
-                                <li><i class="fa fa-phone contact-icon"></i> <a href="tel:+609 2330376" rel="nofollow">+609 2330376</a> (Mon - Sat from 9am to 5pm)</li>
+                                @if (hotel.SecondDisplayPhone != null)
+                                {
+                                    <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@hotel.SecondDisplayPhone" rel="nofollow">@hotel.SecondDisplayPhone</a> (Mon - Sat from 9am to 5pm)</li>
+                                }
+                                <li><i class="fa fa-phone contact-icon"></i> <a href="tel:+6013 6042460" rel="nofollow">+6013 6042460</a> (for calls only)</li>
                                 @if (hotel.DisplayFax != null)
                                 {
                                     <li><i class="fa fa-fax contact-icon"></i> @hotel.DisplayFax</li>
@@ -76,7 +80,11 @@
                                         <textarea cols="30" rows="10" name="Message" class="field-textarea" placeholder="Your Message" ng-model="form.Message" validate-on="dirty" required></textarea>
                                     </div>
                                     <div class="col-sm-6">
-                                        <button type="submit" class="ghostbutton" ng-disabled="myFormName.$invalid">SEND</button>
+                                        <button type="submit" class="ghostbutton" ng-disabled="isLoading || myFormName.$invalid">
+                                            <i class="fa fa-paper-plane" ng-show="!isLoading"></i>
+                                            <i class="fa fa-circle-o-notch fa-spin fa-fw" ng-show="isLoading"></i>
+                                            &nbsp;&nbsp;SEND
+                                        </button>
                                     </div>
                                 </div>
                             </form>

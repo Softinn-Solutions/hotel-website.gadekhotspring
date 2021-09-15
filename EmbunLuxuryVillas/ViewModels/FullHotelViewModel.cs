@@ -9,6 +9,7 @@ namespace EmbunLuxuryVillas.ViewModels
     public class FullHotelViewModel
     {
         public HotelViewModel Hotel { get; set; }
+        public CMSSettingViewModel CMSSetting { get; set; }
         public CountryViewModel Country { get; set; }
         public StateViewModel State { get; set; }
         public List<PhotoViewModel> Photos { get; set; }
@@ -22,5 +23,7 @@ namespace EmbunLuxuryVillas.ViewModels
         public List<GoogleReviewViewModel> GoogleReviews { get; set; }
         public List<CustomReviewViewModel> CustomReviews { get; set; }
         public List<BlogViewModel> Blogs { get; set; }
+        public List<CustomHtmlTagViewModel> HeadCustomHtmlTags { get; set; }
+        public List<CustomHtmlTagViewModel> BodyCustomHtmlTags { get; set; }
     }
 }

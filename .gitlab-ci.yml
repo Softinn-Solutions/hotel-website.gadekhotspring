@@ -21,7 +21,7 @@ build:
   - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
  script:
   - cd EmbunLuxuryVillas
-  - docker build -t $IMAGE_NAME:$TAG . --build-arg PAT=n3adqmqltbkbwckyn6ccoxo54ffihzq6x7nj6jvpmeg57wo2rtpa
+  - docker build -t $IMAGE_NAME:$TAG . --build-arg PAT=q27coyqolrlqofyzx2e3fewzriu2o3pr6lpous6sulauuchifkba
   - docker push $IMAGE_NAME:$TAG
  after_script:
   - apk update && apk add bash
@@ -38,7 +38,7 @@ test:
  image: docker:latest
  services:
   - docker:dind
-  - microsoft/dotnet
+  - mcr.microsoft.com/dotnet/sdk:3.1
  only:
   - master
   - develop
