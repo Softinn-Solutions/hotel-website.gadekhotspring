@@ -55,6 +55,8 @@ namespace EmbunLuxuryVillas.Helpers
 
             var blogs = GetBlogs();
 
+            var customHtmlTags = GetCustomHtmlTags(dbPath);
+
             var viewModel = new FullHotelViewModel()
             {
                 Hotel = hotel,
@@ -137,7 +139,19 @@ namespace EmbunLuxuryVillas.Helpers
                               RoomType = photo.RoomTypeId != null && roomTypes.Any(rt => rt.Id == photo.RoomTypeId) ? new RoomTypeViewModel(roomTypes.FirstOrDefault(rt => rt.Id == photo.RoomTypeId)) : new RoomTypeViewModel()
                           }).ToList(),
 
-                Blogs = blogs.ToList()
+                Blogs = blogs.ToList(),
+
+                HeadCustomHtmlTags = (from customHtmlTag in customHtmlTags
+                                      where customHtmlTag.IsEnabled == true
+                                      where customHtmlTag.TagLocation == "head"
+                                      orderby customHtmlTag.Number
+                                      select customHtmlTag).ToList(),
+
+                BodyCustomHtmlTags = (from customHtmlTag in customHtmlTags
+                                      where customHtmlTag.IsEnabled == true
+                                      where customHtmlTag.TagLocation == "body"
+                                      orderby customHtmlTag.Number
+                                      select customHtmlTag).ToList(),
             };
 
             return viewModel;
@@ -490,6 +504,18 @@ namespace EmbunLuxuryVillas.Helpers
             }
 
             return blogs;
+        }
+
+        public static List<CustomHtmlTagViewModel> GetCustomHtmlTags(string dbPath)
+        {
+            List<CustomHtmlTagViewModel> htmlTags;
+
+            using (var db = new LiteRepository(dbPath))
+            {
+                htmlTags = db.Query<CustomHtmlTagViewModel>().ToList();
+            }
+
+            return htmlTags;
         }
     }
 }

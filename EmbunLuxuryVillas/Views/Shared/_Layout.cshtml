@@ -12,6 +12,8 @@
     List<MiceViewModel> mices = ViewBag.ViewModel.Mices;
     List<TourPackageViewModel> tourPackages = ViewBag.ViewModel.TourPackages;
     List<BlogViewModel> blogs = ViewBag.ViewModel.Blogs;
+    List<CustomHtmlTagViewModel> headCustomHtmlTags = ViewBag.ViewModel.HeadCustomHtmlTags;
+    List<CustomHtmlTagViewModel> bodyCustomHtmlTags = ViewBag.ViewModel.BodyCustomHtmlTags;
 
     ViewBag.MetaUrl = hotel.URLDomain;
 
@@ -102,6 +104,17 @@
     <![endif]-->
     @RenderSection("css", required: false)
     <script src="/Scripts/headScript.js"></script>
+
+    <!-- Custom HTML Tags - Head -->
+    @{
+        string headCustomTag = "";
+        foreach (var headCustomHtmlTag in headCustomHtmlTags)
+        {
+            headCustomTag += headCustomHtmlTag.Script;
+        }
+
+        @Html.Raw(headCustomTag);
+    }
 </head>
 <!--[if IE 7]> <body class="ie7 lt-ie8 lt-ie9 lt-ie10"> <![endif]-->
 <!--[if IE 8]> <body class="ie8 lt-ie9 lt-ie10"> <![endif]-->
@@ -216,6 +229,17 @@
         </header>
         <!-- END / HEADER -->
         @RenderBody()
+
+        <!-- Custom HTML Tags - Body -->
+        @{
+            string bodyCustomTag = "";
+            foreach (var bodyCustomHtmlTag in bodyCustomHtmlTags)
+            {
+                bodyCustomTag += bodyCustomHtmlTag.Script;
+            }
+
+            @Html.Raw(bodyCustomTag);
+        }
 
         <!-- FOOTER -->
         <footer id="footer">
