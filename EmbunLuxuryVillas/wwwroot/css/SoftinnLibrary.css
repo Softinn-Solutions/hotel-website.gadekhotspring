@@ -5079,7 +5079,7 @@ body.compensate-for-scrollbar {
 }
 
 .overlay-content {
-    padding: 0 20px 20px 20px;
+    padding: 20px;
 }
 
 .fancybox-content {
@@ -5104,6 +5104,7 @@ body.compensate-for-scrollbar {
 
 .fancybox-can-swipe .fancybox-content, .fancybox-can-pan .fancybox-content {
     cursor: unset;
+    width: 60%;
 }
 
 #corner-popup {
@@ -5120,14 +5121,22 @@ body.compensate-for-scrollbar {
     #corner-popup .corner-close {
         right: -16px;
     }
-}
-    
-
-        #corner-popup .corner-close:before, #corner-popup .corner-close:after {
-            background-color: black;
-        }
 
     #corner-popup.left {
-        left: 80px;
-        right: unset;
+        left: 0px !important;
     }
+
+    .fancybox-can-swipe .fancybox-content, .fancybox-can-pan .fancybox-content {
+        width: unset;
+    }
+}
+
+
+#corner-popup .corner-close:before, #corner-popup .corner-close:after {
+    background-color: black;
+}
+
+#corner-popup.left {
+    left: 80px;
+    right: unset;
+}
