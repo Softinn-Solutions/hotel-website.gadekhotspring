@@ -84,32 +84,34 @@ function DialogTrigger(callback, options) {
 
 		} else if (this.options.trigger == 'scrollDown') {
 			// Let the user scroll down by some significant amount
-			var scrollStart = jQuery(window).scrollTop();
-			var pageHeight = jQuery(document).height();
+            var scrollStart = jQuery(window).scrollTop();
+            var pageHeight = jQuery(document).height() - $(window).height();
 
-			var parentThis = this;
+            var parentThis = this;
 
-			if (pageHeight > 0) {
-				// Only check the scroll position every few seconds, to avoid bogging the UI
-				this.interval = setInterval(function () {
-					var scrollAmount = jQuery(window).scrollTop() - scrollStart;
-					if (scrollAmount < 0) {
-						scrollAmount = 0;
-						scrollStart = jQuery(window).scrollTop();
-					}
-					var downScrollPercent = parseFloat(scrollAmount) / parseFloat(pageHeight);
+            if (pageHeight > 0) {
+                // Only check the scroll position every few seconds, to avoid bogging the UI
+                this.interval = setInterval(function () {
+                    var scrollAmount = jQuery(window).scrollTop() - scrollStart;
+                    if (scrollAmount < 0) {
+                        scrollAmount = 0;
+                        scrollStart = jQuery(window).scrollTop();
+                    }
 
-					if (downScrollPercent > parseFloat(parentThis.options.percentDown) / 100) {
-						clearInterval(parentThis.interval);
-						parentThis.interval = null;
+                    pageHeight = jQuery(document).height() - $(window).height();
+                    var downScrollPercent = parseFloat(scrollAmount) / parseFloat(pageHeight);
 
-						if (!parentThis.complete) {
-							parentThis.callback();
-							parentThis.complete = true;
-						}
-					}
+                    if (downScrollPercent > parseFloat(parentThis.options.percentDown) / 100) {
+                        clearInterval(parentThis.interval);
+                        parentThis.interval = null;
 
-				}, this.options.scrollInterval);
+                        if (!parentThis.complete) {
+                            parentThis.callback();
+                            parentThis.complete = true;
+                        }
+                    }
+
+                }, this.options.scrollInterval);
 			}
 
 		} else if (this.options.trigger == 'scrollUp') {
