@@ -57,6 +57,8 @@ namespace EmbunLuxuryVillas.Helpers
 
             var customHtmlTags = GetCustomHtmlTags(dbPath);
 
+            var customPrivacyPolicies = GetCustomPrivacyPolicies(dbPath);
+
             var viewModel = new FullHotelViewModel()
             {
                 Hotel = hotel,
@@ -152,6 +154,8 @@ namespace EmbunLuxuryVillas.Helpers
                                       where customHtmlTag.TagLocation == "body"
                                       orderby customHtmlTag.Number
                                       select customHtmlTag).ToList(),
+                
+                CustomPrivacyPolicies = customPrivacyPolicies,
             };
 
             return viewModel;
@@ -516,6 +520,18 @@ namespace EmbunLuxuryVillas.Helpers
             }
 
             return htmlTags;
+        }
+        
+        public static List<CustomPrivacyPolicyViewModel> GetCustomPrivacyPolicies(string dbPath)
+        {
+            List<CustomPrivacyPolicyViewModel> privacyPolicies;
+
+            using (var db = new LiteRepository(dbPath))
+            {
+                privacyPolicies = db.Query<CustomPrivacyPolicyViewModel>().ToList();
+            }
+
+            return privacyPolicies;
         }
     }
 }
