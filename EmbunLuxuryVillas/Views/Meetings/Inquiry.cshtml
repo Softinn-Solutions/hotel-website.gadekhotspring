@@ -1,0 +1,161 @@
+﻿@model Softinn.EntityModels.ViewModel.MeetingViewModel
+@using Softinn.EntityModels.ViewModel;
+
+@{
+    ViewBag.MetaTitle = $"Meetings (Inquiry) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    List<MeetingViewModel> meetings = ViewBag.ViewModel.Meetings;
+    CountryViewModel country = ViewBag.ViewModel.Country;
+}
+
+<section class="section-sub-banner bg-1">
+    <div class="awe-overlay"></div>
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>Meetings Inquiry</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-inquiry">
+    <div class="container">
+        <div class="inquiry">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="contact-form" ng-app="app" ng-controller="meetingInquiryFormController">
+                        <form novalidate angular-validator angular-validator-submit="onMeetingInquiryFormSubmit()" name="meetingInquiryForm">
+                            <div class="row">
+                                <div class="col-sm-8 col-centered">
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                        <label class="font-size-20pt">Fill in the enquiry form below</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-xs-12 margin-top-20px">Packages <span class="text-danger">*</span></label>
+                                        <div class="col-sm-12">
+                                            <select class="chosen-select" data-placeholder="Choose a Package..." required multiple tabindex="4">
+                                                <option></option>
+                                                @{
+                                                    foreach (var meeting in meetings)
+                                                    {
+                                                        <option value="@meeting.Name" selected="@(meeting.Id==Model.Id)">@meeting.Name</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <p class="deco"><a href="/meetings" target="_blank">View other packages</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-xs-12 margin-top-20px">Event Date </label>
+                                        <div class="col-sm-12">
+                                            <div class="input-group input-daterange">
+                                                <input type="text" class="field-text eventdate-from" ng-model="EventDateFrom">
+                                                <div class="input-group-addon color-black-border">to</div>
+                                                <input type="text" class="field-text eventdate-to" ng-model="EventDateTo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="row">
+                                                <label class="col-xs-12 margin-top-20px">No. of Pax </label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="field-text" name="NoPax" placeholder="" ng-model="form.NoPax">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="row">
+                                                <label class="col-xs-12 margin-top-20px">Total Budget (@country.Currency) </label>
+                                                <div class="col-sm-12">
+                                                    <input type="number" class="field-text" name="Budget" placeholder="eg. 2,000" validate-on="dirty" ng-model="form.Budget">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-xs-12 margin-top-20px">Full Name <span class="text-danger">*</span></label>
+                                        <div class="col-md-3 col-xs-4">
+                                            <select class="field-text" required tabindex="4" ng-model="form.Salutation">
+                                                <option>Mr</option>
+                                                <option>Mrs</option>
+                                                <option>Ms</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-9 col-xs-8">
+                                            <input type="text" class="field-text" name="Name" placeholder="" ng-model="form.Name" validate-on="dirty" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-xs-12 margin-top-20px">Company Name </label>
+                                        <div class="col-sm-12">
+                                            <input type="text" class="field-text" name="CompanyName" placeholder="" ng-model="form.CompanyName">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="row">
+                                                <label class="col-xs-12 margin-top-20px">Email <span class="text-danger">*</span></label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="field-text" name="Email" placeholder="" ng-model="form.Email" validate-on="blur" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*&#64[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="row">
+                                                <label class="col-xs-12 margin-top-20px">Phone No. <span class="text-danger">*</span></label>
+                                                <div class="col-sm-12">
+                                                    <input type="text" class="field-text" name="Phone" placeholder="" ng-model="form.Phone" validate-on="dirty" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-xs-12 margin-top-20px">Message </label>
+                                        <div class="col-sm-12">
+                                            <textarea cols="30" rows="10" name="Message" class="field-textarea" placeholder="" ng-model="form.Message"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-8 col-centered">
+                                    <button type="submit" class="inquirybutton" ng-disabled="form.$invalid">SEND ENQUIRY</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section css{
+    <link href="~/css/sweetalert.css" rel="stylesheet" />
+}
+@section scripts {
+    <script src="~/Scripts/angular-1.5.7.js"></script>
+    <script src="~/Scripts/angular-animate-1.5.7.js"></script>
+    <script src="~/Scripts/angular-messages-1.5.7.js"></script>
+    <script src="~/Scripts/angular-sanitize-1.5.7.js"></script>
+    <script src="~/Scripts/angular-validator.js"></script>
+    <script src="~/Scripts/sweetalert.js"></script>
+    <script src="~/app/Controller/MeetingInquiryFormController.js"></script>
+
+    <script type="text/javascript">
+
+        var app = angular.module("app", ["ngAnimate", "ngMessages", "angularValidator"]);
+        var directives = {};
+        var factories = {};
+        var controllers = {};
+
+        app.factory(factories);
+
+        app.directive(directives);
+
+        meetingInquiryFormController.$inject = ["$scope", "$http", "$filter"];
+        controllers.meetingInquiryFormController = meetingInquiryFormController;
+        app.controller(controllers);
+    </script>
+}

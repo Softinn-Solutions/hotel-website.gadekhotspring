@@ -84,6 +84,36 @@ namespace EmbunLuxuryVillas
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapControllerRoute(
+                    name: "Meeting",
+                    defaults: new { controller = "Meetings", action = "Index" },
+                    pattern: "/meetings");
+
+                routes.MapControllerRoute(
+                    name: "Meeting Details",
+                    defaults: new { controller = "Meetings", action = "Detail" },
+                    pattern: "/meetings/{name?}");
+
+                routes.MapControllerRoute(
+                    name: "Meeting Inquiry",
+                    defaults: new { controller = "Meetings", action = "Inquiry" },
+                    pattern: "/meetings/inquiry/{name?}");
+                
+                routes.MapControllerRoute(
+                    name: "Event",
+                    defaults: new { controller = "Events", action = "Index" },
+                    pattern: "/events");
+
+                routes.MapControllerRoute(
+                    name: "Event Inquiry",
+                    defaults: new { controller = "Events", action = "Inquiry" },
+                    pattern: "events/inquiry/{name?}");
+                
+                routes.MapControllerRoute(
+                    name: "Event Details",
+                    defaults: new { controller = "Events", action = "Detail" },
+                    pattern: "events/{name}");
+
+                routes.MapControllerRoute(
                     name: "Blog Post",
                     defaults: new { controller = "Blogs", action = "Detail" },
                     pattern: "p/{titleSlug}");

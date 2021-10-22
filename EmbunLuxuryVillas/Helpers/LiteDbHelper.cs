@@ -59,6 +59,11 @@ namespace EmbunLuxuryVillas.Helpers
 
             var customPrivacyPolicies = GetCustomPrivacyPolicies(dbPath);
 
+            var meetings = GetMeetings();
+            var meetingsCta = GetMeetingCallToActionTypes();
+            var events = GetEvents();
+            var eventsCta = GetEventCallToActionTypes();
+
             var viewModel = new FullHotelViewModel()
             {
                 Hotel = hotel,
@@ -156,6 +161,22 @@ namespace EmbunLuxuryVillas.Helpers
                                       select customHtmlTag).ToList(),
                 
                 CustomPrivacyPolicies = customPrivacyPolicies,
+                
+                Meetings = (from meeting in meetings
+                    select new MeetingViewModel(meeting)
+                    {
+                        MeetingCallToActionType = new MeetingCallToActionTypeViewModel(meetingsCta.FirstOrDefault(at => at.Id == meeting.MeetingCallToActionTypeId)),
+                        Photos = (from photo in photos.Where(p => p.MeetingId == meeting.Id)
+                            select new PhotoViewModel(photo)).ToList()
+                    }).ToList(),
+                
+                Events = (from e in events
+                    select new EventViewModel(e)
+                    {
+                        EventCallToActionType = new EventCallToActionTypeViewModel(eventsCta.FirstOrDefault(at => at.Id == e.EventCallToActionTypeId)),
+                        Photos = (from photo in photos.Where(p => p.EventId == e.Id)
+                            select new PhotoViewModel(photo)).ToList()
+                    }).ToList(),
             };
 
             return viewModel;
@@ -532,6 +553,54 @@ namespace EmbunLuxuryVillas.Helpers
             }
 
             return privacyPolicies;
+        }
+        
+        public List<MeetingViewModel> GetMeetings()
+        {
+            List<MeetingViewModel> meetings;
+            
+            using (var  db = new LiteRepository(dbPath))
+            {
+                meetings = db.Query<MeetingViewModel>().ToList();
+            }
+            
+            return meetings.ToList();
+        }
+        
+        public List<MeetingCallToActionTypeViewModel> GetMeetingCallToActionTypes()
+        {
+            List<MeetingCallToActionTypeViewModel> meetingCallToActionTypes;
+            
+            using (var  db = new LiteRepository(dbPath))
+            {
+                meetingCallToActionTypes = db.Query<MeetingCallToActionTypeViewModel>().ToList();
+            }
+
+            return meetingCallToActionTypes;
+        }
+        
+        public List<EventViewModel> GetEvents()
+        {
+            List<EventViewModel> events;
+            
+            using (var  db = new LiteRepository(dbPath))
+            {
+                events = db.Query<EventViewModel>().ToList();
+            }
+
+            return events;
+        }
+        
+        public List<EventCallToActionTypeViewModel> GetEventCallToActionTypes()
+        {
+            List<EventCallToActionTypeViewModel> eventsCallToActionTypes;
+            
+            using (var  db = new LiteRepository(dbPath))
+            {
+                eventsCallToActionTypes = db.Query<EventCallToActionTypeViewModel>().ToList();
+            }
+
+            return eventsCallToActionTypes;
         }
     }
 }

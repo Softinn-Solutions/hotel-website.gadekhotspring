@@ -26,5 +26,7 @@ namespace EmbunLuxuryVillas.ViewModels
         public List<CustomHtmlTagViewModel> HeadCustomHtmlTags { get; set; }
         public List<CustomHtmlTagViewModel> BodyCustomHtmlTags { get; set; }
         public List<CustomPrivacyPolicyViewModel> CustomPrivacyPolicies { get; set; }
+        public List<MeetingViewModel> Meetings { get; set; }
+        public List<EventViewModel> Events { get; set; }
     }
 }

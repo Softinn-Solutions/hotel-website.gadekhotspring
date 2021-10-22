@@ -38,16 +38,68 @@ namespace EmbunLuxuryVillas.Controllers
         [HttpPost]
         public async Task<IActionResult> SendEmail([FromBody]SendMailViewModel sendMailViewModel)
         {
-            if (String.IsNullOrEmpty(sendMailViewModel.Name) || String.IsNullOrEmpty(sendMailViewModel.Email) || String.IsNullOrEmpty(sendMailViewModel.Phone) || String.IsNullOrEmpty(sendMailViewModel.Subject) ||
-                String.IsNullOrEmpty(sendMailViewModel.Message))
+            if (String.IsNullOrWhiteSpace(sendMailViewModel.Name) ||
+                String.IsNullOrWhiteSpace(sendMailViewModel.Email) ||
+                String.IsNullOrWhiteSpace(sendMailViewModel.Phone) ||
+                String.IsNullOrWhiteSpace(sendMailViewModel.Subject) ||
+                String.IsNullOrWhiteSpace(sendMailViewModel.Message))
                 return BadRequest("Please enter all required fields.");
 
-            var validation = IsValidEmailAddress(sendMailViewModel.Email);
-            if (!validation)
+            var isValidEmailAddress = IsValidEmailAddress(sendMailViewModel.Email);
+            if (!isValidEmailAddress)
                 return BadRequest("Please enter valid email address.");
             try
             {
                 await BvHelper.SendMail(sendMailViewModel);
+                return Ok("Email had been sent.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500);
+            }
+        }
+        
+         
+        [HttpPost]
+        public async Task<IActionResult> SendMeetingInquiryEmail([FromBody]SendMeetingInquiryMailViewModel sendMeetingInquiryMailViewModel)
+        {
+            if (String.IsNullOrWhiteSpace(sendMeetingInquiryMailViewModel.Package) ||
+                String.IsNullOrWhiteSpace(sendMeetingInquiryMailViewModel.Name) ||
+                String.IsNullOrWhiteSpace(sendMeetingInquiryMailViewModel.Email) ||
+                String.IsNullOrWhiteSpace(sendMeetingInquiryMailViewModel.Phone))
+                return BadRequest("Please enter all required fields.");
+
+            var isValidEmailAddress = IsValidEmailAddress(sendMeetingInquiryMailViewModel.Email);
+            if (!isValidEmailAddress)
+                return BadRequest("Please enter valid email address.");
+            
+            try
+            {
+                await BvHelper.SendMeetingInquiryMail(sendMeetingInquiryMailViewModel);
+                return Ok("Email had been sent.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500);
+            }
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> SendEventInquiryEmail([FromBody]SendEventInquiryMailViewModel sendEventInquiryMailView)
+        {
+            if (String.IsNullOrWhiteSpace(sendEventInquiryMailView.Package) ||
+                String.IsNullOrWhiteSpace(sendEventInquiryMailView.Name) ||
+                String.IsNullOrWhiteSpace(sendEventInquiryMailView.Email) ||
+                String.IsNullOrWhiteSpace(sendEventInquiryMailView.Phone))
+                return BadRequest("Please enter all required fields.");
+
+            var isValidEmailAddress = IsValidEmailAddress(sendEventInquiryMailView.Email);
+            if (!isValidEmailAddress)
+                return BadRequest("Please enter valid email address.");
+            
+            try
+            {
+                await BvHelper.SendEventInquiryMail(sendEventInquiryMailView);
                 return Ok("Email had been sent.");
             }
             catch (Exception ex)
@@ -71,11 +123,14 @@ namespace EmbunLuxuryVillas.Controllers
 
         public async Task<IActionResult> SendTourPackageInquiryEmail([FromBody]SendTourPackageInquiryMailViewModel sendTourInquiryMailViewModel)
         {
-            if (String.IsNullOrEmpty(sendTourInquiryMailViewModel.Package) || String.IsNullOrEmpty(sendTourInquiryMailViewModel.Name) || String.IsNullOrEmpty(sendTourInquiryMailViewModel.Email) || String.IsNullOrEmpty(sendTourInquiryMailViewModel.Phone))
+            if (String.IsNullOrWhiteSpace(sendTourInquiryMailViewModel.Package) ||
+                String.IsNullOrWhiteSpace(sendTourInquiryMailViewModel.Name) ||
+                String.IsNullOrWhiteSpace(sendTourInquiryMailViewModel.Email) ||
+                String.IsNullOrWhiteSpace(sendTourInquiryMailViewModel.Phone))
                 return BadRequest("Please enter all required fields.");
 
-            var validation = IsValidEmailAddress(sendTourInquiryMailViewModel.Email);
-            if (!validation)
+            var isValidEmailAddress = IsValidEmailAddress(sendTourInquiryMailViewModel.Email);
+            if (!isValidEmailAddress)
                 return BadRequest("Please enter valid email address.");
             try
             {
@@ -90,11 +145,14 @@ namespace EmbunLuxuryVillas.Controllers
 
         public async Task<IActionResult> SendMiceInquiryEmail([FromBody]SendMiceInquiryMailViewModel sendMiceInquiryMailViewModel)
         {
-            if (String.IsNullOrEmpty(sendMiceInquiryMailViewModel.Package) || String.IsNullOrEmpty(sendMiceInquiryMailViewModel.Name) || String.IsNullOrEmpty(sendMiceInquiryMailViewModel.Email) || String.IsNullOrEmpty(sendMiceInquiryMailViewModel.Phone))
+            if (String.IsNullOrWhiteSpace(sendMiceInquiryMailViewModel.Package) ||
+                String.IsNullOrWhiteSpace(sendMiceInquiryMailViewModel.Name) ||
+                String.IsNullOrWhiteSpace(sendMiceInquiryMailViewModel.Email) ||
+                String.IsNullOrWhiteSpace(sendMiceInquiryMailViewModel.Phone))
                 return BadRequest("Please enter all required fields.");
 
-            var validation = IsValidEmailAddress(sendMiceInquiryMailViewModel.Email);
-            if (!validation)
+            var isValidEmailAddress = IsValidEmailAddress(sendMiceInquiryMailViewModel.Email);
+            if (!isValidEmailAddress)
                 return BadRequest("Please enter valid email address.");
             try
             {
@@ -109,13 +167,13 @@ namespace EmbunLuxuryVillas.Controllers
 
         public async Task<IActionResult> SendDiningInquiryEmail([FromBody]SendDiningInquiryMailViewModel sendDiningInquiryMailViewModel)
         {
-            if (String.IsNullOrEmpty(sendDiningInquiryMailViewModel.Name) ||
-                String.IsNullOrEmpty(sendDiningInquiryMailViewModel.Email) ||
-                String.IsNullOrEmpty(sendDiningInquiryMailViewModel.Phone))
+            if (String.IsNullOrWhiteSpace(sendDiningInquiryMailViewModel.Name) ||
+                String.IsNullOrWhiteSpace(sendDiningInquiryMailViewModel.Email) ||
+                String.IsNullOrWhiteSpace(sendDiningInquiryMailViewModel.Phone))
                 return BadRequest("Please enter all required fields.");
 
-            var validation = IsValidEmailAddress(sendDiningInquiryMailViewModel.Email);
-            if (!validation)
+            var isValidEmailAddress = IsValidEmailAddress(sendDiningInquiryMailViewModel.Email);
+            if (!isValidEmailAddress)
                 return BadRequest("Please enter valid email address.");
 
             try
