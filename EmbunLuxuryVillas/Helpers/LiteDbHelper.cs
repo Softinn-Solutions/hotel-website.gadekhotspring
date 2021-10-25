@@ -60,9 +60,9 @@ namespace EmbunLuxuryVillas.Helpers
             var customPrivacyPolicies = GetCustomPrivacyPolicies(dbPath);
 
             var meetings = GetMeetings();
-            var meetingsCta = GetMeetingCallToActionTypes();
+            var meetingCtas = GetMeetingCallToActionTypes();
             var events = GetEvents();
-            var eventsCta = GetEventCallToActionTypes();
+            var eventsCtas = GetEventCallToActionTypes();
 
             var viewModel = new FullHotelViewModel()
             {
@@ -165,7 +165,7 @@ namespace EmbunLuxuryVillas.Helpers
                 Meetings = (from meeting in meetings
                     select new MeetingViewModel(meeting)
                     {
-                        MeetingCallToActionType = new MeetingCallToActionTypeViewModel(meetingsCta.FirstOrDefault(at => at.Id == meeting.MeetingCallToActionTypeId)),
+                        MeetingCallToActionType = new MeetingCallToActionTypeViewModel(meetingCtas.FirstOrDefault(at => at.Id == meeting.MeetingCallToActionTypeId)),
                         Photos = (from photo in photos.Where(p => p.MeetingId == meeting.Id)
                             select new PhotoViewModel(photo)).ToList()
                     }).ToList(),
@@ -173,7 +173,7 @@ namespace EmbunLuxuryVillas.Helpers
                 Events = (from e in events
                     select new EventViewModel(e)
                     {
-                        EventCallToActionType = new EventCallToActionTypeViewModel(eventsCta.FirstOrDefault(at => at.Id == e.EventCallToActionTypeId)),
+                        EventCallToActionType = new EventCallToActionTypeViewModel(eventsCtas.FirstOrDefault(at => at.Id == e.EventCallToActionTypeId)),
                         Photos = (from photo in photos.Where(p => p.EventId == e.Id)
                             select new PhotoViewModel(photo)).ToList()
                     }).ToList(),
