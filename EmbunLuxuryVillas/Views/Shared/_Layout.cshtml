@@ -9,7 +9,8 @@
     CountryViewModel country = ViewBag.ViewModel.Country;
     List<PromotionViewModel> promotions = ViewBag.ViewModel.Promotions;
     List<PromotionalEventViewModel> promotionalEvents = ViewBag.ViewModel.PromotionalEvents;
-    List<MiceViewModel> mices = ViewBag.ViewModel.Mices;
+    List<MeetingViewModel> meetings = ViewBag.ViewModel.Meetings;
+    List<EventViewModel> events = ViewBag.ViewModel.Events;
     List<TourPackageViewModel> tourPackages = ViewBag.ViewModel.TourPackages;
     List<BlogViewModel> blogs = ViewBag.ViewModel.Blogs;
     List<CustomHtmlTagViewModel> headCustomHtmlTags = ViewBag.ViewModel.HeadCustomHtmlTags;
@@ -177,7 +178,7 @@
                                     }
                                 </ul>
                             </li>
-                            <li class="@Html.IsSelected(controller: "Dining", action: "Index")"><a href="/Dining">Dining</a></li>
+                            @* <li class="@Html.IsSelected(controller: "Dining", action: "Index")"><a href="/Dining">Dining</a></li> *@
                             @if (attractions.Any())
                             {
                                 <li class="@Html.IsSelected(controller: "Attractions", action: "Index")">
@@ -190,9 +191,17 @@
                                     </ul>
                                 </li>
                             }
-                            @if (mices.Any())
+                            @if (meetings.Any())
                             {
-                                <li class="@Html.IsSelected(controller:"MeetingEvents", action:"Index")"><a href="/MeetingEvents">Meetings & Events</a></li>
+                                <li class="@Html.IsSelected(controller: "Meetings", action: "Index")">
+                                    <a href="/meetings">Meetings</a>
+                                </li>
+                            }
+                            @if (events.Any())
+                            {
+                                <li class="@Html.IsSelected(controller: "Events", action: "Index")">
+                                    <a href="/events">Events</a>
+                                </li>
                             }
 
                             @if (promotions.Any() || promotionalEvents.Any())
