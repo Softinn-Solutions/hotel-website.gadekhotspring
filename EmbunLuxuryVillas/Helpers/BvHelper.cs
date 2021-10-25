@@ -37,10 +37,85 @@ namespace EmbunLuxuryVillas.Helpers
             msg.AddBcc(new EmailAddress("marketing@mysoftinn.com"));
             var response = await client.SendEmailAsync(msg);
         }
+        
+         public static async Task SendMeetingInquiryMail(SendMeetingInquiryMailViewModel sendMeetingInquiryMailViewModel)
+        {
+            var liteDbHelper = new LiteDbHelper();
+            var hotelViewModel = liteDbHelper.GetHotel();
+
+            var emailHtml = "Package : " + sendMeetingInquiryMailViewModel.Package +
+                            "<br />Event Date : " +
+                            (IsValidDateTime(sendMeetingInquiryMailViewModel.EventDate)
+                                ? sendMeetingInquiryMailViewModel.EventDate
+                                : "Not Specified") +
+                            "<br />No. of pax : " +
+                            (sendMeetingInquiryMailViewModel.NoPax != 0
+                                ? sendMeetingInquiryMailViewModel.NoPax.ToString()
+                                : "Not Specified") +
+                            "<br />Total budget : " +
+                            (sendMeetingInquiryMailViewModel.Budget != 0
+                                ? sendMeetingInquiryMailViewModel.Budget.ToString()
+                                : "Not Specified") +
+                            "<br />Name : " + sendMeetingInquiryMailViewModel.Name +
+                            "<br />Company Name : " +
+                            (!String.IsNullOrEmpty(sendMeetingInquiryMailViewModel.CompanyName)
+                                ? sendMeetingInquiryMailViewModel.CompanyName
+                                : "Not Specified") +
+                            "<br />Phone: " + sendMeetingInquiryMailViewModel.Phone +
+                            "<br />Email: " + sendMeetingInquiryMailViewModel.Email +
+                            "<br /><br />" + sendMeetingInquiryMailViewModel.Message;
+
+            var apiKey = "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";
+            var client = new SendGridClient(apiKey);
+            var msg = new SendGridMessage()
+            {
+                From = new EmailAddress("marketing@mysoftinn.com", $"{hotelViewModel.DisplayName} Hotel Website Inquiry"),
+                Subject = $"{hotelViewModel.DisplayName}, you have a new meeting inquiry",
+                HtmlContent = emailHtml,
+                ReplyTo = new EmailAddress(sendMeetingInquiryMailViewModel.Email)
+            };
+            msg.AddTo(new EmailAddress(hotelViewModel.DisplayEmail));
+            msg.AddBcc(new EmailAddress("marketing@mysoftinn.com"));
+            await client.SendEmailAsync(msg);
+        }
+
+        public static async Task SendEventInquiryMail(SendEventInquiryMailViewModel sendEventInquiryMailViewModel)
+        {
+            var liteDbHelper = new LiteDbHelper();
+            var hotelViewModel = liteDbHelper.GetHotel();
+
+            var emailHtml = "Package : " + sendEventInquiryMailViewModel.Package +
+                            "<br />Name : " + sendEventInquiryMailViewModel.Name +
+                            "<br />Company Name : " +
+                            (!String.IsNullOrEmpty(sendEventInquiryMailViewModel.CompanyName)
+                                ? sendEventInquiryMailViewModel.CompanyName
+                                : "Not Specified") +
+                            "<br />Phone: " + sendEventInquiryMailViewModel.Phone +
+                            "<br />Email: " + sendEventInquiryMailViewModel.Email +
+                            "<br /><br />" + sendEventInquiryMailViewModel.Message;
+
+            var apiKey = "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";
+            var client = new SendGridClient(apiKey);
+            var msg = new SendGridMessage()
+            {
+                From = new EmailAddress("marketing@mysoftinn.com", $"{hotelViewModel.DisplayName} Hotel Website Inquiry"),
+                Subject = $"{hotelViewModel.DisplayName}, you have a new event inquiry",
+                HtmlContent = emailHtml,
+                ReplyTo = new EmailAddress(sendEventInquiryMailViewModel.Email)
+            };
+            msg.AddTo(new EmailAddress(hotelViewModel.DisplayEmail));
+            msg.AddBcc(new EmailAddress("marketing@mysoftinn.com"));
+            await client.SendEmailAsync(msg);
+        }
 
         public static string GetImageLinkFromStorage(string filePath)
         {
             return "//softinnstorage.blob.core.windows.net" + filePath;
+        }
+
+        public static bool IsValidDateTime(string txtDate)
+        {
+            return !txtDate.Contains("Invalid");
         }
 
         public static string ToSeoFriendly(this string str)
