@@ -11,7 +11,6 @@ namespace EmbunLuxuryVillas.Controllers
         public IActionResult Index()
         {
             return RedirectToAction("Index", "Home", new { area = "" });
-            return View();
         }
     }
 }
