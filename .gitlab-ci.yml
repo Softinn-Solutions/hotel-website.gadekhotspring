@@ -20,7 +20,7 @@ build:
   - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
  script:
   - cd EmbunLuxuryVillas
-  - docker build -t $IMAGE_NAME:$TAG . --build-arg PAT=q27coyqolrlqofyzx2e3fewzriu2o3pr6lpous6sulauuchifkba
+  - docker build -t $IMAGE_NAME:$TAG . --build-arg PAT=vzjvgxgxhgoklw5jrctd5mgkjznvjzs6qyrdxgtomi3jm6wo6ysq
   - docker push $IMAGE_NAME:$TAG
  after_script:
   - apk update && apk add bash
