@@ -3,6 +3,7 @@
 @{
     bool isCampaignDatesNotNull = Model.CampaignStartDate != null && Model.CampaignEndDate != null;
     bool isCheckInDatesNotNull = Model.CheckInAfter != null && Model.CheckInBefore != null;
+    bool hasCustomCallToAction = Model.MeetingCallToActionTypeId.HasValue;
     bool isCustomCallToAction = Model.MeetingCallToActionTypeId == 4;
 
     ViewBag.MetaTitle = $"Meeting ({Model.Name}) - {ViewBag.ViewModel.Hotel.DisplayName}";
@@ -52,13 +53,16 @@
                     {
                         <p>Check in Period: @Model.CheckInAfter.Value.ToString("d MMM yyyy") - @Model.CheckInBefore.Value.ToString("d MMM yyyy")</p>
                     }
-                    @if (isCustomCallToAction)
+                    @if (hasCustomCallToAction)
                     {
-                        <a href="@Model.CTAButtonUrl" class="btn btn-default">@Model.CTAButtonName</a>
-                    }
-                    else
-                    {
-                        <a href="/meetings/inquiry/@Model.Name.ToSeoFriendly()" class="btn btn-default">@Model.MeetingCallToActionType.Name</a>
+                        @if (isCustomCallToAction)
+                        {
+                            <a href="@Model.CTAButtonUrl" class="btn btn-default">@Model.CTAButtonName</a>
+                        }
+                        else
+                        {
+                            <a href="/meetings/inquiry/@Model.Name.ToSeoFriendly()" class="btn btn-default">@Model.MeetingCallToActionType.Name</a>
+                        }
                     }
                 </div>
             </div>
