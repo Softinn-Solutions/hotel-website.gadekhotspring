@@ -159,24 +159,28 @@ namespace EmbunLuxuryVillas.Helpers
                                       where customHtmlTag.TagLocation == "body"
                                       orderby customHtmlTag.Number
                                       select customHtmlTag).ToList(),
-                
+
                 CustomPrivacyPolicies = customPrivacyPolicies,
-                
+
                 Meetings = (from meeting in meetings
-                    select new MeetingViewModel(meeting)
-                    {
-                        MeetingCallToActionType = new MeetingCallToActionTypeViewModel(meetingCtas.FirstOrDefault(at => at.Id == meeting.MeetingCallToActionTypeId)),
-                        Photos = (from photo in photos.Where(p => p.MeetingId == meeting.Id)
-                            select new PhotoViewModel(photo)).ToList()
-                    }).ToList(),
-                
+                            select new MeetingViewModel(meeting)
+                            {
+                                MeetingCallToActionType = meeting.MeetingCallToActionTypeId.HasValue
+                                    ? new MeetingCallToActionTypeViewModel(meetingCtas.FirstOrDefault(at => at.Id == meeting.MeetingCallToActionTypeId))
+                                    : null,
+                                Photos = (from photo in photos.Where(p => p.MeetingId == meeting.Id)
+                                          select new PhotoViewModel(photo)).ToList()
+                            }).ToList(),
+
                 Events = (from e in events
-                    select new EventViewModel(e)
-                    {
-                        EventCallToActionType = new EventCallToActionTypeViewModel(eventsCtas.FirstOrDefault(at => at.Id == e.EventCallToActionTypeId)),
-                        Photos = (from photo in photos.Where(p => p.EventId == e.Id)
-                            select new PhotoViewModel(photo)).ToList()
-                    }).ToList(),
+                          select new EventViewModel(e)
+                          {
+                              EventCallToActionType = e.EventCallToActionTypeId.HasValue
+                                ? new EventCallToActionTypeViewModel(eventsCtas.FirstOrDefault(at => at.Id == e.EventCallToActionTypeId))
+                                : null,
+                              Photos = (from photo in photos.Where(p => p.EventId == e.Id)
+                                        select new PhotoViewModel(photo)).ToList()
+                          }).ToList(),
             };
 
             return viewModel;
@@ -542,7 +546,7 @@ namespace EmbunLuxuryVillas.Helpers
 
             return htmlTags;
         }
-        
+
         public static List<CustomPrivacyPolicyViewModel> GetCustomPrivacyPolicies(string dbPath)
         {
             List<CustomPrivacyPolicyViewModel> privacyPolicies;
@@ -554,48 +558,48 @@ namespace EmbunLuxuryVillas.Helpers
 
             return privacyPolicies;
         }
-        
+
         public List<MeetingViewModel> GetMeetings()
         {
             List<MeetingViewModel> meetings;
-            
-            using (var  db = new LiteRepository(dbPath))
+
+            using (var db = new LiteRepository(dbPath))
             {
                 meetings = db.Query<MeetingViewModel>().ToList();
             }
-            
+
             return meetings.ToList();
         }
-        
+
         public List<MeetingCallToActionTypeViewModel> GetMeetingCallToActionTypes()
         {
             List<MeetingCallToActionTypeViewModel> meetingCallToActionTypes;
-            
-            using (var  db = new LiteRepository(dbPath))
+
+            using (var db = new LiteRepository(dbPath))
             {
                 meetingCallToActionTypes = db.Query<MeetingCallToActionTypeViewModel>().ToList();
             }
 
             return meetingCallToActionTypes;
         }
-        
+
         public List<EventViewModel> GetEvents()
         {
             List<EventViewModel> events;
-            
-            using (var  db = new LiteRepository(dbPath))
+
+            using (var db = new LiteRepository(dbPath))
             {
                 events = db.Query<EventViewModel>().ToList();
             }
 
             return events;
         }
-        
+
         public List<EventCallToActionTypeViewModel> GetEventCallToActionTypes()
         {
             List<EventCallToActionTypeViewModel> eventsCallToActionTypes;
-            
-            using (var  db = new LiteRepository(dbPath))
+
+            using (var db = new LiteRepository(dbPath))
             {
                 eventsCallToActionTypes = db.Query<EventCallToActionTypeViewModel>().ToList();
             }
