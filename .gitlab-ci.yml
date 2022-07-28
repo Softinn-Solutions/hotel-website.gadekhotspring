@@ -4,15 +4,13 @@ stages:
 
 variables:
  IMAGE_NAME: ${CI_REGISTRY_IMAGE}
+ GIT_STRATEGY: clone
 
 build:
  image: docker:latest
- services:
-  - docker:dind
  only:
   - master
  before_script:
-  - apk update && apk add bash
   - chmod +x ./function.sh
   - . function.sh
   - get_image_tag
@@ -23,7 +21,6 @@ build:
   - docker build -t $IMAGE_NAME:$TAG . --build-arg PAT=vzjvgxgxhgoklw5jrctd5mgkjznvjzs6qyrdxgtomi3jm6wo6ysq
   - docker push $IMAGE_NAME:$TAG
  after_script:
-  - apk update && apk add bash
   - chmod +x ./function.sh
   - . function.sh
   - get_image_tag
@@ -36,13 +33,11 @@ build:
 test:
  image: docker:latest
  services:
-  - docker:dind
   - mcr.microsoft.com/dotnet/sdk:3.1
  only:
   - master
  stage: test
  before_script:
-  - apk update && apk add bash
   - chmod +x ./function.sh
   - . function.sh
   - get_image_tag
@@ -53,7 +48,6 @@ test:
   - docker run -d -p 3020 --name aspwebcore $IMAGE_NAME:$TAG -it
   - docker ps
  after_script:
-  - apk update && apk add bash
   - chmod +x ./function.sh
   - . function.sh
   - get_image_tag
