@@ -58,12 +58,12 @@
                                 </p>
                             </div>
 
-                            <div class="room-detail_form">
-                                <form action="/Reservation" method="post">
+                            <div class="room-detail_form" ng-app="app" ng-controller="checkAvailabilityFormController">
+                                <form name="checkAvailabilityForm" novalidate angular-validator angular-validator-submit="searchHotel(checkAvailabilityForm)">
                                     <label>CHECK IN</label>
-                                    <input type="text" name="startDate" class="awe-calendar from" placeholder="Check-In Date" readonly>
+                                    <input type="text" name="startDate" class="awe-calendar from" id="checkInDatePicker" placeholder="Check-In Date" ng-model="arrive" readonly>
                                     <label>CHECK OUT</label>
-                                    <input type="text" name="endDate" class="awe-calendar to" placeholder="Check-Out Date" readonly>
+                                    <input type="text" name="endDate" class="awe-calendar to" id="checkOutDatePicker" placeholder="Check-Out Date" ng-model="departure" readonly>
 
                                     <button class="awe-btn awe-btn-13">Book Now</button>
                                 </form>
@@ -283,5 +283,27 @@
             </div>
         </div>
     </section>
-
 </div>
+
+@section scripts {
+    <script src="~/Scripts/angular-1.5.7.js"></script>
+    <script src="~/Scripts/angular-animate-1.5.7.js"></script>
+    <script src="~/Scripts/angular-messages-1.5.7.js"></script>
+    <script src="~/Scripts/angular-sanitize-1.5.7.js"></script>
+    <script src="~/Scripts/angular-validator.js"></script>
+    <script src="~/app/Controller/CheckAvailabilityFormController.js"></script>
+
+    <script type="text/javascript">
+        var app = angular.module("app", ["ngAnimate", "ngMessages", "angularValidator"]);
+        var directives = {};
+        var factories = {};
+        var controllers = {};
+
+        app.factory(factories);
+
+        app.directive(directives);
+
+        controllers.checkAvailabilityFormController = checkAvailabilityFormController;
+        app.controller(controllers);
+    </script>
+}
