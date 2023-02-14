@@ -14,7 +14,7 @@ namespace EmbunLuxuryVillas.Controllers
 
             string url = "https://booking.mysoftinn.com/bookHotelRoom/web?hotelId=" + hotelViewModel.Id;
 
-            if (startDate != null && endDate != null)
+            if (startDate != null && endDate != null && startDate.ToString() != "01-Jan-01 12:00:00 AM" && endDate.ToString() != "01-Jan-01 12:00:00 AM")
             {
                 ViewBag.StartDate = startDate.ToString("yyyy-MM-dd");
                 ViewBag.EndDate = endDate.ToString("yyyy-MM-dd");
