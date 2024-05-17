@@ -1,5 +1,3 @@
-using System;
-
 namespace EmbunLuxuryVillas.Models
 {
     public class ErrorViewModel

@@ -1,13 +1,10 @@
-﻿using EmbunLuxuryVillas.ViewModels;
-using HtmlAgilityPack;
-using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using SendGrid;
-using SendGrid.Helpers.Mail;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Text;
 using System.Threading.Tasks;
+using EmbunLuxuryVillas.ViewModels;
+using HtmlAgilityPack;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace EmbunLuxuryVillas.Helpers
 {
@@ -37,8 +34,8 @@ namespace EmbunLuxuryVillas.Helpers
             msg.AddBcc(new EmailAddress("marketing@mysoftinn.com"));
             var response = await client.SendEmailAsync(msg);
         }
-        
-         public static async Task SendMeetingInquiryMail(SendMeetingInquiryMailViewModel sendMeetingInquiryMailViewModel)
+
+        public static async Task SendMeetingInquiryMail(SendMeetingInquiryMailViewModel sendMeetingInquiryMailViewModel)
         {
             var liteDbHelper = new LiteDbHelper();
             var hotelViewModel = liteDbHelper.GetHotel();
