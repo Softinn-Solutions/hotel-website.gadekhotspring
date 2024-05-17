@@ -4,7 +4,7 @@
 @{
     RoomTypeViewModel room = ViewBag.Room ?? new RoomTypeViewModel();
     List<RoomTypeViewModel> otherRooms = ViewBag.OtherRooms;
-    var photos = room.Photos.Any() ? room.Photos : new List<PhotoViewModel>();
+    var photos = room.Photos != null && room.Photos.Any() ? room.Photos : new List<PhotoViewModel>();
     List<PolicyViewModel> policies = ViewBag.ViewModel.Policies;
     CustomRoomViewModel additionalRoomInfo = ViewBag.AdditionalRoomInfo;
 }
