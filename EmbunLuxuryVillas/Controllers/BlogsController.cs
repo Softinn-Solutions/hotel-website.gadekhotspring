@@ -1,8 +1,8 @@
-﻿using EmbunLuxuryVillas.Helpers;
+﻿using System.Collections.Generic;
+using System.Linq;
+using EmbunLuxuryVillas.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Softinn.EntityModels.ViewModel;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace EmbunLuxuryVillas.Controllers
 {
@@ -21,6 +21,11 @@ namespace EmbunLuxuryVillas.Controllers
             List<BlogViewModel> blogs = liteDbHelper.GetFullHotelViewModel().Blogs;
 
             var blog = blogs.FirstOrDefault(b => b.TitleSlug == titleSlug);
+
+            if (blog == null)
+            {
+                return RedirectToAction("Index");
+            }
 
             ViewBag.Blog = blog;
 
