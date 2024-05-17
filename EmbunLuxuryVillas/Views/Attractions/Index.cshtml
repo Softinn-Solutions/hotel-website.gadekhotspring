@@ -6,7 +6,16 @@
 
     List<AttractionViewModel> attractions = ViewBag.ViewModel.Attractions;
     attractions = attractions.Where(a => a.AttractionType.Name.ToSeoFriendly().ToLower() == ViewBag.AttractionType.ToLower()).ToList();
-    var attractionType = attractions.FirstOrDefault().AttractionType.Name;
+    string attractionType;
+
+    if (attractions.FirstOrDefault() != null)
+    {
+        attractionType = attractions.FirstOrDefault().AttractionType.Name;
+    }
+    else
+    {
+        attractionType = "No attractions found";
+    }
 }
 
 <div id="page-attractions-index">
@@ -34,9 +43,12 @@
                         {
                             <div class="col-md-4 col-xs-6">
                                 <div class="activiti_item">
-                                    <div class="img">
-                                        <img src="//softinnstorage.blob.core.windows.net@(attraction.Photos.FirstOrDefault().URLStorage)" alt="@attraction.Title">
-                                    </div>
+                                    @if (attraction.Photos.Any())
+                                    {
+                                        <div class="img">
+                                            <img src="//softinnstorage.blob.core.windows.net@(attraction.Photos.FirstOrDefault().URLStorage)" alt="@attraction.Title">
+                                        </div>
+                                    }
                                     <div class="text">
                                         <h2>@attraction.Title</h2>
                                         @Html.Raw(attraction.Content)

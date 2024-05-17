@@ -26,9 +26,12 @@
                 {
                     <div class="col-md-4">
                         <div class="cms-promotion promotion-box">
-                            <div class="img">
-                                <img src="@BvHelper.GetImageLinkFromStorage(meeting.Photos.FirstOrDefault().URLStorage)" />
-                            </div>
+                            @if (meeting.Photos.Any())
+                            {
+                                <div class="img">
+                                    <img src="@BvHelper.GetImageLinkFromStorage(meeting.Photos.FirstOrDefault().URLStorage)" />
+                                </div>
+                            }
                             <div class="title-wrapper">
                                 <div class="title">
                                     <h2>@meeting.Name</h2>

@@ -28,9 +28,12 @@
                                 <div class="row room_item-1">
                                     <div class="col-md-2 desc">
                                         <div class="bot margin-top-35px">
-                                            <span class="price">
-                                                From<br /><span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /
-                                            </span>
+                                            @if (room.RackRates.Any())
+                                            {
+                                                <span class="price">
+                                                    From<br /><span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /
+                                                </span>
+                                            }
                                         </div>
                                         <div class="bot text-right">
                                             <span class="price">night</span>
@@ -48,7 +51,10 @@
                                                             <span>@bed.Count @bed.Name</span>
                                                             if (bed != room.BedRelationship.Beds.ToArray()[room.BedRelationship.Beds.Count() - 1])
                                                             {
-                                                                <span>@room.BedRelationship.RelationshipType.Name</span>
+                                                                if (room.BedRelationship.RelationshipType != null)
+                                                                {
+                                                                    <span>@room.BedRelationship.RelationshipType.Name</span>
+                                                                }
                                                             }
                                                         }
                                                     </li>
@@ -91,7 +97,10 @@
                                             <p>@Html.Raw(room.Description)</p>
                                         </div>
                                         <div class="bot padding-top-10px padding-bottom-10px">
-                                            <span class="price">From <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> / night</span>
+                                            @if (room.RackRates.Any())
+                                            {
+                                                <span class="price">From <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> / night</span>
+                                            }
                                             <a href="/Rooms/Detail/@room.Name.ToSeoFriendly()" class="awe-btn awe-btn-13">VIEW DETAILS</a>
                                         </div>
                                     </div>
