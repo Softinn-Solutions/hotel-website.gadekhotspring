@@ -14,7 +14,10 @@
         campaignDateNotNull = true;
     }
 
-    ViewBag.MetaTitle = $"Meetings & Events ({Model.Name}) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Meetings & Events ({Model.Name}) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
 }
 <section class="section-sub-banner bg-1">
     <div class="awe-overlay"></div>
@@ -31,7 +34,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                @if (Model.Photos.Any())
+                @if (Model.Photos != null && Model.Photos.Any())
 				{
                     <div class="img">
                         <a href="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" class="lightbox"><img class="mfp-image" src="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" /></a>

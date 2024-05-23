@@ -231,7 +231,10 @@
                             <h2 class="heading">Our Story</h2>
                             <span class="box-border"></span>
                             <div class="our-story-desc fade-overflow">
-                                @Html.Raw(hotel.FullDescription)
+                                @if (hotel != null)
+                                {
+                                    @Html.Raw(hotel.FullDescription)
+                                }
                             </div>
                             <a href="/Home/OurStory" class="awe-btn awe-btn-default">READ MORE</a>
                         </div>
@@ -268,7 +271,7 @@
                                                     <h2>
                                                         <a href="/Rooms/Detail/@room.Name.Replace(" ", "").Replace("/", "")">@room.Name</a>
                                                     </h2>
-                                                    @if (room.RackRates.SingleOrDefault(rr => rr.RackRateType.Name == "Weekday") != null)
+                                                    @if (room.RackRates != null && room.RackRates.SingleOrDefault(rr => rr.RackRateType.Name == "Weekday") != null)
 													{
                                                         <p class="price">
                                                             <span class="amout">From RM @room.RackRates.SingleOrDefault(rr => rr.RackRateType.Name == "Weekday").Rates.ToString("#")</span>/night
@@ -346,7 +349,7 @@
                                                 @{
                                                     var attraction = attractions.FirstOrDefault(a => a.AttractionType.Name == attractionType);
 
-                                                    if (attraction != null && attraction.Photos.Any())
+                                                    if (attraction != null && attraction.Photos != null && attraction.Photos.Any())
                                                     {
                                                         <div class="img">
                                                             <a href="/Attractions/@attractionType.ToSeoFriendly()"><img src="@BvHelper.GetImageLinkFromStorage(attraction.Photos.FirstOrDefault().URLStorage)" alt="@attractionType"></a>

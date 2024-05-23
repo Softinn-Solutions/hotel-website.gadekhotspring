@@ -3,8 +3,11 @@
 @using EmbunLuxuryVillas.Helpers
 
 @{
-    ViewBag.MetaTitle = $"Blogs - {ViewBag.ViewModel.Hotel.DisplayName}";
-    ViewBag.MetaDescription = $"List of blog of {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+	{
+        ViewBag.MetaTitle = $"Blogs - {ViewBag.ViewModel.Hotel.DisplayName}";
+        ViewBag.MetaDescription = $"List of blog of {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
 
     HotelViewModel hotel = ViewBag.ViewModel.Hotel;
     List<BlogViewModel> blogs = ViewBag.ViewModel.Blogs;

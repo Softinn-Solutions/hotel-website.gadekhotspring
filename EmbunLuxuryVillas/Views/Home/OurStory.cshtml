@@ -32,7 +32,10 @@
                     <div class="text">
                         <h2 class="heading">Our Story</h2>
                         <div class="desc">
-                            @Html.Raw(hotel.FullDescription)
+                            @if (hotel != null)
+                            {
+                                @Html.Raw(hotel.FullDescription)
+                            }
                         </div>
                     </div>
                 </div>

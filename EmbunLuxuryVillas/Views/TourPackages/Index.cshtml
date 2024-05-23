@@ -2,7 +2,11 @@
 @using EmbunLuxuryVillas.Helpers
 
 @{
-    ViewBag.MetaTitle = $"Package - {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Package - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
+
     List<TourPackageViewModel> tourPackages = ViewBag.ViewModel.TourPackages;
 }
 
@@ -26,7 +30,7 @@
                 {
                     <div class="col-md-4">
                         <div class="cms-promotion promotion-box">
-                            @if (tourpackage.Photos.Any())
+                            @if (tourpackage.Photos != null && tourpackage.Photos.Any())
                             {
                                 <div class="img">
                                     <img src="@BvHelper.GetImageLinkFromStorage(tourpackage.Photos.FirstOrDefault().URLStorage)" />

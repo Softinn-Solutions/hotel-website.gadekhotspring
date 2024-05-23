@@ -1,20 +1,19 @@
 ﻿@using Softinn.EntityModels.ViewModel
 @using EmbunLuxuryVillas.Helpers
 @{
-    ViewBag.MetaTitle = $"Attractions NearBy {ViewBag.ViewModel.Hotel.DisplayName}";
-    ViewBag.MetaDescription = $"Attractions, transportation guides, maps and interesting places around {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Attractions NearBy {ViewBag.ViewModel.Hotel.DisplayName}";
+        ViewBag.MetaDescription = $"Attractions, transportation guides, maps and interesting places around {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
 
     List<AttractionViewModel> attractions = ViewBag.ViewModel.Attractions;
     attractions = attractions.Where(a => a.AttractionType.Name.ToSeoFriendly().ToLower() == ViewBag.AttractionType.ToLower()).ToList();
-    string attractionType;
+    string attractionType = "";
 
     if (attractions.FirstOrDefault() != null)
     {
         attractionType = attractions.FirstOrDefault().AttractionType.Name;
-    }
-    else
-    {
-        attractionType = "No attractions found";
     }
 }
 
@@ -43,7 +42,7 @@
                         {
                             <div class="col-md-4 col-xs-6">
                                 <div class="activiti_item">
-                                    @if (attraction.Photos.Any())
+                                    @if (attraction.Photos != null && attraction.Photos.Any())
                                     {
                                         <div class="img">
                                             <img src="//softinnstorage.blob.core.windows.net@(attraction.Photos.FirstOrDefault().URLStorage)" alt="@attraction.Title">

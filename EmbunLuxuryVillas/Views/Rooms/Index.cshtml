@@ -28,7 +28,7 @@
                                 <div class="row room_item-1">
                                     <div class="col-md-2 desc">
                                         <div class="bot margin-top-35px">
-                                            @if (room.RackRates.Any())
+                                            @if (room.RackRates != null && room.RackRates.Any())
                                             {
                                                 <span class="price">
                                                     From<br /><span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /
@@ -97,7 +97,7 @@
                                             <p>@Html.Raw(room.Description)</p>
                                         </div>
                                         <div class="bot padding-top-10px padding-bottom-10px">
-                                            @if (room.RackRates.Any())
+                                            @if (room.RackRates != null && room.RackRates.Any())
                                             {
                                                 <span class="price">From <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> / night</span>
                                             }

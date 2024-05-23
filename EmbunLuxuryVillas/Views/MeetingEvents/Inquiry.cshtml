@@ -4,7 +4,11 @@
 @using EmbunLuxuryVillas.ViewModels;
 
 @{
-    ViewBag.MetaTitle = $"Meetings & Events (Inquiry) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Meetings & Events (Inquiry) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
+
     List<MiceViewModel> mices = ViewBag.ViewModel.Mices;
     CountryViewModel country = ViewBag.ViewModel.Country;
 }

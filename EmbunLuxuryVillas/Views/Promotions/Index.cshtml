@@ -23,7 +23,7 @@
             {
                 <div class="col-md-4">
                     <div class="cms-promotion promotion-box">
-                        @if (promotionalEvent.Photos.Any())
+                        @if (promotionalEvent.Photos != null && promotionalEvent.Photos.Any())
                         {
                             <div class="img">
                                 <img src="@BvHelper.GetImageLinkFromStorage(promotionalEvent.Photos.FirstOrDefault().URLStorage)" />

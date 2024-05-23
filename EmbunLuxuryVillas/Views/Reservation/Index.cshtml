@@ -1,7 +1,9 @@
 ﻿@{
-    ViewBag.MetaTitle = $"Booking Page of {ViewBag.ViewModel.Hotel.DisplayName}";
-    ViewBag.MetaDescription = $"Make reservation direct with {ViewBag.ViewModel.Hotel.DisplayName} and save more.";
-
+    if (ViewBag.ViewModel.Hotel != null)
+	{
+        ViewBag.MetaTitle = $"Booking Page of {ViewBag.ViewModel.Hotel.DisplayName}";
+        ViewBag.MetaDescription = $"Make reservation direct with {ViewBag.ViewModel.Hotel.DisplayName} and save more.";
+    }
 }
 
 <div id="page-reservation">

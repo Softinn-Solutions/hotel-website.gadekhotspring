@@ -2,7 +2,11 @@
 @using EmbunLuxuryVillas.Helpers
 
 @{
-    ViewBag.MetaTitle = $"Meetings & Events - {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Meetings & Events - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
+
     List<MiceViewModel> mices = ViewBag.ViewModel.Mices;
 }
 
@@ -26,7 +30,7 @@
                 {
                     <div class="col-md-4">
                         <div class="cms-promotion promotion-box">
-                            @if (mice.Photos.Any())
+                            @if (mice.Photos != null && mice.Photos.Any())
                             {
                                 <div class="img">
                                     <img src="@BvHelper.GetImageLinkFromStorage(mice.Photos.FirstOrDefault().URLStorage)" />
