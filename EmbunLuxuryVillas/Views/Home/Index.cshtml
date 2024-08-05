@@ -220,7 +220,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="img">
-                            @if (hotelPhoto.URLStorage != null)
+                            @if (hotelPhoto != null)
                             {
                                 <a href="/Home/OurStory"><img src="//softinnstorage.blob.core.windows.net@(hotelPhoto.URLStorage)" alt="Hotel Front View"></a>
                             }
@@ -231,7 +231,10 @@
                             <h2 class="heading">Our Story</h2>
                             <span class="box-border"></span>
                             <div class="our-story-desc fade-overflow">
-                                @Html.Raw(hotel.FullDescription)
+                                @if (hotel != null)
+                                {
+                                    @Html.Raw(hotel.FullDescription)
+                                }
                             </div>
                             <a href="/Home/OurStory" class="awe-btn awe-btn-default">READ MORE</a>
                         </div>
@@ -268,9 +271,12 @@
                                                     <h2>
                                                         <a href="/Rooms/Detail/@room.Name.Replace(" ", "").Replace("/", "")">@room.Name</a>
                                                     </h2>
-                                                    <p class="price">
-                                                        <span class="amout">From RM @room.RackRates.SingleOrDefault(rr => rr.RackRateType.Name == "Weekday").Rates.ToString("#")</span>/night
-                                                    </p>
+                                                    @if (room.RackRates != null && room.RackRates.SingleOrDefault(rr => rr.RackRateType.Name == "Weekday") != null)
+													{
+                                                        <p class="price">
+                                                            <span class="amout">From RM @room.RackRates.SingleOrDefault(rr => rr.RackRateType.Name == "Weekday").Rates.ToString("#")</span>/night
+                                                        </p>
+													}
                                                 </div>
                                             </div>
                                         </div>
@@ -340,9 +346,17 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="news-item">
-                                                <div class="img">
-                                                    <a href="/Attractions/@attractionType.ToSeoFriendly()"><img src="@BvHelper.GetImageLinkFromStorage(attractions.FirstOrDefault(a => a.AttractionType.Name == attractionType).Photos.FirstOrDefault().URLStorage)" alt="@attractionType"></a>
-                                                </div>
+                                                @{
+                                                    var attraction = attractions.FirstOrDefault(a => a.AttractionType.Name == attractionType);
+
+                                                    if (attraction != null && attraction.Photos != null && attraction.Photos.Any())
+                                                    {
+                                                        <div class="img">
+                                                            <a href="/Attractions/@attractionType.ToSeoFriendly()"><img src="@BvHelper.GetImageLinkFromStorage(attraction.Photos.FirstOrDefault().URLStorage)" alt="@attractionType"></a>
+                                                        </div>
+                                                    }
+                                                }
+                                                
                                                 <div class="text">
                                                     <h2>
                                                         <a href="/Attractions/@attractionType.ToSeoFriendly()">@attractionType</a>

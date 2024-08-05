@@ -2,7 +2,11 @@
 @using Softinn.EntityModels.ViewModel;
 
 @{
-    ViewBag.MetaTitle = $"Meetings (Inquiry) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Meetings (Inquiry) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
+
     List<MeetingViewModel> meetings = ViewBag.ViewModel.Meetings;
     CountryViewModel country = ViewBag.ViewModel.Country;
 }

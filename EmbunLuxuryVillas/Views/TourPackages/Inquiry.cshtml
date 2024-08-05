@@ -4,7 +4,11 @@
 @using EmbunLuxuryVillas.ViewModels;
 
 @{
-    ViewBag.MetaTitle = $"Package (Inquiry) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Package (Inquiry) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
+
     List<TourPackageViewModel> tourPackages = ViewBag.ViewModel.TourPackages;
 }
 

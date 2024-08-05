@@ -12,8 +12,8 @@ using EmbunLuxuryVillas.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Softinn.SiteMap.AWS;
 
 namespace EmbunLuxuryVillas.Controllers

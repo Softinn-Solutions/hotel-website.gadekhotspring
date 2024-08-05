@@ -2,8 +2,11 @@
 @model object
 
 @{
-    ViewBag.MetaTitle = $"Privacy Policies - {ViewBag.ViewModel.Hotel.DisplayName}";
-    ViewBag.MetaDescription = $"Privacy Policies - {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+	{
+        ViewBag.MetaTitle = $"Privacy Policies - {ViewBag.ViewModel.Hotel.DisplayName}";
+        ViewBag.MetaDescription = $"Privacy Policies - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
 
     List<CustomPrivacyPolicyViewModel> privacyPolicies = ViewBag.ViewModel.CustomPrivacyPolicies;
 }

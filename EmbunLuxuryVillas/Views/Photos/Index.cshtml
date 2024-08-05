@@ -3,7 +3,11 @@
 @using EmbunLuxuryVillas.Helpers
 @{
     ViewBag.MetaTitle = "Photo Gallery";
-    ViewBag.MetaDescription = $"Photos of {ViewBag.ViewModel.Hotel.DisplayName}";
+
+    if (ViewBag.ViewModel.Hotel != null)
+	{
+        ViewBag.MetaDescription = $"Photos of {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
 
     List<string> photoTypes = new List<string>();
     List<PhotoViewModel> photos = ViewBag.ViewModel.Photos;

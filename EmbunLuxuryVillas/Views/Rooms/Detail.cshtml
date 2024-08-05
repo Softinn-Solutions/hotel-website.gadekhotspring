@@ -2,9 +2,9 @@
 @using EmbunLuxuryVillas.Helpers
 @using EmbunLuxuryVillas.ViewModels
 @{
-    RoomTypeViewModel room = ViewBag.Room;
+    RoomTypeViewModel room = ViewBag.Room ?? new RoomTypeViewModel();
     List<RoomTypeViewModel> otherRooms = ViewBag.OtherRooms;
-    var photos = room.Photos.Any() ? room.Photos : new List<PhotoViewModel>();
+    var photos = room.Photos != null && room.Photos.Any() ? room.Photos : new List<PhotoViewModel>();
     List<PolicyViewModel> policies = ViewBag.ViewModel.Policies;
     CustomRoomViewModel additionalRoomInfo = ViewBag.AdditionalRoomInfo;
 }
@@ -53,9 +53,12 @@
                             <div class="room-detail_total">
                                 <h6>STARTING FROM</h6>
 
-                                <p class="price">
-                                    <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /night
-                                </p>
+                                @if (room.RackRates != null && room.RackRates.Any())
+                                {
+                                    <p class="price">
+                                        <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /night
+                                    </p>
+                                }
                             </div>
 
                             <div class="room-detail_form" ng-app="app" ng-controller="checkAvailabilityFormController">
@@ -211,7 +214,17 @@
                                                 <h6>Weekday</h6>
                                             </td>
                                             <td>
-                                                <p class="price"><span class="amout">RM @room.RackRates.FirstOrDefault(rr => rr.RackRateType.Name == Softinn.EntityModels.AppSettings.RackRateTypeWeekday).Rates.ToString("#")</span></p>
+                                                @{
+                                                    if (room.RackRates != null)
+                                                    {
+                                                        var roomRackRateWeekday = room.RackRates.FirstOrDefault(rr => rr.RackRateType.Name == Softinn.EntityModels.AppSettings.RackRateTypeWeekday);
+
+                                                        if (roomRackRateWeekday != null)
+														{
+                                                            <p class="price"><span class="amout">RM @roomRackRateWeekday.Rates.ToString("#")</span></p>
+                                                        }
+                                                    }
+                                                }
                                             </td>
                                         </tr>
                                         <tr>
@@ -219,7 +232,17 @@
                                                 <h6>Weekend</h6>
                                             </td>
                                             <td>
-                                                <p class="price"><span class="amout">RM @room.RackRates.FirstOrDefault(rr => rr.RackRateType.Name == Softinn.EntityModels.AppSettings.RackRateTypeWeekend).Rates.ToString("#")</span></p>
+                                                @{
+                                                    if (room.RackRates != null)
+                                                    {
+                                                        var roomRackRateWeekend = room.RackRates.FirstOrDefault(rr => rr.RackRateType.Name == Softinn.EntityModels.AppSettings.RackRateTypeWeekend);
+
+                                                        if (roomRackRateWeekend != null)
+                                                        {
+                                                            <p class="price"><span class="amout">RM @roomRackRateWeekend.Rates.ToString("#")</span></p>
+                                                        }
+                                                    }
+                                                }
                                             </td>
 
                                         </tr>
@@ -228,7 +251,17 @@
                                                 <h6>Public Holiday</h6>
                                             </td>
                                             <td>
-                                                <p class="price"><span class="amout">RM @room.RackRates.FirstOrDefault(rr => rr.RackRateType.Name == Softinn.EntityModels.AppSettings.RackRateTypePublicHoliday).Rates.ToString("#")</span></p>
+                                                @{
+                                                    if (room.RackRates != null)
+													{
+														var roomRackRatePublicHoliday = room.RackRates.FirstOrDefault(rr => rr.RackRateType.Name == Softinn.EntityModels.AppSettings.RackRateTypePublicHoliday);
+
+														if (roomRackRatePublicHoliday != null)
+														{
+															<p class="price"><span class="amout">RM @roomRackRatePublicHoliday.Rates.ToString("#")</span></p>
+														}
+													}
+                                                }
                                             </td>
                                         </tr>
                                     </table>
@@ -266,7 +299,10 @@
                                                             <span>@bed.Count @bed.Name</span>
                                                             if (bed != otherRoom.BedRelationship.Beds.ToArray()[otherRoom.BedRelationship.Beds.Count() - 1])
                                                             {
-                                                                <span>@otherRoom.BedRelationship.RelationshipType.Name</span>
+                                                                if (otherRoom.BedRelationship.RelationshipType != null)
+																{
+																	<span>@otherRoom.BedRelationship.RelationshipType.Name</span>
+																}
                                                             }
                                                         }
                                                     </li>

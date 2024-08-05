@@ -11,7 +11,10 @@
     }
     else
     {
-        ViewBag.MetaTitle = $"{blog.Title} - {ViewBag.ViewModel.Hotel.DisplayName}";
+        if (ViewBag.ViewModel.Hotel != null)
+		{
+            ViewBag.MetaTitle = $"{blog.Title} - {ViewBag.ViewModel.Hotel.DisplayName}";
+        }
     }
 
     if (blog.MetaDescription != null)

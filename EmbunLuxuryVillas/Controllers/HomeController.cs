@@ -1,10 +1,10 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using EmbunLuxuryVillas.Models;
+﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
-using EmbunLuxuryVillas.ViewModels;
-using System;
 using EmbunLuxuryVillas.Helpers;
+using EmbunLuxuryVillas.Models;
+using EmbunLuxuryVillas.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EmbunLuxuryVillas.Controllers
 {
@@ -36,7 +36,7 @@ namespace EmbunLuxuryVillas.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendEmail([FromBody]SendMailViewModel sendMailViewModel)
+        public async Task<IActionResult> SendEmail([FromBody] SendMailViewModel sendMailViewModel)
         {
             if (String.IsNullOrWhiteSpace(sendMailViewModel.Name) ||
                 String.IsNullOrWhiteSpace(sendMailViewModel.Email) ||
@@ -58,10 +58,10 @@ namespace EmbunLuxuryVillas.Controllers
                 return StatusCode(500);
             }
         }
-        
-         
+
+
         [HttpPost]
-        public async Task<IActionResult> SendMeetingInquiryEmail([FromBody]SendMeetingInquiryMailViewModel sendMeetingInquiryMailViewModel)
+        public async Task<IActionResult> SendMeetingInquiryEmail([FromBody] SendMeetingInquiryMailViewModel sendMeetingInquiryMailViewModel)
         {
             if (String.IsNullOrWhiteSpace(sendMeetingInquiryMailViewModel.Package) ||
                 String.IsNullOrWhiteSpace(sendMeetingInquiryMailViewModel.Name) ||
@@ -72,7 +72,7 @@ namespace EmbunLuxuryVillas.Controllers
             var isValidEmailAddress = IsValidEmailAddress(sendMeetingInquiryMailViewModel.Email);
             if (!isValidEmailAddress)
                 return BadRequest("Please enter valid email address.");
-            
+
             try
             {
                 await BvHelper.SendMeetingInquiryMail(sendMeetingInquiryMailViewModel);
@@ -83,9 +83,9 @@ namespace EmbunLuxuryVillas.Controllers
                 return StatusCode(500);
             }
         }
-        
+
         [HttpPost]
-        public async Task<IActionResult> SendEventInquiryEmail([FromBody]SendEventInquiryMailViewModel sendEventInquiryMailView)
+        public async Task<IActionResult> SendEventInquiryEmail([FromBody] SendEventInquiryMailViewModel sendEventInquiryMailView)
         {
             if (String.IsNullOrWhiteSpace(sendEventInquiryMailView.Package) ||
                 String.IsNullOrWhiteSpace(sendEventInquiryMailView.Name) ||
@@ -96,7 +96,7 @@ namespace EmbunLuxuryVillas.Controllers
             var isValidEmailAddress = IsValidEmailAddress(sendEventInquiryMailView.Email);
             if (!isValidEmailAddress)
                 return BadRequest("Please enter valid email address.");
-            
+
             try
             {
                 await BvHelper.SendEventInquiryMail(sendEventInquiryMailView);
@@ -121,7 +121,7 @@ namespace EmbunLuxuryVillas.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<IActionResult> SendTourPackageInquiryEmail([FromBody]SendTourPackageInquiryMailViewModel sendTourInquiryMailViewModel)
+        public async Task<IActionResult> SendTourPackageInquiryEmail([FromBody] SendTourPackageInquiryMailViewModel sendTourInquiryMailViewModel)
         {
             if (String.IsNullOrWhiteSpace(sendTourInquiryMailViewModel.Package) ||
                 String.IsNullOrWhiteSpace(sendTourInquiryMailViewModel.Name) ||
@@ -143,7 +143,7 @@ namespace EmbunLuxuryVillas.Controllers
             }
         }
 
-        public async Task<IActionResult> SendMiceInquiryEmail([FromBody]SendMiceInquiryMailViewModel sendMiceInquiryMailViewModel)
+        public async Task<IActionResult> SendMiceInquiryEmail([FromBody] SendMiceInquiryMailViewModel sendMiceInquiryMailViewModel)
         {
             if (String.IsNullOrWhiteSpace(sendMiceInquiryMailViewModel.Package) ||
                 String.IsNullOrWhiteSpace(sendMiceInquiryMailViewModel.Name) ||
@@ -165,7 +165,7 @@ namespace EmbunLuxuryVillas.Controllers
             }
         }
 
-        public async Task<IActionResult> SendDiningInquiryEmail([FromBody]SendDiningInquiryMailViewModel sendDiningInquiryMailViewModel)
+        public async Task<IActionResult> SendDiningInquiryEmail([FromBody] SendDiningInquiryMailViewModel sendDiningInquiryMailViewModel)
         {
             if (String.IsNullOrWhiteSpace(sendDiningInquiryMailViewModel.Name) ||
                 String.IsNullOrWhiteSpace(sendDiningInquiryMailViewModel.Email) ||
