@@ -13,7 +13,6 @@ namespace EmbunLuxuryVillas.ViewModels
         public List<PromotionViewModel> Promotions { get; set; }
         public List<PromotionalEventViewModel> PromotionalEvents { get; set; }
         public List<TourPackageViewModel> TourPackages { get; set; }
-        public List<MiceViewModel> Mices { get; set; }
         public List<RoomTypeViewModel> RoomTypes { get; set; }
         public List<PolicyViewModel> Policies { get; set; }
         public List<AttractionViewModel> Attractions { get; set; }
