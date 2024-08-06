@@ -1,9 +1,12 @@
 ﻿@using Softinn.EntityModels.ViewModel
 @{
-    ViewBag.MetaTitle = $"Contact of {ViewBag.ViewModel.Hotel.DisplayName}";
-    ViewBag.MetaDescription = $"Address and phone number of {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.CMSSetting != null)
+	{
+        ViewBag.MetaTitle = $"Contact of {ViewBag.ViewModel.CMSSetting.PropertyName}";
+        ViewBag.MetaDescription = $"Address and phone number of {ViewBag.ViewModel.CMSSetting.PropertyName}";
+    }
 
-    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+    CMSSettingViewModel cmsSetting = ViewBag.ViewModel.CMSSetting;
 }
 <div id="page-contact-us">
 
@@ -26,20 +29,22 @@
                     <div class="col-md-6 col-lg-6">
                         <div class="text">
                             <h2>Contact</h2>
-                            <ul>
-                                <li><i class="fa fa-map-marker contact-icon"></i> @hotel.DisplayAddress</li>
-                                <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@hotel.DisplayPhone" rel="nofollow">@hotel.DisplayPhone</a></li>
-                                @if (hotel.SecondDisplayPhone != null)
-                                {
-                                    <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@hotel.SecondDisplayPhone" rel="nofollow">@hotel.SecondDisplayPhone</a> (Mon - Sat from 9am to 5pm)</li>
-                                }
-                                <li><i class="fa fa-phone contact-icon"></i> <a href="tel:+6013 6042460" rel="nofollow">+6013 6042460</a> (for calls only)</li>
-                                @if (hotel.DisplayFax != null)
-                                {
-                                    <li><i class="fa fa-fax contact-icon"></i> @hotel.DisplayFax</li>
-                                }
-                                <li><i class="fa fa-envelope-o contact-icon"></i> <a href="mailto:@hotel.DisplayEmail">@hotel.DisplayEmail</a></li>
-                            </ul>
+                            @if (cmsSetting != null)
+                            {
+                                <ul>
+                                    <li><i class="fa fa-map-marker contact-icon"></i> @cmsSetting.PropertyAddress</li>
+                                    <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@cmsSetting.PropertyPhoneNumber" rel="nofollow">@cmsSetting.PropertyPhoneNumber</a> (for calls and WhatsApp)</li>
+                                    @if (cmsSetting.PropertySecondPhoneNumber != null && cmsSetting.PropertyPhoneNumber != cmsSetting.PropertySecondPhoneNumber)
+                                    {
+                                        <li><i class="fa fa-phone contact-icon"></i> <a href="tel:@cmsSetting.PropertySecondPhoneNumber" rel="nofollow">@cmsSetting.PropertySecondPhoneNumber</a></li>
+                                    }
+                                    @if (cmsSetting.PropertyFaxNumber != null)
+                                    {
+                                        <li><i class="fa fa-fax contact-icon"></i> @cmsSetting.PropertyFaxNumber</li>
+                                    }
+                                    <li><i class="fa fa-envelope-o contact-icon"></i> <a href="mailto:@cmsSetting.PropertyEmail">@cmsSetting.PropertyEmail</a></li>
+                                </ul>
+                            }
                             <span class="divider-line"></span>
                             <div class="chgfont"><p>Look no further! Book directly on this site for best price!</p></div>
                             <div class="mailchimp">

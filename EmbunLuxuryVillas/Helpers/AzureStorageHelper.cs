@@ -1,14 +1,10 @@
-﻿using EmbunLuxuryVillas.Models;
-using Microsoft.AspNetCore.Hosting;
+﻿using System;
+using System.Threading.Tasks;
+using EmbunLuxuryVillas.Models;
 using Microsoft.Extensions.Options;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.Table;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EmbunLuxuryVillas.Helpers
 {

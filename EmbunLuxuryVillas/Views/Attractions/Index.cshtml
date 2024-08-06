@@ -1,12 +1,20 @@
 ﻿@using Softinn.EntityModels.ViewModel
 @using EmbunLuxuryVillas.Helpers
 @{
-    ViewBag.MetaTitle = $"Attractions NearBy {ViewBag.ViewModel.Hotel.DisplayName}";
-    ViewBag.MetaDescription = $"Attractions, transportation guides, maps and interesting places around {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Attractions NearBy {ViewBag.ViewModel.Hotel.DisplayName}";
+        ViewBag.MetaDescription = $"Attractions, transportation guides, maps and interesting places around {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
 
     List<AttractionViewModel> attractions = ViewBag.ViewModel.Attractions;
     attractions = attractions.Where(a => a.AttractionType.Name.ToSeoFriendly().ToLower() == ViewBag.AttractionType.ToLower()).ToList();
-    var attractionType = attractions.FirstOrDefault().AttractionType.Name;
+    string attractionType = "";
+
+    if (attractions.FirstOrDefault() != null)
+    {
+        attractionType = attractions.FirstOrDefault().AttractionType.Name;
+    }
 }
 
 <div id="page-attractions-index">
@@ -34,9 +42,12 @@
                         {
                             <div class="col-md-4 col-xs-6">
                                 <div class="activiti_item">
-                                    <div class="img">
-                                        <img src="//softinnstorage.blob.core.windows.net@(attraction.Photos.FirstOrDefault().URLStorage)" alt="@attraction.Title">
-                                    </div>
+                                    @if (attraction.Photos != null && attraction.Photos.Any())
+                                    {
+                                        <div class="img">
+                                            <img src="//softinnstorage.blob.core.windows.net@(attraction.Photos.FirstOrDefault().URLStorage)" alt="@attraction.Title">
+                                        </div>
+                                    }
                                     <div class="text">
                                         <h2>@attraction.Title</h2>
                                         @Html.Raw(attraction.Content)

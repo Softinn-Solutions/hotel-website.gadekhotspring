@@ -27,9 +27,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <div class="img">
-                    <a href="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" class="lightbox"><img class="mfp-image" src="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" /></a>
-                </div>
+                @if (Model.Photos != null && Model.Photos.Any())
+                {
+                    <div class="img">
+                        <a href="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" class="lightbox"><img class="mfp-image" src="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" /></a>
+                    </div>
+                }
             </div>
             <div class="col-md-7">
                 <div class="detail">

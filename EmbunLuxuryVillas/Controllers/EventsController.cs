@@ -11,7 +11,7 @@ namespace EmbunLuxuryVillas.Controllers
         {
             return View();
         }
-        
+
         public IActionResult Detail(string name)
         {
             var liteDbHelper = new LiteDbHelper();

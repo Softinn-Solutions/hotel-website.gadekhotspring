@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using EmbunLuxuryVillas.Helpers;
-using EmbunLuxuryVillas.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Softinn.EntityModels.ViewModel;
 

@@ -3,7 +3,7 @@
 @using EmbunLuxuryVillas.Helpers;
 @{
     List<RoomTypeViewModel> rooms = ViewBag.ViewModel.RoomTypes;
-    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+    CMSSettingViewModel cmsSetting = ViewBag.ViewModel.CMSSetting;
     List<AttractionViewModel> attractions = ViewBag.ViewModel.Attractions;
     StateViewModel state = ViewBag.ViewModel.State;
     CountryViewModel country = ViewBag.ViewModel.Country;
@@ -16,19 +16,19 @@
     List<CustomHtmlTagViewModel> headCustomHtmlTags = ViewBag.ViewModel.HeadCustomHtmlTags;
     List<CustomHtmlTagViewModel> bodyCustomHtmlTags = ViewBag.ViewModel.BodyCustomHtmlTags;
 
-    ViewBag.MetaUrl = hotel.URLDomain;
+    ViewBag.MetaUrl = cmsSetting.PropertyWebsiteURL;
 
     if (ViewBag.MetaHotelName == null)
     {
-        ViewBag.MetaHotelName = hotel.DisplayName;
+        ViewBag.MetaHotelName = cmsSetting.PropertyName;
     }
     if (ViewBag.MetaTitle == null)
     {
-        ViewBag.MetaTitle = $"{hotel.DisplayName} - Official Website";
+        ViewBag.MetaTitle = $"{cmsSetting.PropertyName} - Official Website";
     }
     if (ViewBag.MetaDescription == null)
     {
-        ViewBag.MetaDescription = hotel.Description;
+        ViewBag.MetaDescription = cmsSetting.PropertyFullDescription;
     }
     if (ViewBag.MetaKeywords == null)
     {
@@ -138,7 +138,7 @@
             <div class="header_top">
                 <div class="container">
                     <div class="header_left float-left">
-                        <span><i class="fa fa-map-marker"></i> @hotel.DisplayAddress</span>
+                        <span><i class="fa fa-map-marker"></i> @cmsSetting.PropertyAddress</span>
                     </div>
                 </div>
             </div>
@@ -273,9 +273,9 @@
                         <div class="col-lg-2 col-xs-12">
                             <div class="social">
                                 <div class="social-content">
-                                    @if (@hotel.URLFacebook != null)
+                                    @if (@cmsSetting.PropertyFacebookURL != null)
                                     {
-                                        <a href="@hotel.URLFacebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <a href="@cmsSetting.PropertyFacebookURL" target="_blank"><i class="fa fa-facebook"></i></a>
                                     }
                                     <a href="https://www.instagram.com/embunvillas/" target="_blank"><i class="fa fa-instagram"></i></a>
                                 </div>
@@ -329,34 +329,31 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="img">
-                                                <a href="#"><img src="~/images/Logo/web_logo.png" alt="@hotel.DisplayName"></a>
+                                                <a href="#"><img src="~/images/Logo/web_logo.png" alt="@cmsSetting.PropertyName"></a>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="text">
                                                 <p>
-                                                    <i class="fa fa-phone"></i> <a href="tel:@hotel.DisplayPhone" rel="nofollow">@hotel.DisplayPhone</a>
+                                                    <i class="fa fa-phone"></i> <a href="tel:@cmsSetting.PropertyPhoneNumber" rel="nofollow">@cmsSetting.PropertyPhoneNumber</a> (for calls and WhatsApp)
                                                 </p>
-                                                @if (hotel.SecondDisplayPhone != null)
+                                                @if (cmsSetting.PropertySecondPhoneNumber != null && cmsSetting.PropertyPhoneNumber != cmsSetting.PropertySecondPhoneNumber)
                                                 {
                                                     <p>
-                                                        <i class="fa fa-phone"></i> <a href="tel:@hotel.SecondDisplayPhone" rel="nofollow">@hotel.SecondDisplayPhone</a> (Mon - Sat from 9am to 5pm)
+                                                        <i class="fa fa-phone"></i> <a href="tel:@cmsSetting.PropertySecondPhoneNumber" rel="nofollow">@cmsSetting.PropertySecondPhoneNumber</a>
+                                                    </p>
+                                                }
+                                                @if (cmsSetting.PropertyFaxNumber != null)
+                                                {
+                                                    <p>
+                                                        <i class="fa fa-fax"></i> @cmsSetting.PropertyFaxNumber
                                                     </p>
                                                 }
                                                 <p>
-                                                    <i class="fa fa-phone"></i> <a href="tel:+6013 6042460" rel="nofollow">+6013 6042460</a> (for calls only)
-                                                </p>
-                                                @if (hotel.DisplayFax != null)
-                                                {
-                                                    <p>
-                                                        <i class="fa fa-fax"></i> @hotel.DisplayFax
-                                                    </p>
-                                                }
-                                                <p>
-                                                    <i class="fa fa-envelope-o"></i> <a href="mailto:@hotel.DisplayEmail">@hotel.DisplayEmail</a>
+                                                    <i class="fa fa-envelope-o"></i> <a href="mailto:@cmsSetting.PropertyEmail">@cmsSetting.PropertyEmail</a>
                                                 </p>
                                                 <p>
-                                                    <i class="fa fa-map-marker"></i>  @hotel.DisplayAddress
+                                                    <i class="fa fa-map-marker"></i>  @cmsSetting.PropertyAddress
                                                 </p>
                                                 <p>
                                                     A resort managed by Embunaz Ventures Sdn Bhd (620304-X)
@@ -408,7 +405,7 @@
             <!-- FOOTER BOTTOM -->
             <div class="footer_bottom">
                 <div class="container">
-                    &copy; @DateTime.Now.Year @hotel.DisplayName All rights reserved. Powered by <a class="poweredBy" target="_blank" href="http://mysoftinn.com/">Softinn Solutions.</a>
+                    &copy; @DateTime.Now.Year @cmsSetting.PropertyName All rights reserved. Powered by <a class="poweredBy" target="_blank" href="http://mysoftinn.com/">Softinn Solutions.</a>
                 </div>
             </div>
             <!-- END / FOOTER BOTTOM -->
@@ -448,7 +445,7 @@
             }
         });
     </script>
-    <script async src="https://cms.mysoftinn.com/tracking/js?hotelId=@hotel.Id"></script>
+    <script async src="https://cms.mysoftinn.com/tracking/js?hotelId=@cmsSetting.HotelId"></script>
 
     @{await Html.RenderPartialAsync("~/Views/Shared/_GoogleStructuredData.cshtml");}
     @RenderSection("scripts", required: false)

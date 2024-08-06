@@ -1,0 +1,58 @@
+name: Build and Deploy hotel website
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  # Change this to the folder name in which your Dockerfile is located
+  BUILD_CONTEXT: EmbunLuxuryVillas
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          cd $BUILD_CONTEXT
+          docker build -t ${{ secrets.DIGITALOCEAN_IMAGE }}:latest . --build-arg PAT=${{ secrets.DIGITALOCEAN_GITHUB_PAT }}
+
+      - name: Verify Docker image
+        run: |
+          docker images
+          docker inspect ${{ secrets.DIGITALOCEAN_IMAGE }}:latest
+
+      - name: Test Docker image
+        run: |
+          docker run -d --name aspwebcore ${{ secrets.DIGITALOCEAN_IMAGE }}:latest
+          sleep 10
+          docker ps
+          docker logs aspwebcore
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.DIGITALOCEAN_SSH_KEY }}
+
+      - name: Save and transfer Docker image
+        run: |
+          docker save ${{ secrets.DIGITALOCEAN_IMAGE }}:latest | gzip | ssh -o StrictHostKeyChecking=no root@${{ secrets.DIGITALOCEAN_HOST }} 'gzip -d | docker load'
+
+      - name: Deploy Docker image
+        run: |
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.DIGITALOCEAN_HOST }} << 'EOF'
+            docker stop aspwebcore || true
+            docker rm aspwebcore || true
+            docker run -d --restart unless-stopped -p 80:80 --name aspwebcore ${{ secrets.DIGITALOCEAN_IMAGE }}:latest
+          EOF
+
+      - name: Clean up
+        run: |
+          docker system prune -af

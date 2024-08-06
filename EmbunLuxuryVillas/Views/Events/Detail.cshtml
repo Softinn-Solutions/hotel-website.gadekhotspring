@@ -6,7 +6,10 @@
     bool hasCustomCallToAction = Model.EventCallToActionTypeId.HasValue;
     bool isCustomCallToAction = Model.EventCallToActionTypeId == 4;
 
-    ViewBag.MetaTitle = $"Event ({Model.Name}) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    if (ViewBag.ViewModel.Hotel != null)
+	{
+        ViewBag.MetaTitle = $"Event ({Model.Name}) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
 }
 <section class="section-sub-banner bg-1">
     <div class="awe-overlay"></div>
@@ -24,9 +27,12 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="img">
-                    <a href="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" class="lightbox">
-                        <img class="mfp-image" src="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)"/>
-                    </a>
+                    @if (Model.Photos != null && Model.Photos.Any())
+                    {
+                        <a href="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" class="lightbox">
+                            <img class="mfp-image" src="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" />
+                        </a>
+                    }
                 </div>
             </div>
             <div class="col-md-7">
@@ -61,7 +67,10 @@
                         }
                         else
                         {
-                            <a href="/events/inquiry/@Model.Name.ToSeoFriendly()" class="btn btn-default">@Model.EventCallToActionType.Name</a>
+                            @if (Model.EventCallToActionType != null)
+                            {
+                                <a href="/events/inquiry/@Model.Name.ToSeoFriendly()" class="btn btn-default">@Model.EventCallToActionType.Name</a>
+                            }
                         }
                     }
                 </div>

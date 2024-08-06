@@ -1,8 +1,6 @@
-﻿using EmbunLuxuryVillas.Helpers;
+﻿using System.Linq;
+using EmbunLuxuryVillas.Helpers;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using Softinn.EntityModels.ViewModel;
-using System.Collections.Generic;
 
 namespace EmbunLuxuryVillas.Controllers
 {
