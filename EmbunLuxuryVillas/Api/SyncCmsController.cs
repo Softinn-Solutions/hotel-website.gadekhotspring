@@ -1,4 +1,8 @@
-﻿using System;
+﻿using EmbunLuxuryVillas.Helpers;
+using EmbunLuxuryVillas.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -6,10 +10,6 @@ using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using EmbunLuxuryVillas.Helpers;
-using EmbunLuxuryVillas.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 
 namespace EmbunLuxuryVillas
 {
@@ -123,13 +123,10 @@ namespace EmbunLuxuryVillas
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-                if (!string.IsNullOrEmpty(content))
+                byte[] info = new UTF8Encoding(true).GetBytes(content);
+                using (FileStream fs = System.IO.File.Create(filePath))
                 {
-                    byte[] info = new UTF8Encoding(true).GetBytes(content);
-                    using (FileStream fs = System.IO.File.Create(filePath))
-                    {
-                        fs.Write(info, 0, info.Length);
-                    }
+                    fs.Write(info, 0, info.Length);
                 }
             }
             else
