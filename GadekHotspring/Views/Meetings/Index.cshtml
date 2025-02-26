@@ -1,0 +1,62 @@
+﻿@using Softinn.EntityModels.ViewModel
+@using GadekHotspring.Helpers
+
+@{
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Meetings - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
+
+    List<MeetingViewModel> meetings = ViewBag.ViewModel.Meetings;
+}
+
+<section class="section-sub-banner bg-4">
+    <div class="awe-overlay"></div>
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>Meetings</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-promotion">
+    <div class="container">
+        @if (meetings.Any())
+        {
+            <div class="row">
+                @foreach (var meeting in meetings)
+                {
+                    <div class="col-md-4">
+                        <div class="cms-promotion promotion-box">
+                            @if (meeting.Photos != null && meeting.Photos.Any())
+                            {
+                                <div class="img">
+                                    <img src="@BvHelper.GetImageLinkFromStorage(meeting.Photos.FirstOrDefault().URLStorage)" />
+                                </div>
+                            }
+                            <div class="title-wrapper">
+                                <div class="title">
+                                    <h2>@meeting.Name</h2>
+                                    <a href="/Meetings/Detail/@meeting.Name.ToSeoFriendly()" class="awe-btn awe-btn-13">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</section>
+
+@section css{
+    <link href="~/css/promotion.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+}
+
+@section scripts{
+    <script src="~/Scripts/promotion.js"></script>
+}

@@ -1,0 +1,112 @@
+﻿@using Softinn.EntityModels.ViewModel
+@using GadekHotspring.Helpers
+@{
+    List<RoomTypeViewModel> rooms = ViewBag.ViewModel.RoomTypes;
+    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+    List<AttractionViewModel> attractions = ViewBag.ViewModel.Attractions;
+    StateViewModel state = ViewBag.ViewModel.State;
+    CountryViewModel country = ViewBag.ViewModel.Country;
+    List<PromotionViewModel> promotions = ViewBag.ViewModel.Promotions;
+    List<PromotionalEventViewModel> promotionalEvents = ViewBag.ViewModel.PromotionalEvents;
+}
+<script type="application/ld+json">
+    {
+    "@@context":"http://schema.org",
+    "@@type":"Hotel",
+    "name":"@hotel.DisplayName",
+    "alternateName":"@hotel.AlternateName",
+    "description":"@hotel.Description",
+    "url":"@hotel.URLDomain",
+    "image":"@hotel.URLDomain/images/new-hotel-logo-footer.png",
+    "openingHoursSpecification" : {
+    "@@type" : "OpeningHoursSpecification",
+    "dayOfWeek" : [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
+    "opens" : "00:00:00",
+    "closes" : "23:59:59"
+    },
+    "currenciesAccepted":"@country.Currency",
+    "paymentAccepted":"Cash, Credit Card",
+    "priceRange":"@country.Currency @rooms.Min(r => r.RackRates.Min(rr => rr.Rates)).ToString("#.##") to @country.Currency @rooms.Max(r => r.RackRates.Max(rr => rr.Rates)).ToString("#.##")",
+    "sameAs":"",
+    "hasMap":"@hotel.URLDomain/ContactUs",
+    "address":{
+    "@@type":"PostalAddress",
+    "streetAddress":"@hotel.DisplayAddress",
+    "addressRegion":"@state.Name",
+    "addressCountry":"MY",
+    "addressLocality":"@state.Name",
+    "postalCode":"@hotel.Postcode"
+    },
+    "geo":{
+    "@@type":"GeoCoordinates",
+    "latitude":"@hotel.Latitude",
+    "longitude":"@hotel.Longitude"
+    },
+    "telephone":"@hotel.DisplayPhone",
+    "contactPoint":
+    [
+    {
+    "@@type":"ContactPoint",
+    "telephone":"@hotel.DisplayPhone",
+    "faxNumber":"",
+    "contactType":"reservations",
+    "availableLanguage":"English, Chinese, Malay"
+    },
+    {
+    "@@type":"ContactPoint",
+    "telephone":"@hotel.SecondDisplayPhone",
+    "contactType":"reservations",
+    "availableLanguage":"English, Chinese, Malay"
+    },
+    {
+    "@@type":"ContactPoint",
+    "email":"@hotel.DisplayEmail",
+    "contactType":"reservations",
+    "availableLanguage":"English, Chinese, Malay"
+    }
+    ],
+    "potentialAction":{
+    "@@type":"ReserveAction",
+    "target":{
+    "@@type":"EntryPoint",
+    "urlTemplate":"@hotel.URLDomain/Reservation",
+    "actionPlatform":[
+    "http://schema.org/DesktopWebPlatform",
+    "http://schema.org/IOSPlatform",
+    "http://schema.org/AndroidPlatform"
+    ],
+    "inLanguage":"en-US"
+    },
+    "result":{
+    "@@type":"LodgingReservation",
+    "name":"Book Hotel Room"
+    }
+    },
+    "containsPlace":
+    [
+    @foreach (var room in rooms)
+    {
+        <text>
+            {
+            "@@type":"HotelRoom",
+            "name":"@room.Name",
+            "description":"@room.Description",
+            "url": "@hotel.URLDomain/Rooms/Detail/@room.Name.ToSeoFriendly()",
+            "offers": {
+            "@@type": "Offer",
+            "name": "Room Rate",
+            "priceSpecification": {
+            "@@type": "UnitPriceSpecification",
+            "priceCurrency": "@country.Currency",
+            "price": "@room.RackRates.Min(rr => rr.Rates)",
+            "unitCode": "DAY"
+            }
+            },
+            "image":"@room.ImagePath"
+            }@if (room != rooms[rooms.Count() - 1])
+            {<text>,</text>}
+            </text>
+        }
+    ]
+    }
+</script>

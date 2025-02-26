@@ -1,0 +1,91 @@
+﻿@using Microsoft.AspNetCore.Html
+@using Softinn.EntityModels.ViewModel
+@using GadekHotspring.Helpers
+
+@{
+    BlogViewModel blog = ViewBag.Blog;
+
+    if (blog.MetaTitle != null)
+    {
+        ViewBag.MetaTitle = blog.MetaTitle;
+    }
+    else
+    {
+        if (ViewBag.ViewModel.Hotel != null)
+		{
+            ViewBag.MetaTitle = $"{blog.Title} - {ViewBag.ViewModel.Hotel.DisplayName}";
+        }
+    }
+
+    if (blog.MetaDescription != null)
+    {
+        ViewBag.MetaDescription = blog.MetaDescription;
+    }
+    else
+    {
+        var blogContent = BvHelper.GetReadableText(blog.Content);
+
+        if (blogContent.Length > 150)
+        {
+            ViewBag.MetaDescription = blogContent.Substring(0, Math.Min(blogContent.Length, 150));
+        }
+        else
+        {
+            ViewBag.MetaDescription = blogContent;
+        }
+    }
+
+    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+    var blogTitle = (blog.Title.Contains("Privacy Policy")) ? "Privacy Policy" : "Our Blog";
+}
+<section class="section-sub-banner bg-9">
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>@blogTitle</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG -->
+<section class="section-blog bg-white">
+    <div class="container">
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="blog-content">
+                        <h1 class="element-invisible">Blog detail</h1>
+                        <!-- POST SINGLE -->
+                        <article class="post post-single">
+                            @if (!blog.Title.Contains("Privacy Policy"))
+                            {
+                                <div class="entry-media">
+                                    <img src="@blog.FeaturedImage" alt="Image for @blog.Title">
+                                    <span class="posted-on"><strong>@blog.Posted.ToString("dd")</strong>@blog.Posted.ToString("MMM")</span>
+                                </div>
+
+                                <div class="entry-header">
+                                    <h2 class="entry-title">@blog.Title</h2>
+                                    <p class="entry-meta">
+                                        <span>
+                                            <span class="screen-reader-text">Posted on</span>
+                                            <span class="entry-time">@blog.Posted.ToString("MMM dd, yyyy")</span>
+                                        </span>
+                                    </p>
+                                </div>
+                            }
+
+                            <div class="entry-content">
+                                @Html.Raw(blog.Content)
+                            </div>
+
+                        </article>
+                        <!-- END / POST SINGLE -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END / BLOG -->

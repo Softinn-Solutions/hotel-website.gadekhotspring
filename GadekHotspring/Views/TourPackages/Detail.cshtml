@@ -1,0 +1,100 @@
+﻿@using GadekHotspring.Helpers
+@model Softinn.EntityModels.ViewModel.TourPackageViewModel
+@{
+    var campaignDateNotNull = false;
+    var checkInDateNotNull = false;
+
+    if (Model.CheckInAfter != null && Model.CheckInBefore != null)
+    {
+        checkInDateNotNull = true;
+    }
+
+    if (Model.CampaignStartDate != null && Model.CampaignEndDate != null)
+    {
+        campaignDateNotNull = true;
+    }
+
+    if (ViewBag.ViewModel.Hotel != null)
+    {
+        ViewBag.MetaTitle = $"Package ({Model.Name}) - {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
+}
+<section class="section-sub-banner bg-1">
+    <div class="awe-overlay"></div>
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>Package Details</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-promotion-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                @if (Model.Photos != null && Model.Photos.Any())
+                {
+                    <div class="img">
+                        <a href="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" class="lightbox"><img class="mfp-image" src="@BvHelper.GetImageLinkFromStorage(Model.Photos.FirstOrDefault().URLStorage)" /></a>
+                    </div>
+                }
+            </div>
+            <div class="col-md-7">
+                <div class="detail">
+                    <h2>
+                        @Model.Name
+                    </h2>
+                    <p>@Html.Raw(Model.Description)</p>
+                    @if (Model.Price != null)
+                    {
+                        <p>Price: RM @String.Format("{0:0.##}", Model.Price)</p>
+                    }
+                    @if (campaignDateNotNull)
+                    {
+                        <p>
+                            @if (checkInDateNotNull)
+                            {<text>Booking Period</text>}
+                        else
+                        {<text>Campaign Period</text>}: @Model.CampaignStartDate.Value.ToString("d MMM yyyy") - @Model.CampaignEndDate.Value.ToString("d MMM yyyy")
+                    </p>
+                }
+                    @if (checkInDateNotNull)
+                    {
+                        <p>Check in Period: @Model.CheckInAfter.Value.ToString("d MMM yyyy") - @Model.CheckInBefore.Value.ToString("d MMM yyyy")</p>
+                    }
+                    @if (!String.IsNullOrWhiteSpace(Model.TourPackageCallToActionType.Name))
+                    {
+                        <a href="/TourPackages/inquiry/@Model.Name.ToSeoFriendly()" class="awe-btn awe-btn-13">@Model.TourPackageCallToActionType.Name</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section css{
+    <link href="~/css/promotion.min.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script>
+        $(".section-promotion-detail .img").magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            mainClass: 'mfp-with-zoom',
+            zoom: {
+                enabled: true,
+                duration: 300,
+                easing: 'ease-in-out',
+            },
+            gallery: {
+                enabled: true,
+                arrowMarkup: '<button title="%title%" type="button" class="mfp-prevent-%dir% fa fa-arrow-%dir%"></button>',
+                tPrev: '',
+                tNext: ''
+            }
+        });
+    </script>
+}

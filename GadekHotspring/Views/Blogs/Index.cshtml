@@ -1,0 +1,82 @@
+﻿@using Microsoft.AspNetCore.Html
+@using Softinn.EntityModels.ViewModel
+@using GadekHotspring.Helpers
+
+@{
+    if (ViewBag.ViewModel.Hotel != null)
+	{
+        ViewBag.MetaTitle = $"Blogs - {ViewBag.ViewModel.Hotel.DisplayName}";
+        ViewBag.MetaDescription = $"List of blog of {ViewBag.ViewModel.Hotel.DisplayName}";
+    }
+
+    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+    List<BlogViewModel> blogs = ViewBag.ViewModel.Blogs;
+}
+
+<div id="page-contact-us">
+    <section class="section-sub-banner bg-7">
+        <div class="awe-overlay"></div>
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-center">
+                    <h2>Our Blog</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-blog bg-white">
+        <div class="container">
+            <div class="blog">
+                <div class="row">
+                    <h1 class="element-invisible">Blog</h1>
+                    <div class="col-md-12">
+                        <div class="blog-content">
+                            @foreach (var blog in blogs.Where(b => !b.IsStandalone))
+                            {
+                                <!-- POST ITEM -->
+                                <article class="post">
+
+                                    <div class="entry-media">
+                                        <a href="/p/@blog.TitleSlug" class="post-thumbnail hover-zoom"><img src="@blog.FeaturedImage" alt="Image of @blog.Title"></a>
+
+                                        <span class="posted-on"><strong>@blog.Posted.ToString("dd")</strong>@blog.Posted.ToString("MMM")</span>
+
+                                    </div>
+
+                                    <div class="entry-header">
+                                        <h2 class="entry-title"><a href="/p/@blog.TitleSlug">@blog.Title</a></h2>
+                                    </div>
+
+                                    <div class="entry-content">
+                                        @{
+                                            var blogContent = BvHelper.GetReadableText(blog.Content);
+
+                                            if (blogContent.Length > 320)
+                                            {
+                                                <p>@Html.Raw(blogContent.Substring(0, Math.Min(blogContent.Length, 320)))...</p>
+                                            }
+                                            else
+                                            {
+                                                <p>@Html.Raw(blogContent)</p>
+                                            }
+                                        }
+                                    </div>
+
+                                    <div class="entry-footer">
+                                        <p class="entry-meta">
+                                            <span class="entry-author">
+                                                <span class="screen-reader-text">Posted on</span>
+                                                <span class="entry-time">@blog.Posted.ToString("MMM dd, yyyy")</span>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </article>
+                                <!-- END / POST ITEM -->
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
