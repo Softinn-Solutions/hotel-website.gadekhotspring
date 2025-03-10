@@ -7,7 +7,109 @@
   max-height: 70px; }
 
 #header .header_mobile .header_menu ul li .sub-menu {
-  background-color: #5A920B; }
+    background-color: #125FA9;
+}
+
+/*region homepage header video*/
+#page-home .homepage-header-video-wrapper {
+    height: 325px !important;
+}
+
+#page-home .homepage-header-video-wrapper.show-xs {
+    display: block !important;
+}
+
+#page-home .homepage-header-video-wrapper.show-sm {
+    display: none !important;
+}
+
+#page-home .homepage-header-video-wrapper.show-md {
+    display: none !important;
+}
+
+#page-home .homepage-header-video-wrapper.show-lg {
+    display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+    #page-home .homepage-header-video-wrapper {
+        height: 475px !important;
+    }
+
+    #page-home .homepage-header-video-wrapper.show-xs {
+        display: none !important;
+    }
+
+    #page-home .homepage-header-video-wrapper.show-sm {
+        display: block !important;
+    }
+
+    #page-home .homepage-header-video-wrapper.show-md {
+        display: none !important;
+    }
+
+    #page-home .homepage-header-video-wrapper.show-lg {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #page-home .homepage-header-video-wrapper {
+        height: 610px !important;
+    }
+
+    #page-home .homepage-header-video-wrapper.show-xs {
+        display: none !important;
+    }
+
+    #page-home .homepage-header-video-wrapper.show-sm {
+        display: none !important;
+    }
+
+    #page-home .homepage-header-video-wrapper.show-md {
+        display: block !important;
+    }
+
+    #page-home .homepage-header-video-wrapper.show-lg {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #page-home .homepage-header-video-wrapper {
+        height: 711px !important;
+    }
+
+        #page-home .homepage-header-video-wrapper.show-xs {
+            display: none !important;
+        }
+
+        #page-home .homepage-header-video-wrapper.show-sm {
+            display: none !important;
+        }
+
+        #page-home .homepage-header-video-wrapper.show-md {
+            display: none !important;
+        }
+
+        #page-home .homepage-header-video-wrapper.show-lg {
+            display: block !important;
+        }
+}
+
+#page-home .homepage-header-video {
+    text-align: center;
+}
+
+#page-home .homepage-header-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
 #page-home .section-slider {
   max-height: 568px !important; }
@@ -55,8 +157,9 @@
 
 #page-home .section-accomd {
   background-color: #f9f9f9; }
-  #page-home .section-accomd .accomd-modations-room {
-    border: #8DC53E solid 2px; }
+    #page-home .section-accomd .accomd-modations-room {
+        border: #125FA9 solid 2px;
+    }
     #page-home .section-accomd .accomd-modations-room img {
       height: 290px;
       object-fit: cover; }
@@ -154,34 +257,36 @@
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease; }
-  .section-inquiry .inquiry .contact-form .inquirybutton {
-    left: 0px;
-    top: 0px;
-    width: 200px;
-    height: 48px;
-    background: inherit;
-    background-color: #8DC53E;
-    box-sizing: border-box;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #8DC53E;
-    border-radius: 0px;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
-    color: white;
-    margin-top: 20px;
-    width: 100%;
-    padding-top: 12px;
-    padding-bottom: 12px; }
-    .section-inquiry .inquiry .contact-form .inquirybutton:hover {
-      color: #8DC53E;
-      border-color: #8DC53E;
-      background-color: white; }
+    .section-inquiry .inquiry .contact-form .inquirybutton {
+        left: 0px;
+        top: 0px;
+        width: 200px;
+        height: 48px;
+        background: inherit;
+        background-color: #125FA9;
+        box-sizing: border-box;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #125FA9;
+        border-radius: 0px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-style: normal;
+        font-size: 15px;
+        color: white;
+        margin-top: 20px;
+        width: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+        .section-inquiry .inquiry .contact-form .inquirybutton:hover {
+            color: #125FA9;
+            border-color: #125FA9;
+            background-color: white;
+        }
 
 #page-reservation .booking-subtitle p {
   font-family: 'Montserrat Bold', 'Montserrat Regular', 'Montserrat';
@@ -206,16 +311,18 @@
   object-fit: cover; }
 
 #page-contact-us .section-contact .contact-icon {
-  color: #8DC53E;
-  font-size: 20px;
-  margin-right: 20px;
-  vertical-align: middle; }
+    color: #125FA9;
+    font-size: 20px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
 
 #page-contact-us .section-contact .divider-line {
-  background: #8DC53E;
-  display: inline-block;
-  width: 480px;
-  height: 1px; }
+    background: #125FA9;
+    display: inline-block;
+    width: 480px;
+    height: 1px;
+}
 
 #page-contact-us .section-contact .contact .text .chgfont p {
   font-family: 'Montserrat Bold', 'Montserrat Regular', 'Montserrat';
@@ -302,14 +409,15 @@
     margin-right: 10px;
     line-height: 88px; }
     #footer .mailchimp p:before {
-      content: "\f00c";
-      padding: 10px;
-      color: #8DC53E;
-      margin-right: 5px;
-      font-family: 'FontAwesome';
-      -webkit-border-radius: 100%;
-      -moz-border-radius: 100%;
-      border-radius: 100%; }
+        content: "\f00c";
+        padding: 10px;
+        color: #125FA9;
+        margin-right: 5px;
+        font-family: 'FontAwesome';
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+    }
   #footer .payment_method {
     background: #FFFFFF;
     display: flex;
@@ -361,7 +469,8 @@
     background-color: #101010;
     color: #acacac; }
     #footer .footer_bottom .poweredBy {
-      color: #8DC53E; }
+        color: #125FA9;
+    }
       #footer .footer_bottom .poweredBy:hover {
         color: #acacac; }
 

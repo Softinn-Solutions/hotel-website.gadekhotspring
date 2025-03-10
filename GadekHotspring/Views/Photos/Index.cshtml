@@ -29,8 +29,8 @@
         <div class="sub-banner">
             <div class="container">
                 <div class="text text-center">
-                    <h2>Gallery</h2>
-                    <p>Sneak peek of our hotel and rooms</p>
+                    <h2>Galeri</h2>
+                    <p>Tinjau hotel dan bilik kami</p>
                 </div>
             </div>
         </div>
@@ -39,14 +39,14 @@
     <section class="section_page-gallery">
         <div class="container">
             <div class="gallery">
-                <h1 class="element-invisible">Gallery</h1>
+                <h1 class="element-invisible">Galeri</h1>
 
                 <div class="gallery-cat text-center">
                     <ul class="list-inline">
-                        <li class="active"><a href="#" data-filter="*">All</a></li>
+                        <li class="active"><a href="#" data-filter="*">Semua</a></li>
                         @foreach (var filter in photoTypes)
                         {
-                            <li><a href="#" data-filter=".@filter">@filter</a></li>
+                            <li><a href="#" data-filter=".@filter">@filter.Replace("Hotel", "Resort").Replace("Room", "Bilik").Replace("Facility", "Fasiliti").Replace("Nearby", "Berdekatan").Replace("Others", "Lain-lain")</a></li>
                         }
                     </ul>
                 </div>
@@ -57,7 +57,7 @@
                             <div class="item-size"></div>
                             @foreach (var photo in photos)
                             {
-                                var title = photo.PhotoType.Filter == "Room" ? photo.RoomType.Name : photo.PhotoType.Filter;
+                                var title = photo.PhotoType.Filter == "Room" ? photo.RoomType.Name : photo.PhotoType.Filter.Replace("Hotel", "Resort").Replace("Room", "Bilik").Replace("Facility", "Fasiliti").Replace("Nearby", "Berdekatan").Replace("Others", "Lain-lain");
                                 <div class="item-isotope @photo.PhotoType.Filter">
                                     <div class="gallery_item">
                                         <a href="@BvHelper.GetImageLinkFromStorage(photo.URLStorage)" class="mfp-image">

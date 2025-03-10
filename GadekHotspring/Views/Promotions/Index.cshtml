@@ -10,7 +10,7 @@
     <div class="sub-banner">
         <div class="container">
             <div class="text text-center">
-                <h2>Promotions</h2>
+                <h2>Promosi</h2>
             </div>
         </div>
     </div>
@@ -51,36 +51,36 @@
                                 <div class="promotion-overlay-container promotion-overlay-container_@promotion.Id hidden">
                                     <div class="promotion-overlay promotion-overlay_@promotion.Id hidden slideInUp animated">
                                         <div class="close-button close-button_@promotion.Id"><i class="fa fa-close"></i></div>
-                                        <h5>Terms &amp; Conditions:</h5>
-                                        <span>• Book from @promotion.CampaignStartDate.ToString("dd MMM yyyy") - @promotion.CampaignEndDate.ToString("dd MMM yyyy")</span>
-                                        <span>• Check in from @promotion.CheckInAfter.ToString("dd MMM yyyy") - @promotion.CheckInBefore.ToString("dd MMM yyyy")</span>
+                                        <h5>Terma &amp; Syarat:</h5>
+                                        <span>• Tempah dari @promotion.CampaignStartDate.ToString("dd MMM yyyy") - @promotion.CampaignEndDate.ToString("dd MMM yyyy")</span>
+                                        <span>• Daftar masuk dari @promotion.CheckInAfter.ToString("dd MMM yyyy") - @promotion.CheckInBefore.ToString("dd MMM yyyy")</span>
                                         @if (promotion.MinNights.HasValue && promotion.MinNights.Value > 1)
                                         {
-                                            <span>• Min. nights: @promotion.MinNights.Value</span>
+                                            <span>• Min. malam: @promotion.MinNights.Value</span>
                                         }
                                         @if (promotion.MaxNights.HasValue && promotion.MaxNights.Value > 1)
                                         {
-                                            <span>• Max. nights: @promotion.MaxNights.Value</span>
+                                            <span>• Max. malam: @promotion.MaxNights.Value</span>
                                         }
                                         @if (promotion.MinTotalFees.HasValue && promotion.MinTotalFees != 0)
                                         {
-                                            <span>• Min. booking value: RM @promotion.MinTotalFees.Value.ToString("#.##")</span>
+                                            <span>• Min. harga tempahan: RM @promotion.MinTotalFees.Value.ToString("#.##")</span>
                                         }
                                         @if (promotion.MaxDiscountRates.HasValue)
                                         {
-                                            <span>• Max. redemption: RM @promotion.MaxDiscountRates.Value.ToString("#.##")</span>
+                                            <span>• Max. penebusan: RM @promotion.MaxDiscountRates.Value.ToString("#.##")</span>
                                         }
                                         @if (!String.IsNullOrEmpty(promotion.EligibleDayNames))
                                         {
-                                            <span>• Only eligible on @promotion.EligibleDayNames.Replace(",", ", ")</span>
+                                            <span>• Hanya layak pada @promotion.EligibleDayNames.Replace(",", ", ").Replace("Monday", "Isnin").Replace("Tuesday", "Selasa").Replace("Wednesday", "Rabu").Replace("Thursday", "Khamis").Replace("Friday", "Jumaat").Replace("Saturday", "Sabtu").Replace("Sunday", "Ahad")</span>
                                         }
                                         @if (!promotion.IsApplicableOnPublicHoliday)
                                         {
-                                            <span>• Not applicable on public holiday</span>
+                                            <span>• Tidak terpakai pada hari cuti umum</span>
                                         }
                                         @if (!promotion.IsApplicableOnDiscountedRates)
                                         {
-                                            <span>• Not applicable with other discounted rate</span>
+                                            <span>• Tidak terpakai dengan kadar diskaun lain</span>
                                         }
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                                             <h5>@promotion.Name</h5>
                                         </div>
                                         <div class="promotion-rate">
-                                            <span>Discount:</span><br />
+                                            <span>Diskaun:</span><br />
                                             @if (promotion.DiscountTypeId == 2)
                                             {
                                                 <h2>RM @promotion.Discount.ToString("#.##")</h2>
@@ -102,7 +102,7 @@
                                             }
                                         </div>
                                         <div class="promotion-code-section">
-                                            <span>Use Promo Code:</span>
+                                            <span>Guna Promo Code:</span>
                                             <div class="promotion-code-box">
                                                 <span>@promotion.PromotionPrefix</span>
                                             </div>
@@ -112,8 +112,8 @@
 
                                 <div class="promotion-detail">
                                     <div class="promotion-footer">
-                                        <span class="terms-and-condition terms-and-condition_@promotion.Id">Show terms &amp; conditions</span>
-                                        <a target="_blank" href="/Reservation?promotionCode=@promotion.PromotionPrefix" class="awe-btn awe-btn-13">Book Now</a>
+                                        <span class="terms-and-condition terms-and-condition_@promotion.Id">Tunjuk terma &amp; syarat</span>
+                                        <a target="_blank" href="/Reservation?promotionCode=@promotion.PromotionPrefix" class="awe-btn awe-btn-13">Tempah Sekarang</a>
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 ﻿@using Softinn.EntityModels.ViewModel
 @{
     List<PhotoViewModel> photos = ViewBag.ViewModel.Photos;
-    HotelViewModel hotel = ViewBag.ViewModel.Hotel;
+    CMSSettingViewModel cmsSetting = ViewBag.ViewModel.CMSSetting;
 
     var sliderPhotos = photos.Where(p => p.PhotoType.Name == Softinn.EntityModels.AppSettings.PhotoType_HomePageSlider).OrderBy(p => p.Number);
 }
@@ -13,7 +13,7 @@
         <div class="sub-banner">
             <div class="container">
                 <div class="text text-center">
-                    <h2>Our Story</h2>
+                    <h2>Tentang Kami</h2>
                 </div>
             </div>
         </div>
@@ -30,11 +30,11 @@
                         }
                     </div>
                     <div class="text">
-                        <h2 class="heading">Our Story</h2>
+                        <h2 class="heading">Tentang Kami</h2>
                         <div class="desc">
-                            @if (hotel != null)
+                            @if (cmsSetting != null)
                             {
-                                @Html.Raw(hotel.FullDescription)
+                                @Html.Raw(cmsSetting.PropertyFullDescription)
                             }
                         </div>
                     </div>

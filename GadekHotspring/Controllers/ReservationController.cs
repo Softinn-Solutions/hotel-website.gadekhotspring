@@ -20,7 +20,7 @@ namespace GadekHotspring.Controllers
                 url = url + "&startDate=" + ViewBag.StartDate + "&endDate=" + ViewBag.EndDate;
             }
 
-            url = url + "&themeColor=8DC53E&darkenColor=8DC53E";
+            url = url + "&themeColor=125FA9&darkenColor=125FA9";
 
             if (promotionCode != null)
             {

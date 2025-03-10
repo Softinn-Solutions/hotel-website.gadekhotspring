@@ -51,24 +51,24 @@
                     <div class="col-lg-3">
                         <div class="room-detail_book">
                             <div class="room-detail_total">
-                                <h6>STARTING FROM</h6>
+                                <h6>BERMULA DARI</h6>
 
                                 @if (room.RackRates != null && room.RackRates.Any())
                                 {
                                     <p class="price">
-                                        <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /night
+                                        <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /satu malam
                                     </p>
                                 }
                             </div>
 
                             <div class="room-detail_form" ng-app="app" ng-controller="checkAvailabilityFormController">
                                 <form name="checkAvailabilityForm" novalidate angular-validator angular-validator-submit="searchHotel(checkAvailabilityForm)">
-                                    <label>CHECK IN</label>
-                                    <input type="text" name="startDate" class="awe-calendar from" id="checkInDatePicker" placeholder="Check-In Date" ng-model="arrive" readonly>
-                                    <label>CHECK OUT</label>
-                                    <input type="text" name="endDate" class="awe-calendar to" id="checkOutDatePicker" placeholder="Check-Out Date" ng-model="departure" readonly>
+                                    <label>DAFTAR MASUK</label>
+                                    <input type="text" name="startDate" class="awe-calendar from" id="checkInDatePicker" placeholder="Tarikh Daftar Masuk" ng-model="arrive" readonly>
+                                    <label>DAFTAR KELUAR</label>
+                                    <input type="text" name="endDate" class="awe-calendar to" id="checkOutDatePicker" placeholder="Tarikh Dafatar Keluar" ng-model="departure" readonly>
 
-                                    <button class="awe-btn awe-btn-13">Book Now</button>
+                                    <button class="awe-btn awe-btn-13">Tempah Sekarang</button>
                                 </form>
                             </div>
                         </div>
@@ -79,10 +79,10 @@
                 <div class="row">
                     <div class="col-md-3">
                         <ul class="room-detail_tab-header">
-                            <li class="active"><a href="#overview" data-toggle="tab">OVERVIEW</a></li>
-                            <li><a href="#amenities" data-toggle="tab">Amenities</a></li>
-                            <li><a href="#rates" data-toggle="tab">RATES</a></li>
-                            <li><a href="#policy" data-toggle="tab">Booking Policies</a></li>
+                            <li class="active"><a href="#overview" data-toggle="tab">GAMBARAN KESELURUHAN</a></li>
+                            <li><a href="#amenities" data-toggle="tab">Kemudahan</a></li>
+                            <li><a href="#rates" data-toggle="tab">Harga</a></li>
+                            <li><a href="#policy" data-toggle="tab">Polisi Tempahan</a></li>
                         </ul>
                     </div>
 
@@ -91,7 +91,7 @@
                             <div class="tab-pane fade active in" id="overview">
                                 <div class="room-detail_overview">
                                     <h5 class='text-uppercase'>
-                                        Overview of @room.Name
+                                        Gambaran Keseluruhan @room.Name
                                     </h5>
                                     <br />
                                     @Html.Raw(room.FullDescription)
@@ -102,44 +102,33 @@
                                 <div class="room-detail_amenities">
                                     <div class="row">
                                         <div class="col-xs-6 col-lg-4">
-                                            <h6>Amenities</h6>
+                                            <h6>Kemudahan</h6>
                                             <ul>
-                                                <li>Free wifi</li>
+                                                <li>Wifi Percuma</li>
                                                 <li>TV</li>
-                                                <li>Astro Channel</li>
-                                                <li>Air - conditioner</li>
-                                                <li>Iron</li>
-                                                <li>Kettle</li>
-                                                <li>Toaster</li>
-                                                <li>Coffee/tea making facilities</li>
-                                                <li>Cooking facilities</li>
-                                                <li>Hot & Cold Rain Shower</li>
-                                                <li>Hairdryer</li>
-                                                <li>Fridge</li>
-                                                <li>Safety box</li>
-                                                <li>Toiletries</li>
-                                                <li>Towels</li>
-                                                <li>Baby cot</li>
-                                                <li>Writing desk</li>
-                                                <li>Fan</li>
+                                                <li>Penghawa Dingin</li>
+                                                <li>Seterika</li>
+                                                <li>Cerek</li>
+                                                <li>Kemudahan Membuat Kopi/Teh</li>
+                                                <li>Pancuran Air Sejuk</li>
+                                                <li>Pengering Rambut</li>
+                                                <li>Peti Ais</li>
+                                                <li>Peralatan Mandian</li>
+                                                <li>Tuala</li>
+                                                <li>Meja Tulis</li>
                                             </ul>
                                         </div>
                                         <div class="col-xs-6 col-lg-4">
-                                            <h6>Facilities</h6>
+                                            <h6>Fasiliti</h6>
                                             <ul>
-                                                <li>Parking</li>
-                                                <li>Extra mattress (roll-away bed)</li>
-                                                <li>Wheelchair friendly</li>
-                                                <li>Swimming Pool</li>
-                                                <li>Meeting/Conference Room</li>
-                                                <li>Family Gathering/Event</li>
-                                                <li>Room Service</li>
-                                                <li>BBQ Equipment (additional cost)</li>
-                                                <li>Children's high chairs</li>
-                                                <li>Special diet menus (on request)</li>
-                                                <li>Massage</li>
-                                                <li>Airport shuttle (additional cost)</li>
-                                                <li>Newspapers</li>
+                                                <li>Tempet Letak Kereta</li>
+                                                <li>Mesra Kerusi Roda</li>
+                                                <li>Kolam Renang</li>
+                                                <li>Perhimpunan Keluarga/Acara</li>
+                                                <li>Perkhidmatan Bilik</li>
+                                                <li>Peralatan BBQ (kos tambahan)</li>
+                                                <li>Kerusi Tinggi Kanak-Kanak</li>
+                                                <li>Urutan</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -148,55 +137,51 @@
 
                             <div class="tab-pane fade" id="policy">
                                 <div class="room-detail_overview">
-                                    <h5 class="text-uppercase">BOOKING POLICIES</h5>
+                                    <h5 class="text-uppercase">POLISI TEMPAHAN</h5>
                                     <br />
-                                    <p><u>By accepting/ making this booking, you agree to the Hotels Policies and the following terms:</u></p>
+                                    <p><u>Dengan menerima/membuat tempahan ini, anda bersetuju menerima Polisi Hotel dan terma berikut:</u></p>
                                     <br />
-                                    <p>Check-in from 3.00 pm and check out at 12.00 pm.</p>
-                                    <br />
-                                    <p>Late check out is strictly subject to availability and not later than 2.00 pm.</p>
-                                    <br />
-                                    <p>If you wish to extend the check-out time and subject to availability, an additional fee equal to</p>
+                                    <p>1. Tempahan &amp; Pembayaran</p>
                                     <ul>
-                                        <li>15% of your room rate will be charged for extensions until 3:00 pm</li>
-                                        <li>30% for extensions until 4.00 pm</li>
-                                        <li>50% for extensions until 6:00 pm, and</li>
-                                        <li>an additional fee equal to the full room rate for checking-out after 6:00 pm.</li>
+                                        <li>Semua tempahan perlu disahkan dengan pembayaran penuh.</li>
+                                        <li>Pembayaran boleh dibuat melalui kad kredit, debit, atau pindahan bank.</li>
                                     </ul>
                                     <br />
-
-                                    <p>Additional breakfast per Adult: RM70+ / Child (5y-12y): RM35+.</p>
-                                    <p>Add-on lunch per Adult: RM90+/ Child (5y-12y): RM45+.</p>
-                                    <p>Add on dinner per Adult: RM120+/Child (5y-12y): RM60+.</p>
-                                    <br />
-
-                                    <p>Extra roll-away bed without breakfast is charged at RM110 + each and subject to availability.</p>
-                                    <p>Extra roll-away bed with breakfast is charged at RM180 +  each and subject to availability.</p>
-                                    <br />
-
-                                    <p>Refundable safety deposit RM500.00 is required upon check-in.</p>
-                                    <br />
-                                    <p>During the eve of and on Chinese New Year & New Year gazetted public holidays, additional surcharge rates are RM200+ for the suite and one bedroom villas, RM250+ for two bedroom villas and RM300+ for three bedroom villas.</p>
-                                    <br />
-                                    <p>Room Occupancy</p>
+                                    <p>2. Polisi Pembatalan</p>
                                     <ul>
-                                        <li>Rates are offered strictly on a twin-sharing basis per room</li>
-                                        <li>Maximum occupancy per room is two (2) adults and one (1) child 12 years and below OR two (2) adults and two (2) children 6 years and below</li>
-                                        <li>Guests showing up with more than the maximum capacity of the villas or suite can be charged additional fees or refused entry with no reimbursement or refund of any payment made.</li>
+                                        <li>Pembatalan tempahan mestilah dibuat sekurang-kurangnya 48 jam sebelum tarikh check in.</li>
+                                        <li>Pembatalan lewat atau 'no-show' pembayaran yang telah dibuat tidak akan dikembalikan.</li>
                                     </ul>
                                     <br />
-                                    <p>Cancellation Policy</p>
+                                    <p>3. Check-In &amp; Check-out</p>
                                     <ul>
-                                        <li>Confirmation of reservation is subject to full payment of total stay</li>
-                                        <li>Cancellations made on promotional rates requires full prepayment. It is non-cancellable, non-refundable and no changes are allowed</li>
-                                        <li>Cancellations 14 days or less before the booked date will be charged one-night stay</li>
-                                        <li>Cancellations within 48 hours of booked date will be charged the entire stay</li>
-                                        <li>All applicable cancellations & refunds made is subject to a processing fee of RM50.00</li>
+                                        <li>Check-in: 3:00 petang</li>
+                                        <li>Check- out: 12:00 tengah hari</li>
+                                        <li>Caj tambahan mungkin dikenakan untuk check out lewat.</li>
                                     </ul>
                                     <br />
-                                    <p>Baggage and personal effects are at guests' own risk throughout their stay.</p>
+                                    <p>4. Polisi Rokok &amp; Haiwan Peliharaan</p>
+                                    <ul>
+                                        <li>Merokok dilarang di dalam bilik.</li>
+                                        <li>Haiwan peliharaan tidak dibenarkan.</li>
+                                    </ul>
                                     <br />
-                                    <p>The Hotel shall be reimbursed for all damages to property or personal injury as a result of any negligent or wilful act by guests and/or they invitee(s).</p>
+                                    <p>5. Keselamatan &amp; Barangan Berharga</p>
+                                    <ul>
+                                        <li>Barang berharga adalah dibawah tanggungjawab tetamu sendiri, pihak hotel tidak bertanggungjawab atas kehilangan atau kerosakkan.</li>
+                                    </ul>
+                                    <br />
+                                    <p>6. Kerugian &amp; Kerosakan</p>
+                                    <ul>
+                                        <li>Tetamu akan bertanggungjawab atas sebarang kerosakan atau kehilangan harta benda hotel semasa penginapan.</li>
+                                    </ul>
+                                    <br />
+                                    <p>7. Peraturan Tambahan</p>
+                                    <ul>
+                                        <li>Tetamu diminta menjaga ketenteraman dan kebersihan.</li>
+                                        <li>Aktiviti yang mengganggu tetamu lain tidak dibenarkan</li>
+                                    </ul>
+                                    <br />
                                 </div>
                             </div>
 
@@ -205,13 +190,13 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th>Rate Period</th>
-                                                <th>Nightly</th>
+                                                <th>Tempoh Kadar</th>
+                                                <th>Setiap Malam</th>
                                             </tr>
                                         </thead>
                                         <tr>
                                             <td>
-                                                <h6>Weekday</h6>
+                                                <h6>Hari Biasa</h6>
                                             </td>
                                             <td>
                                                 @{
@@ -229,7 +214,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <h6>Weekend</h6>
+                                                <h6>Hari Minggu</h6>
                                             </td>
                                             <td>
                                                 @{
@@ -248,7 +233,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <h6>Public Holiday</h6>
+                                                <h6>Cuti Umum</h6>
                                             </td>
                                             <td>
                                                 @{
@@ -273,7 +258,7 @@
             </div>
 
             <div class="room-detail_compare">
-                <h2 class="room-compare_title">Other Rooms</h2>
+                <h2 class="room-compare_title">Bilik Lain</h2>
                 <div class="room-compare_content">
                     <div class="row">
                         @{
@@ -289,11 +274,11 @@
                                                 <a href="/Rooms/Detail/@otherRoom.Name.ToSeoFriendly()">@otherRoom.Name</a>
                                             </h2>
                                             <ul>
-                                                <li><i class="fa fa-male"></i> Max: @otherRoom.GuestNumberMax @(otherRoom.GuestNumberMax > 1 ? "Adults" : "Adult")</li>
+                                                <li><i class="fa fa-male"></i> Max: @otherRoom.GuestNumberMax Dewasa</li>
                                                 @if (otherRoom.BedRelationship != null)
                                                 {
                                                     <li>
-                                                        <i class="fa fa-bed"></i> Bed:
+                                                        <i class="fa fa-bed"></i> Katil:
                                                         @foreach (var bed in otherRoom.BedRelationship.Beds)
                                                         {
                                                             <span>@bed.Count @bed.Name</span>
@@ -308,7 +293,7 @@
                                                     </li>
                                                 }
                                             </ul>
-                                            <a href="/Rooms/Detail/@otherRoom.Name.ToSeoFriendly()" class="awe-btn awe-btn-default">VIEW DETAILS</a>
+                                            <a href="/Rooms/Detail/@otherRoom.Name.ToSeoFriendly()" class="awe-btn awe-btn-default">LIHAT DETAIL</a>
                                         </div>
                                     </div>
                                 </div>

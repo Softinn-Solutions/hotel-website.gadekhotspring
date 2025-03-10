@@ -10,11 +10,11 @@
                         $(".promotion-overlay-container_" + promotionId).removeClass("hidden");
                         $(".promotion-overlay_" + promotionId).removeClass("hidden");
 
-                        $('.terms-and-condition_' + promotionId).html("Hide terms &amp; conditions");
+                        $('.terms-and-condition_' + promotionId).html("Tutup terma &amp; syarat");
                     } else {
                         $(".promotion-overlay_" + promotionId).removeClass("slideInUp");
                         $(".promotion-overlay_" + promotionId).addClass("slideOutDown");
-                        $('.terms-and-condition_' + promotionId).html("Show terms &amp; conditions");
+                        $('.terms-and-condition_' + promotionId).html("Tunjuk terma &amp; syarat");
 
                         setTimeout(function () {
                             $(".promotion-overlay-container_" + promotionId).addClass("hidden");
@@ -28,7 +28,7 @@
                     $(".promotion-overlay_" + promotionId).removeClass("slideOutDown");
                     $(".promotion-overlay_" + promotionId).addClass("slideInUp");
 
-                    $('.terms-and-condition_' + promotionId).html("Hide terms &amp; conditions");
+                    $('.terms-and-condition_' + promotionId).html("Tutup terma &amp; syarat");
                 }
             }
         });

@@ -11,7 +11,7 @@
         <div class="sub-banner">
             <div class="container">
                 <div class="text text-center">
-                    <h2>ROOMS &amp; RATES</h2>
+                    <h2>BILIK &amp; HARGA</h2>
                 </div>
             </div>
         </div>
@@ -31,12 +31,12 @@
                                             @if (room.RackRates != null && room.RackRates.Any())
                                             {
                                                 <span class="price">
-                                                    From<br /><span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /
+                                                    Dari<br /><span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> /
                                                 </span>
                                             }
                                         </div>
                                         <div class="bot text-right">
-                                            <span class="price">night</span>
+                                            <span class="price">satu malam</span>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
@@ -59,11 +59,11 @@
                                                         }
                                                     </li>
                                                 }
-                                                <li>@room.GuestNumberMax @(room.GuestNumberMax > 1 ? "Adults" : "Adult")</li>
+                                                <li>@room.GuestNumberMax Dewasa</li>
                                             </ul>
                                             <p>@Html.Raw(room.Description)</p>
                                         </div>
-                                        <a href="/Rooms/Detail/@room.Name.ToSeoFriendly()" class="awe-btn awe-btn-13">VIEW DETAILS</a>
+                                        <a href="/Rooms/Detail/@room.Name.ToSeoFriendly()" class="awe-btn awe-btn-13">LIHAT DETAIL</a>
                                     </div>
                                     <div class="col-md-5 img">
                                         <a href="/Rooms/Detail/@room.Name.ToSeoFriendly()"><img src="@room.ImagePath" alt="@room.Name"></a>
@@ -92,16 +92,16 @@
                                                         }
                                                     </li>
                                                 }
-                                                <li>@room.GuestNumberMax Adult</li>
+                                                <li>@room.GuestNumberMax Dewasa</li>
                                             </ul>
                                             <p>@Html.Raw(room.Description)</p>
                                         </div>
                                         <div class="bot padding-top-10px padding-bottom-10px">
                                             @if (room.RackRates != null && room.RackRates.Any())
                                             {
-                                                <span class="price">From <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> / night</span>
+                                                <span class="price">From <span class="amout">RM @room.RackRates.Select(rr => rr.Rates).Min().ToString("#")</span> / satu malam</span>
                                             }
-                                            <a href="/Rooms/Detail/@room.Name.ToSeoFriendly()" class="awe-btn awe-btn-13">VIEW DETAILS</a>
+                                            <a href="/Rooms/Detail/@room.Name.ToSeoFriendly()" class="awe-btn awe-btn-13">LIHAT DETAIL</a>
                                         </div>
                                     </div>
                                 </div>
