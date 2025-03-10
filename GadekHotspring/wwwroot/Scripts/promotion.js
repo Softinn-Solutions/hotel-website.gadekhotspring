@@ -14,7 +14,7 @@
                     } else {
                         $(".promotion-overlay_" + promotionId).removeClass("slideInUp");
                         $(".promotion-overlay_" + promotionId).addClass("slideOutDown");
-                        $('.terms-and-condition_' + promotionId).html("Tunjuk terma &amp; syarat");
+                        $('.terms-and-condition_' + promotionId).html("Papar terma &amp; syarat");
 
                         setTimeout(function () {
                             $(".promotion-overlay-container_" + promotionId).addClass("hidden");
