@@ -46,7 +46,7 @@
                         <li class="active"><a href="#" data-filter="*">Semua</a></li>
                         @foreach (var filter in photoTypes)
                         {
-                            <li><a href="#" data-filter=".@filter">@filter.Replace("Hotel", "Resort").Replace("Room", "Bilik").Replace("Facility", "Fasiliti").Replace("Nearby", "Berdekatan").Replace("Others", "Lain-lain")</a></li>
+                            <li><a href="#" data-filter=".@filter">@filter.Replace("Hotel", "Resort").Replace("Room", "Bilik").Replace("Facility", "Fasiliti").Replace("Nearby", "Tarikan").Replace("Others", "Lain-lain")</a></li>
                         }
                     </ul>
                 </div>
@@ -57,7 +57,7 @@
                             <div class="item-size"></div>
                             @foreach (var photo in photos)
                             {
-                                var title = photo.PhotoType.Filter == "Room" ? photo.RoomType.Name : photo.PhotoType.Filter.Replace("Hotel", "Resort").Replace("Room", "Bilik").Replace("Facility", "Fasiliti").Replace("Nearby", "Berdekatan").Replace("Others", "Lain-lain");
+                                var title = photo.PhotoType.Filter == "Room" ? photo.RoomType.Name : photo.PhotoType.Filter.Replace("Hotel", "Resort").Replace("Room", "Bilik").Replace("Facility", "Fasiliti").Replace("Nearby", "Tarikan").Replace("Others", "Lain-lain");
                                 <div class="item-isotope @photo.PhotoType.Filter">
                                     <div class="gallery_item">
                                         <a href="@BvHelper.GetImageLinkFromStorage(photo.URLStorage)" class="mfp-image">

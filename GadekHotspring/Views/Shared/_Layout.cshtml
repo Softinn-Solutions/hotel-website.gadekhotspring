@@ -182,7 +182,7 @@
                             @if (attractions.Any())
                             {
                                 <li class="@Html.IsSelected(controller: "Attractions", action: "Index")">
-                                    <a href="#">Berdekatan <span class="fa fa-caret-down"></span></a>
+                                    <a href="#">Tarikan <span class="fa fa-caret-down"></span></a>
                                     <ul class="sub-menu">
                                         @foreach (var attractionType in attractions.Select(a => a.AttractionType.Name).Distinct())
                                         {
