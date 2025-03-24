@@ -11637,6 +11637,29 @@ img {
                 font-size: 14px;
             }
 
+                .custom-bullet {
+                    list-style: none;
+                    padding-left: 20px;
+                }
+
+                    .custom-bullet li {
+                        position: relative;
+                        padding-left: 25px;
+                        margin-bottom: 10px;
+                    }
+
+                        .custom-bullet li::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 20px;
+                            height: 20px;
+                            background-image: url('/images/Logo/bullet-md.png');
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                        }
+
                 .facility-item .text .desc p {
                     line-height: 1.428em;
                     vertical-align: middle;

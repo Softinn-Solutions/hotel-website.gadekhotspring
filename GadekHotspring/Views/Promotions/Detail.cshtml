@@ -17,7 +17,7 @@
     <div class="sub-banner">
         <div class="container">
             <div class="text text-center">
-                <h2>Promotion Details</h2>
+                <h2>Butiran Promosi</h2>
             </div>
         </div>
     </div>
@@ -42,11 +42,11 @@
                     <p>@Html.Raw(Model.Description)</p>
                     @if (campaignDateNotNull)
                     {
-                        <p>@if (checkInDateNotNull) {<text>Booking Period</text>} else {<text>Campaign Period</text> }: @Model.CampaignStartDate.Value.ToString("d MMM yyyy") - @Model.CampaignEndDate.Value.ToString("d MMM yyyy")</p>
+                        <p>@if (checkInDateNotNull) {<text>Tempoh Tempahan</text>} else {<text>Tempoh Kempen</text> }: @Model.CampaignStartDate.Value.ToString("d MMM yyyy") - @Model.CampaignEndDate.Value.ToString("d MMM yyyy")</p>
                     }
                     @if (checkInDateNotNull)
                     {
-                        <p>Check in Period: @Model.CheckInAfter.Value.ToString("d MMM yyyy") - @Model.CheckInBefore.Value.ToString("d MMM yyyy")</p>
+                        <p>Tempoh Daftar Masuk: @Model.CheckInAfter.Value.ToString("d MMM yyyy") - @Model.CheckInBefore.Value.ToString("d MMM yyyy")</p>
                     }
                     @if (!String.IsNullOrWhiteSpace(Model.CallToAction) && !String.IsNullOrWhiteSpace(Model.CallToActionUrl)) { 
                         <a href="@Model.CallToActionUrl" class="awe-btn awe-btn-13">@Model.CallToAction</a>
