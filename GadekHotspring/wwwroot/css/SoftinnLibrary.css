@@ -5131,6 +5131,11 @@ body.compensate-for-scrollbar {
     }
 }
 
+@media (min-width: 1200px) {
+    .fancybox-can-swipe .fancybox-content, .fancybox-can-pan .fancybox-content {
+        width: 40%;
+    }
+}
 
 #corner-popup .corner-close:before, #corner-popup .corner-close:after {
     background-color: black;
