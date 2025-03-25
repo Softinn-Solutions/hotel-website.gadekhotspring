@@ -7,7 +7,7 @@ on:
 
 env:
   # Change this to the folder name in which your Dockerfile is located
-  BUILD_CONTEXT: EmbunLuxuryVillas
+  BUILD_CONTEXT: GadekHotspring
 
 jobs:
   build:
